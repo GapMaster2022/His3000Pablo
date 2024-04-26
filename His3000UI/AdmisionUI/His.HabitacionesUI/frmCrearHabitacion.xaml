@@ -1,0 +1,10 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="His.HabitacionesUI.CrearHabitacion"
+	x:Name="Window"
+	Title="CrearHabitacion"
+	Width="291" Height="197">
+
+	<Grid x:Name="LayoutRoot" Background="LightGray" />
+</Window>

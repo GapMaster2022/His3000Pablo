@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD31CBD8-907B-4BD0-B392-69AC93783485}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TarifariosUI</RootNamespace>
+    <AssemblyName>TarifariosUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDock.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Excel.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="His.Parametros, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\His.Parametros\obj\Debug\His.Parametros.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics3.Excel.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics3.Win.UltraWinGrid.ExcelExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConexionEntidades.cs" />
+    <Compile Include="ConsultaHonorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaHonorarios.Designer.cs">
+      <DependentUpon>ConsultaHonorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Atencion.cs" />
+    <Compile Include="frmAcerca.xaml.cs">
+      <DependentUpon>frmAcerca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarAseguradoras2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarAseguradoras2.Designer.cs">
+      <DependentUpon>frmAdministrarAseguradoras2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarConvenios.Designer.cs">
+      <DependentUpon>frmAdministrarConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarEstructura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarEstructura.Designer.cs">
+      <DependentUpon>frmAdministrarEstructura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarTarifario.Designer.cs">
+      <DependentUpon>frmAdministrarTarifario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarTarifas.Designer.cs">
+      <DependentUpon>frmAdministrarTarifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarTipoEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarTipoEmpresa.Designer.cs">
+      <DependentUpon>frmAdministrarTipoEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaPacien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaPacien.Designer.cs">
+      <DependentUpon>frmAyudaPacien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarHonorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarHonorario.Designer.cs">
+      <DependentUpon>frmBuscarHonorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaCIE10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaCIE10.Designer.cs">
+      <DependentUpon>frmBusquedaCIE10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaTarifario.Designer.cs">
+      <DependentUpon>frmBusquedaTarifario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCatalogosCostosTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCatalogosCostosTipo.Designer.cs">
+      <DependentUpon>frmCatalogosCostosTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlesWPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlesWPF.Designer.cs">
+      <DependentUpon>frmControlesWPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearHonorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearHonorarios.Designer.cs">
+      <DependentUpon>frmCrearHonorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListas.Designer.cs">
+      <DependentUpon>frmListas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainTarifario.Designer.cs">
+      <DependentUpon>frmMainTarifario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorcentajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorcentajes.Designer.cs">
+      <DependentUpon>frmPorcentajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AyudaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AyudaPacientes.Designer.cs">
+      <DependentUpon>frm_AyudaPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CategoriasConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CategoriasConvenios.Designer.cs">
+      <DependentUpon>frm_CategoriasConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CatlogoCostos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CatlogoCostos.Designer.cs">
+      <DependentUpon>frm_CatlogoCostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Medicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Medicos.Designer.cs">
+      <DependentUpon>frm_Medicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PreciosConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PreciosConvenios.Designer.cs">
+      <DependentUpon>frm_PreciosConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HIS3000BDDataSet.cs">
+      <DependentUpon>HIS3000BDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HIS3000BDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HIS3000BDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewColumnSort.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsultaHonorarios.resx">
+      <DependentUpon>ConsultaHonorarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarAseguradoras2.resx">
+      <DependentUpon>frmAdministrarAseguradoras2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarConvenios.resx">
+      <DependentUpon>frmAdministrarConvenios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarEstructura.resx">
+      <DependentUpon>frmAdministrarEstructura.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarTarifario.resx">
+      <DependentUpon>frmAdministrarTarifario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarTarifas.resx">
+      <DependentUpon>frmAdministrarTarifas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarTipoEmpresa.resx">
+      <DependentUpon>frmAdministrarTipoEmpresa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaPacien.resx">
+      <DependentUpon>frmAyudaPacien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarHonorario.resx">
+      <DependentUpon>frmBuscarHonorario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaCIE10.resx">
+      <DependentUpon>frmBusquedaCIE10.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaTarifario.resx">
+      <DependentUpon>frmBusquedaTarifario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCatalogosCostosTipo.resx">
+      <DependentUpon>frmCatalogosCostosTipo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlesWPF.resx">
+      <DependentUpon>frmControlesWPF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearHonorarios.resx">
+      <DependentUpon>frmCrearHonorarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListas.resx">
+      <DependentUpon>frmListas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainTarifario.resx">
+      <DependentUpon>frmMainTarifario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorcentajes.resx">
+      <DependentUpon>frmPorcentajes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AyudaPacientes.resx">
+      <DependentUpon>frm_AyudaPacientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CategoriasConvenios.resx">
+      <DependentUpon>frm_CategoriasConvenios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CatlogoCostos.resx">
+      <DependentUpon>frm_CatlogoCostos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Medicos.resx">
+      <DependentUpon>frm_Medicos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PreciosConvenios.resx">
+      <DependentUpon>frm_PreciosConvenios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesTarifario.resx">
+      <DependentUpon>frmReportesTarifario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tarifario\ConvenioAseguradora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ConvenioAseguradora.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tarifario\crpHonorariosTarifario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpHonorariosTarifario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tarifario\EmpresasAseguradoras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmpresasAseguradoras.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tarifario\HonorariosMedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HonorariosMedico.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tarifario\rTarifarioHonorarios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rTarifarioHonorarios.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TarifarioFactura.rdlc" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="HIS3000BDDataSet.xsc">
+      <DependentUpon>HIS3000BDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HIS3000BDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HIS3000BDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HIS3000BDDataSet.xss">
+      <DependentUpon>HIS3000BDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmReportesTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesTarifario.Designer.cs">
+      <DependentUpon>frmReportesTarifario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tarifario\ConvenioAseguradora.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConvenioAseguradora.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Tarifario\crpHonorariosTarifario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpHonorariosTarifario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Tarifario\EmpresasAseguradoras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpresasAseguradoras.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Tarifario\HonorariosMedico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HonorariosMedico.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Tarifario\rTarifarioHonorarios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rTarifarioHonorarios.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Datos\Core.Datos.csproj">
+      <Project>{19ACEFD2-D37B-4FD6-A5B8-A36E437AC94A}</Project>
+      <Name>Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Core.Entidades\Core.Entidades.csproj">
+      <Project>{3D7A1A75-226E-441F-85C6-7A186ADF0BB4}</Project>
+      <Name>Core.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\His.Maintenance\His.Maintenance.csproj">
+      <Project>{c6ee982b-768e-4b96-8245-460139e04b9f}</Project>
+      <Name>His.Maintenance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\His.Negocio\His.Negocio.csproj">
+      <Project>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</Project>
+      <Name>His.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\His3000Negocio\His.General\His.General.csproj">
+      <Project>{8A713189-DCE0-4674-A95C-0FB17EFED0D4}</Project>
+      <Name>His.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralUI\GeneralApp.csproj">
+      <Project>{D3BA8C0F-99C3-4CD6-BAC8-4D905A67E3C2}</Project>
+      <Name>GeneralApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HistoriasUI\His.Formulario\His.Formulario.csproj">
+      <Project>{6e44c066-8aae-40fa-97ba-ed6ef7da08d5}</Project>
+      <Name>His.Formulario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Recursos\His.Recursos.csproj">
+      <Project>{AD16CB7B-FCE5-40C2-B91B-12149F725119}</Project>
+      <Name>His.Recursos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel apuestas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\índice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="frmAcerca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\percent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

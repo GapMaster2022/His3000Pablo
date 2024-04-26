@@ -1,0 +1,34 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+	x:Class="His.HabitacionesUI.frmDietas"
+	x:Name="Window"
+	Title="frmDietas"
+	Width="596" Height="377" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.Background>
+			<RadialGradientBrush>
+				<GradientStop Color="#FFB4B3B3" Offset="1"/>
+				<GradientStop Color="White"/>
+			</RadialGradientBrush>
+		</Grid.Background>
+		<Menu Height="28" VerticalAlignment="Top" Margin="0,0,4,0" Grid.ColumnSpan="2">
+			<MenuItem x:Name="NuevoMenuItem" Header="Nuevo" Height="28" Margin="0" Width="71"/>
+			<MenuItem x:Name="ModificarMenuItem" Header="Modificar" Height="28" Margin="0" Width="71"/>
+			<MenuItem x:Name="EliminarMenuItem" Header="Eliminar" Height="28" Margin="0" Width="71"/>
+			<MenuItem x:Name="GuardarMenuItem" Header="Guardar" Height="28" Margin="0" Width="71"/>
+			<MenuItem x:Name="CancelarMenuItem" Header="Cancelar" Height="28" Margin="0" Width="71"/>
+		</Menu>
+		<Custom:DataGrid Margin="26,152,21,21"/>
+		<Canvas Height="98" Margin="27,40,21,0" VerticalAlignment="Top">
+			<Label Content="Codigo" Height="21" Canvas.Left="19" Canvas.Top="8" Width="76"/>
+			<Label Content="Nombre" Height="21.5" Canvas.Left="19" Canvas.Top="33" Width="76"/>
+			<Label Content="Descripcion" Height="22" Canvas.Left="19" Canvas.Top="58.5" Width="76"/>
+			<TextBox Height="21" Canvas.Left="108" TextWrapping="Wrap" Canvas.Top="8" Width="102"/>
+			<TextBox Height="21.5" Canvas.Left="108" TextWrapping="Wrap" Canvas.Top="33" Width="389"/>
+			<TextBox Height="21.5" Canvas.Left="108" TextWrapping="Wrap" Canvas.Top="59" Width="389"/>
+		</Canvas>
+	</Grid>
+</Window>

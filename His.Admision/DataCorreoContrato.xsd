@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataCorreoContrato" targetNamespace="http://tempuri.org/DataCorreoContrato.xsd" xmlns:mstns="http://tempuri.org/DataCorreoContrato.xsd" xmlns="http://tempuri.org/DataCorreoContrato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataCorreoContrato" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataCorreoContrato" msprop:Generator_UserDSName="DataCorreoContrato">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Contrato" msprop:Generator_TableClassName="ContratoDataTable" msprop:Generator_TableVarName="tableContrato" msprop:Generator_TablePropName="Contrato" msprop:Generator_RowDeletingName="ContratoRowDeleting" msprop:Generator_RowChangingName="ContratoRowChanging" msprop:Generator_RowEvHandlerName="ContratoRowChangeEventHandler" msprop:Generator_RowDeletedName="ContratoRowDeleted" msprop:Generator_UserTableName="Contrato" msprop:Generator_RowChangedName="ContratoRowChanged" msprop:Generator_RowEvArgName="ContratoRowChangeEvent" msprop:Generator_RowClassName="ContratoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Correo" msprop:Generator_ColumnVarNameInTable="columnCorreo" msprop:Generator_ColumnPropNameInRow="Correo" msprop:Generator_ColumnPropNameInTable="CorreoColumn" msprop:Generator_UserColumnName="Correo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

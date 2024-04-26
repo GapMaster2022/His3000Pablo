@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HIS3000BDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="HIS3000BDModelStoreContainer">
+          <EntitySet Name="CATALOGOS" EntityType="HIS3000BDModel.Store.CATALOGOS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HABITACIONES" EntityType="HIS3000BDModel.Store.HABITACIONES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HABITACIONES_DETALLE" EntityType="HIS3000BDModel.Store.HABITACIONES_DETALLE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HABITACIONES_ESTADO" EntityType="HIS3000BDModel.Store.HABITACIONES_ESTADO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HABITACIONES_TIPO" EntityType="HIS3000BDModel.Store.HABITACIONES_TIPO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NIVEL_PISO" EntityType="HIS3000BDModel.Store.NIVEL_PISO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PEDIDOS_ESTACIONES" EntityType="HIS3000BDModel.Store.PEDIDOS_ESTACIONES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RUBROS" EntityType="HIS3000BDModel.Store.RUBROS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HABITACIONES_ATENCION_VISTA" EntityType="HIS3000BDModel.Store.HABITACIONES_ATENCION_VISTA" store:Type="Views" store:Schema="dbo" store:Name="HABITACIONES_ATENCION_VISTA">
+            <DefiningQuery>SELECT 
+      [HABITACIONES_ATENCION_VISTA].[hab_Codigo] AS [hab_Codigo], 
+      [HABITACIONES_ATENCION_VISTA].[hab_Numero] AS [hab_Numero], 
+      [HABITACIONES_ATENCION_VISTA].[HES_CODIGO] AS [HES_CODIGO], 
+      [HABITACIONES_ATENCION_VISTA].[USUARIO] AS [USUARIO], 
+      [HABITACIONES_ATENCION_VISTA].[ATE_CODIGO] AS [ATE_CODIGO], 
+      [HABITACIONES_ATENCION_VISTA].[PAC_HISTORIA_CLINICA] AS [PAC_HISTORIA_CLINICA], 
+      [HABITACIONES_ATENCION_VISTA].[PACIENTE] AS [PACIENTE], 
+      [HABITACIONES_ATENCION_VISTA].[HAD_FECHA_INGRESO] AS [HAD_FECHA_INGRESO], 
+      [HABITACIONES_ATENCION_VISTA].[HAD_FECHA_ALTA_MEDICO] AS [HAD_FECHA_ALTA_MEDICO], 
+      [HABITACIONES_ATENCION_VISTA].[HAD_FECHA_DISPONIBILIDAD] AS [HAD_FECHA_DISPONIBILIDAD], 
+      [HABITACIONES_ATENCION_VISTA].[HAD_FECHA_FACTURACION] AS [HAD_FECHA_FACTURACION], 
+      [HABITACIONES_ATENCION_VISTA].[ATE_DIAGNOSTICO_FINAL] AS [ATE_DIAGNOSTICO_FINAL], 
+      [HABITACIONES_ATENCION_VISTA].[NIV_NOMBRE] AS [NIV_NOMBRE], 
+      [HABITACIONES_ATENCION_VISTA].[MED_NOMBRE] AS [MED_NOMBRE], 
+      [HABITACIONES_ATENCION_VISTA].[ESP_NOMBRE] AS [ESP_NOMBRE], 
+      [HABITACIONES_ATENCION_VISTA].[HAD_CODIGO] AS [HAD_CODIGO], 
+      [HABITACIONES_ATENCION_VISTA].[HES_NOMBRE] AS [HES_NOMBRE]
+      FROM [dbo].[HABITACIONES_ATENCION_VISTA] AS [HABITACIONES_ATENCION_VISTA]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_HABITACIONES_DETALLE_HABITACIONES" Association="HIS3000BDModel.Store.FK_HABITACIONES_DETALLE_HABITACIONES">
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+            <End Role="HABITACIONES_DETALLE" EntitySet="HABITACIONES_DETALLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HABITACIONES_HABITACIONES_ESTADO" Association="HIS3000BDModel.Store.FK_HABITACIONES_HABITACIONES_ESTADO">
+            <End Role="HABITACIONES_ESTADO" EntitySet="HABITACIONES_ESTADO" />
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HABITACIONES_HABITACIONES_TIPO" Association="HIS3000BDModel.Store.FK_HABITACIONES_HABITACIONES_TIPO">
+            <End Role="HABITACIONES_TIPO" EntitySet="HABITACIONES_TIPO" />
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HABITACIONES_NIVEL_PISO" Association="HIS3000BDModel.Store.FK_HABITACIONES_NIVEL_PISO">
+            <End Role="NIVEL_PISO" EntitySet="NIVEL_PISO" />
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CATALOGOS">
+          <Key>
+            <PropertyRef Name="CAD_CODIGO" />
+          </Key>
+          <Property Name="CAD_CODIGO" Type="bigint" Nullable="false" />
+          <Property Name="CAD_NOMBRE" Type="varchar" MaxLength="30" />
+          <Property Name="CAD_PADRE" Type="bigint" />
+          <Property Name="CAD_ESTADO" Type="bigint" />
+          <Property Name="CAD_VALOR" Type="int" />
+          <Property Name="CAD_TABLA" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CAD_CAMPO" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="HABITACIONES">
+          <Key>
+            <PropertyRef Name="hab_Codigo" />
+          </Key>
+          <Property Name="hab_Codigo" Type="smallint" Nullable="false" />
+          <Property Name="NIV_CODIGO" Type="smallint" />
+          <Property Name="HES_CODIGO" Type="smallint" />
+          <Property Name="HAT_CODIGO" Type="smallint" />
+          <Property Name="hab_Numero" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="hab_Padre" Type="smallint" />
+          <Property Name="hab_Activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="HABITACIONES_DETALLE">
+          <Key>
+            <PropertyRef Name="HAD_CODIGO" />
+          </Key>
+          <Property Name="HAD_CODIGO" Type="int" Nullable="false" />
+          <Property Name="hab_Codigo" Type="smallint" />
+          <Property Name="ID_USUARIO" Type="smallint" />
+          <Property Name="ATE_CODIGO" Type="int" />
+          <Property Name="HAD_FECHA_INGRESO" Type="datetime" />
+          <Property Name="HAD_FECHA_ALTA_MEDICO" Type="datetime" />
+          <Property Name="HAD_FECHA_DISPONIBILIDAD" Type="datetime" />
+          <Property Name="HAD_FECHA_FACTURACION" Type="datetime" />
+          <Property Name="HAD_REGISTRO_ANTERIOR" Type="smallint" />
+          <Property Name="HAD_ENCARGADO" Type="bit" />
+          <Property Name="HAD_OBSERVACION" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HABITACIONES_ESTADO">
+          <Key>
+            <PropertyRef Name="HES_CODIGO" />
+          </Key>
+          <Property Name="HES_CODIGO" Type="smallint" Nullable="false" />
+          <Property Name="HES_NOMBRE" Type="nvarchar" MaxLength="50" />
+          <Property Name="HES_DESCRIPCION" Type="nvarchar" MaxLength="80" />
+          <Property Name="HES_COLOR" Type="nchar" MaxLength="15" />
+          <Property Name="HES_IMAGEN" Type="nchar" MaxLength="50" />
+          <Property Name="HES_ACTIVO" Type="bit" />
+        </EntityType>
+        <EntityType Name="HABITACIONES_TIPO">
+          <Key>
+            <PropertyRef Name="HAT_CODIGO" />
+          </Key>
+          <Property Name="HAT_CODIGO" Type="smallint" Nullable="false" />
+          <Property Name="HAT_NOMBRE" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="HAT_ESTADO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NIVEL_PISO">
+          <Key>
+            <PropertyRef Name="NIV_CODIGO" />
+          </Key>
+          <Property Name="NIV_CODIGO" Type="smallint" Nullable="false" />
+          <Property Name="NIV_NOMBRE" Type="nvarchar" MaxLength="124" />
+          <Property Name="NIV_NUMERO_PISO" Type="smallint" />
+        </EntityType>
+        <EntityType Name="PEDIDOS_ESTACIONES">
+          <Key>
+            <PropertyRef Name="PEE_CODIGO" />
+          </Key>
+          <Property Name="PEE_CODIGO" Type="tinyint" Nullable="false" />
+          <Property Name="PEE_NOMBRE" Type="varchar" MaxLength="20" />
+          <Property Name="PEE_DESCRIPCION" Type="varchar" MaxLength="120" />
+          <Property Name="PEE_ESTADO" Type="bit" />
+        </EntityType>
+        <EntityType Name="RUBROS">
+          <Key>
+            <PropertyRef Name="RUB_CODIGO" />
+          </Key>
+          <Property Name="RUB_CODIGO" Type="int" Nullable="false" />
+          <Property Name="RUB_NOMBRE" Type="nchar" MaxLength="10" />
+          <Property Name="RUB_TIPO" Type="nchar" MaxLength="10" />
+          <Property Name="RUB_ASOCIADO" Type="bigint" />
+          <Property Name="RUB_TIP_ASOCIADO" Type="varchar" MaxLength="5" />
+          <Property Name="RUB_ESTADO" Type="nchar" MaxLength="10" />
+          <Property Name="TIP_CODIGO" Type="smallint" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'His3000.dbo.HABITACIONES_ATENCION_VISTA' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="HABITACIONES_ATENCION_VISTA">
+          <Key>
+            <PropertyRef Name="hab_Codigo" />
+            <PropertyRef Name="hab_Numero" />
+            <PropertyRef Name="USUARIO" />
+            <PropertyRef Name="ESP_NOMBRE" />
+            <PropertyRef Name="HAD_CODIGO" />
+          </Key>
+          <Property Name="hab_Codigo" Type="smallint" Nullable="false" />
+          <Property Name="hab_Numero" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="HES_CODIGO" Type="smallint" />
+          <Property Name="USUARIO" Type="varchar" Nullable="false" MaxLength="56" />
+          <Property Name="ATE_CODIGO" Type="int" />
+          <Property Name="PAC_HISTORIA_CLINICA" Type="nchar" MaxLength="10" />
+          <Property Name="PACIENTE" Type="varchar" MaxLength="83" />
+          <Property Name="HAD_FECHA_INGRESO" Type="datetime" />
+          <Property Name="HAD_FECHA_ALTA_MEDICO" Type="datetime" />
+          <Property Name="HAD_FECHA_DISPONIBILIDAD" Type="datetime" />
+          <Property Name="HAD_FECHA_FACTURACION" Type="datetime" />
+          <Property Name="ATE_DIAGNOSTICO_FINAL" Type="varchar" MaxLength="255" />
+          <Property Name="NIV_NOMBRE" Type="nvarchar" MaxLength="124" />
+          <Property Name="MED_NOMBRE" Type="varchar" MaxLength="73" />
+          <Property Name="ESP_NOMBRE" Type="varchar" Nullable="false" MaxLength="70" />
+          <Property Name="HAD_CODIGO" Type="int" Nullable="false" />
+          <Property Name="HES_NOMBRE" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_HABITACIONES_DETALLE_HABITACIONES">
+          <End Role="HABITACIONES" Type="HIS3000BDModel.Store.HABITACIONES" Multiplicity="0..1" />
+          <End Role="HABITACIONES_DETALLE" Type="HIS3000BDModel.Store.HABITACIONES_DETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HABITACIONES">
+              <PropertyRef Name="hab_Codigo" />
+            </Principal>
+            <Dependent Role="HABITACIONES_DETALLE">
+              <PropertyRef Name="hab_Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HABITACIONES_HABITACIONES_ESTADO">
+          <End Role="HABITACIONES_ESTADO" Type="HIS3000BDModel.Store.HABITACIONES_ESTADO" Multiplicity="0..1" />
+          <End Role="HABITACIONES" Type="HIS3000BDModel.Store.HABITACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HABITACIONES_ESTADO">
+              <PropertyRef Name="HES_CODIGO" />
+            </Principal>
+            <Dependent Role="HABITACIONES">
+              <PropertyRef Name="HES_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HABITACIONES_HABITACIONES_TIPO">
+          <End Role="HABITACIONES_TIPO" Type="HIS3000BDModel.Store.HABITACIONES_TIPO" Multiplicity="0..1" />
+          <End Role="HABITACIONES" Type="HIS3000BDModel.Store.HABITACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HABITACIONES_TIPO">
+              <PropertyRef Name="HAT_CODIGO" />
+            </Principal>
+            <Dependent Role="HABITACIONES">
+              <PropertyRef Name="HAT_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HABITACIONES_NIVEL_PISO">
+          <End Role="NIVEL_PISO" Type="HIS3000BDModel.Store.NIVEL_PISO" Multiplicity="0..1" />
+          <End Role="HABITACIONES" Type="HIS3000BDModel.Store.HABITACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIVEL_PISO">
+              <PropertyRef Name="NIV_CODIGO" />
+            </Principal>
+            <Dependent Role="HABITACIONES">
+              <PropertyRef Name="NIV_CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_HABITACIONES_ATENCION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_med_Codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_ate_codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_hab_codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_pac_codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_hab_numero" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_had_codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_hes_codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_ate_estado" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_had_disponible" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HIS3000BDModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="HIS3000BDEntAdmision">
+          <EntitySet Name="HABITACIONES" EntityType="HIS3000BDModel.HABITACIONES" />
+          <EntitySet Name="HABITACIONES_DETALLE" EntityType="HIS3000BDModel.HABITACIONES_DETALLE" />
+          <EntitySet Name="HABITACIONES_ESTADO" EntityType="HIS3000BDModel.HABITACIONES_ESTADO" />
+          <EntitySet Name="HABITACIONES_TIPO" EntityType="HIS3000BDModel.HABITACIONES_TIPO" />
+          <EntitySet Name="NIVEL_PISO" EntityType="HIS3000BDModel.NIVEL_PISO" />
+          <AssociationSet Name="FK_HABITACIONES_DETALLE_HABITACIONES" Association="HIS3000BDModel.FK_HABITACIONES_DETALLE_HABITACIONES">
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+            <End Role="HABITACIONES_DETALLE" EntitySet="HABITACIONES_DETALLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HABITACIONES_HABITACIONES_ESTADO" Association="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_ESTADO">
+            <End Role="HABITACIONES_ESTADO" EntitySet="HABITACIONES_ESTADO" />
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HABITACIONES_HABITACIONES_TIPO" Association="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_TIPO">
+            <End Role="HABITACIONES_TIPO" EntitySet="HABITACIONES_TIPO" />
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HABITACIONES_NIVEL_PISO" Association="HIS3000BDModel.FK_HABITACIONES_NIVEL_PISO">
+            <End Role="NIVEL_PISO" EntitySet="NIVEL_PISO" />
+            <End Role="HABITACIONES" EntitySet="HABITACIONES" />
+          </AssociationSet>
+          <EntitySet Name="CATALOGOS" EntityType="HIS3000BDModel.CATALOGOS" />
+          <EntitySet Name="RUBROS" EntityType="HIS3000BDModel.RUBROS" /></EntityContainer>
+        <EntityType Name="HABITACIONES">
+          <Key>
+            <PropertyRef Name="hab_Codigo" />
+          </Key>
+          <Property Name="hab_Codigo" Type="Int16" Nullable="false" />
+          <Property Name="hab_Numero" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="hab_Padre" Type="Int16" />
+          <Property Name="hab_Activo" Type="Boolean" />
+          <NavigationProperty Name="HABITACIONES_DETALLE" Relationship="HIS3000BDModel.FK_HABITACIONES_DETALLE_HABITACIONES" FromRole="HABITACIONES" ToRole="HABITACIONES_DETALLE" />
+          <NavigationProperty Name="HABITACIONES_ESTADO" Relationship="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_ESTADO" FromRole="HABITACIONES" ToRole="HABITACIONES_ESTADO" />
+          <NavigationProperty Name="HABITACIONES_TIPO" Relationship="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_TIPO" FromRole="HABITACIONES" ToRole="HABITACIONES_TIPO" />
+          <NavigationProperty Name="NIVEL_PISO" Relationship="HIS3000BDModel.FK_HABITACIONES_NIVEL_PISO" FromRole="HABITACIONES" ToRole="NIVEL_PISO" />
+        </EntityType>
+        <EntityType Name="HABITACIONES_DETALLE">
+          <Key>
+            <PropertyRef Name="HAD_CODIGO" />
+          </Key>
+          <Property Name="HAD_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="Int16" />
+          <Property Name="ATE_CODIGO" Type="Int32" />
+          <Property Name="HAD_FECHA_INGRESO" Type="DateTime" />
+          <Property Name="HAD_FECHA_ALTA_MEDICO" Type="DateTime" />
+          <Property Name="HAD_FECHA_DISPONIBILIDAD" Type="DateTime" />
+          <Property Name="HAD_FECHA_FACTURACION" Type="DateTime" />
+          <Property Name="HAD_REGISTRO_ANTERIOR" Type="Int16" />
+          <Property Name="HAD_ENCARGADO" Type="Boolean" />
+          <Property Name="HAD_OBSERVACION" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="HABITACIONES" Relationship="HIS3000BDModel.FK_HABITACIONES_DETALLE_HABITACIONES" FromRole="HABITACIONES_DETALLE" ToRole="HABITACIONES" />
+        </EntityType>
+        <EntityType Name="HABITACIONES_ESTADO">
+          <Key>
+            <PropertyRef Name="HES_CODIGO" />
+          </Key>
+          <Property Name="HES_CODIGO" Type="Int16" Nullable="false" />
+          <Property Name="HES_NOMBRE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HES_DESCRIPCION" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="HES_COLOR" Type="String" MaxLength="15" Unicode="true" FixedLength="true" />
+          <Property Name="HES_IMAGEN" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="HES_ACTIVO" Type="Boolean" />
+          <NavigationProperty Name="HABITACIONES" Relationship="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_ESTADO" FromRole="HABITACIONES_ESTADO" ToRole="HABITACIONES" />
+        </EntityType>
+        <EntityType Name="HABITACIONES_TIPO">
+          <Key>
+            <PropertyRef Name="HAT_CODIGO" />
+          </Key>
+          <Property Name="HAT_CODIGO" Type="Int16" Nullable="false" />
+          <Property Name="HAT_NOMBRE" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="HAT_ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="HABITACIONES" Relationship="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_TIPO" FromRole="HABITACIONES_TIPO" ToRole="HABITACIONES" />
+        </EntityType>
+        <EntityType Name="NIVEL_PISO">
+          <Key>
+            <PropertyRef Name="NIV_CODIGO" />
+          </Key>
+          <Property Name="NIV_CODIGO" Type="Int16" Nullable="false" />
+          <Property Name="NIV_NOMBRE" Type="String" MaxLength="124" Unicode="true" FixedLength="false" />
+          <Property Name="NIV_NUMERO_PISO" Type="Int16" />
+          <NavigationProperty Name="HABITACIONES" Relationship="HIS3000BDModel.FK_HABITACIONES_NIVEL_PISO" FromRole="NIVEL_PISO" ToRole="HABITACIONES" />
+        </EntityType>
+        <Association Name="FK_HABITACIONES_DETALLE_HABITACIONES">
+          <End Role="HABITACIONES" Type="HIS3000BDModel.HABITACIONES" Multiplicity="0..1" />
+          <End Role="HABITACIONES_DETALLE" Type="HIS3000BDModel.HABITACIONES_DETALLE" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_HABITACIONES_HABITACIONES_ESTADO">
+          <End Role="HABITACIONES_ESTADO" Type="HIS3000BDModel.HABITACIONES_ESTADO" Multiplicity="0..1" />
+          <End Role="HABITACIONES" Type="HIS3000BDModel.HABITACIONES" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_HABITACIONES_HABITACIONES_TIPO">
+          <End Role="HABITACIONES_TIPO" Type="HIS3000BDModel.HABITACIONES_TIPO" Multiplicity="0..1" />
+          <End Role="HABITACIONES" Type="HIS3000BDModel.HABITACIONES" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_HABITACIONES_NIVEL_PISO">
+          <End Role="NIVEL_PISO" Type="HIS3000BDModel.NIVEL_PISO" Multiplicity="0..1" />
+          <End Role="HABITACIONES" Type="HIS3000BDModel.HABITACIONES" Multiplicity="*" />
+        </Association>
+        <EntityType Name="CATALOGOS">
+          <Key>
+            <PropertyRef Name="CAD_CODIGO" /></Key>
+          <Property Name="CAD_CODIGO" Type="Int64" Nullable="false" />
+          <Property Name="CAD_NOMBRE" Type="String" Nullable="true" />
+          <Property Name="CAD_PADRE" Type="Int64" Nullable="true" />
+          <Property Name="CAD_ESTADO" Type="Int64" Nullable="true" />
+          <Property Name="CAD_VALOR" Type="Int32" Nullable="true" />
+          <Property Name="CAD_TABLA" Type="String" Nullable="false" />
+          <Property Name="CAD_CAMPO" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="RUBROS">
+          <Key>
+            <PropertyRef Name="RUB_CODIGO" /></Key>
+          <Property Name="RUB_CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="RUB_NOMBRE" Type="String" Nullable="true" />
+          <Property Name="RUB_TIPO" Type="String" Nullable="true" />
+          <Property Name="RUB_ASOCIADO" Type="Int64" Nullable="true" />
+          <Property Name="RUB_TIP_ASOCIADO" Type="String" Nullable="true" />
+          <Property Name="RUB_ESTADO" Type="String" Nullable="true" />
+          <Property Name="TIP_CODIGO" Type="Int16" Nullable="true" /></EntityType></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="HIS3000BDModelStoreContainer" CdmEntityContainer="HIS3000BDEntAdmision">
+          <EntitySetMapping Name="HABITACIONES">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.HABITACIONES)">
+              <MappingFragment StoreEntitySet="HABITACIONES">
+                <ScalarProperty Name="hab_Codigo" ColumnName="hab_Codigo" />
+                <ScalarProperty Name="hab_Numero" ColumnName="hab_Numero" />
+                <ScalarProperty Name="hab_Padre" ColumnName="hab_Padre" />
+                <ScalarProperty Name="hab_Activo" ColumnName="hab_Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HABITACIONES_DETALLE">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.HABITACIONES_DETALLE)">
+              <MappingFragment StoreEntitySet="HABITACIONES_DETALLE">
+                <ScalarProperty Name="HAD_CODIGO" ColumnName="HAD_CODIGO" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ATE_CODIGO" ColumnName="ATE_CODIGO" />
+                <ScalarProperty Name="HAD_FECHA_INGRESO" ColumnName="HAD_FECHA_INGRESO" />
+                <ScalarProperty Name="HAD_FECHA_ALTA_MEDICO" ColumnName="HAD_FECHA_ALTA_MEDICO" />
+                <ScalarProperty Name="HAD_FECHA_DISPONIBILIDAD" ColumnName="HAD_FECHA_DISPONIBILIDAD" />
+                <ScalarProperty Name="HAD_FECHA_FACTURACION" ColumnName="HAD_FECHA_FACTURACION" />
+                <ScalarProperty Name="HAD_REGISTRO_ANTERIOR" ColumnName="HAD_REGISTRO_ANTERIOR" />
+                <ScalarProperty Name="HAD_ENCARGADO" ColumnName="HAD_ENCARGADO" />
+                <ScalarProperty Name="HAD_OBSERVACION" ColumnName="HAD_OBSERVACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HABITACIONES_ESTADO">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.HABITACIONES_ESTADO)">
+              <MappingFragment StoreEntitySet="HABITACIONES_ESTADO">
+                <ScalarProperty Name="HES_CODIGO" ColumnName="HES_CODIGO" />
+                <ScalarProperty Name="HES_NOMBRE" ColumnName="HES_NOMBRE" />
+                <ScalarProperty Name="HES_DESCRIPCION" ColumnName="HES_DESCRIPCION" />
+                <ScalarProperty Name="HES_COLOR" ColumnName="HES_COLOR" />
+                <ScalarProperty Name="HES_IMAGEN" ColumnName="HES_IMAGEN" />
+                <ScalarProperty Name="HES_ACTIVO" ColumnName="HES_ACTIVO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HABITACIONES_TIPO">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.HABITACIONES_TIPO)">
+              <MappingFragment StoreEntitySet="HABITACIONES_TIPO">
+                <ScalarProperty Name="HAT_CODIGO" ColumnName="HAT_CODIGO" />
+                <ScalarProperty Name="HAT_NOMBRE" ColumnName="HAT_NOMBRE" />
+                <ScalarProperty Name="HAT_ESTADO" ColumnName="HAT_ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NIVEL_PISO">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.NIVEL_PISO)">
+              <MappingFragment StoreEntitySet="NIVEL_PISO">
+                <ScalarProperty Name="NIV_CODIGO" ColumnName="NIV_CODIGO" />
+                <ScalarProperty Name="NIV_NOMBRE" ColumnName="NIV_NOMBRE" />
+                <ScalarProperty Name="NIV_NUMERO_PISO" ColumnName="NIV_NUMERO_PISO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_HABITACIONES_DETALLE_HABITACIONES" TypeName="HIS3000BDModel.FK_HABITACIONES_DETALLE_HABITACIONES" StoreEntitySet="HABITACIONES_DETALLE">
+            <EndProperty Name="HABITACIONES">
+              <ScalarProperty Name="hab_Codigo" ColumnName="hab_Codigo" />
+            </EndProperty>
+            <EndProperty Name="HABITACIONES_DETALLE">
+              <ScalarProperty Name="HAD_CODIGO" ColumnName="HAD_CODIGO" />
+            </EndProperty>
+            <Condition ColumnName="hab_Codigo" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_HABITACIONES_HABITACIONES_ESTADO" TypeName="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_ESTADO" StoreEntitySet="HABITACIONES">
+            <EndProperty Name="HABITACIONES_ESTADO">
+              <ScalarProperty Name="HES_CODIGO" ColumnName="HES_CODIGO" />
+            </EndProperty>
+            <EndProperty Name="HABITACIONES">
+              <ScalarProperty Name="hab_Codigo" ColumnName="hab_Codigo" />
+            </EndProperty>
+            <Condition ColumnName="HES_CODIGO" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_HABITACIONES_HABITACIONES_TIPO" TypeName="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_TIPO" StoreEntitySet="HABITACIONES">
+            <EndProperty Name="HABITACIONES_TIPO">
+              <ScalarProperty Name="HAT_CODIGO" ColumnName="HAT_CODIGO" />
+            </EndProperty>
+            <EndProperty Name="HABITACIONES">
+              <ScalarProperty Name="hab_Codigo" ColumnName="hab_Codigo" />
+            </EndProperty>
+            <Condition ColumnName="HAT_CODIGO" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_HABITACIONES_NIVEL_PISO" TypeName="HIS3000BDModel.FK_HABITACIONES_NIVEL_PISO" StoreEntitySet="HABITACIONES">
+            <EndProperty Name="NIVEL_PISO">
+              <ScalarProperty Name="NIV_CODIGO" ColumnName="NIV_CODIGO" />
+            </EndProperty>
+            <EndProperty Name="HABITACIONES">
+              <ScalarProperty Name="hab_Codigo" ColumnName="hab_Codigo" />
+            </EndProperty>
+            <Condition ColumnName="NIV_CODIGO" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="CATALOGOS">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.CATALOGOS)">
+              <MappingFragment StoreEntitySet="CATALOGOS">
+                <ScalarProperty Name="CAD_CAMPO" ColumnName="CAD_CAMPO" />
+                <ScalarProperty Name="CAD_TABLA" ColumnName="CAD_TABLA" />
+                <ScalarProperty Name="CAD_VALOR" ColumnName="CAD_VALOR" />
+                <ScalarProperty Name="CAD_ESTADO" ColumnName="CAD_ESTADO" />
+                <ScalarProperty Name="CAD_PADRE" ColumnName="CAD_PADRE" />
+                <ScalarProperty Name="CAD_NOMBRE" ColumnName="CAD_NOMBRE" />
+                <ScalarProperty Name="CAD_CODIGO" ColumnName="CAD_CODIGO" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RUBROS">
+            <EntityTypeMapping TypeName="IsTypeOf(HIS3000BDModel.RUBROS)">
+              <MappingFragment StoreEntitySet="RUBROS">
+                <ScalarProperty Name="TIP_CODIGO" ColumnName="TIP_CODIGO" />
+                <ScalarProperty Name="RUB_ESTADO" ColumnName="RUB_ESTADO" />
+                <ScalarProperty Name="RUB_TIP_ASOCIADO" ColumnName="RUB_TIP_ASOCIADO" />
+                <ScalarProperty Name="RUB_ASOCIADO" ColumnName="RUB_ASOCIADO" />
+                <ScalarProperty Name="RUB_TIPO" ColumnName="RUB_TIPO" />
+                <ScalarProperty Name="RUB_NOMBRE" ColumnName="RUB_NOMBRE" />
+                <ScalarProperty Name="RUB_CODIGO" ColumnName="RUB_CODIGO" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="HisModelo">
+        <EntityTypeShape EntityType="HIS3000BDModel.HABITACIONES" Width="1.5" PointX="3" PointY="1.25" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="HIS3000BDModel.HABITACIONES_DETALLE" Width="1.5" PointX="5.25" PointY="1" Height="2.7427376302083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="HIS3000BDModel.HABITACIONES_ESTADO" Width="1.5" PointX="0.75" PointY="7" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="HIS3000BDModel.HABITACIONES_TIPO" Width="1.5" PointX="0.75" PointY="1.5" Height="1.5923063151041672" IsExpanded="true" />
+        <EntityTypeShape EntityType="HIS3000BDModel.NIVEL_PISO" Width="1.5" PointX="0.75" PointY="4.625" Height="1.5923063151041674" IsExpanded="true" />
+        <AssociationConnector Association="HIS3000BDModel.FK_HABITACIONES_DETALLE_HABITACIONES" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.3748478190104167" />
+          <ConnectorPoint PointX="5.25" PointY="2.3748478190104167" /></AssociationConnector>
+        <AssociationConnector Association="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_ESTADO" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.0426741536458337" />
+          <ConnectorPoint PointX="3.75" PointY="8.0426741536458337" />
+          <ConnectorPoint PointX="3.75" PointY="3.4996956380208335" /></AssociationConnector>
+        <AssociationConnector Association="HIS3000BDModel.FK_HABITACIONES_HABITACIONES_TIPO" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.2961531575520837" />
+          <ConnectorPoint PointX="3" PointY="2.2961531575520837" /></AssociationConnector>
+        <AssociationConnector Association="HIS3000BDModel.FK_HABITACIONES_NIVEL_PISO" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.4211531575520837" />
+          <ConnectorPoint PointX="3.3437475" PointY="5.4211531575520837" />
+          <ConnectorPoint PointX="3.3437475" PointY="3.4996956380208335" /></AssociationConnector>
+        <EntityTypeShape EntityType="HIS3000BDModel.CATALOGOS" Width="1.5" PointX="5.375" PointY="4.75" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="HIS3000BDModel.RUBROS" Width="1.5" PointX="7.375" PointY="3.75" Height="2.0853483072916674" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

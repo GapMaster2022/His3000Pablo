@@ -1,0 +1,10 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="His.HabitacionesUI.frmAsignarPaciente"
+	x:Name="Window"
+	Title="frmAsignarPaciente"
+	Width="408" Height="287">
+
+	<Grid x:Name="LayoutRoot"/>
+</Window>

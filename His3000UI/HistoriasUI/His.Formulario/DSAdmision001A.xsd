@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSAdmision001A" targetNamespace="http://tempuri.org/DSAdmision001A.xsd" xmlns:mstns="http://tempuri.org/DSAdmision001A.xsd" xmlns="http://tempuri.org/DSAdmision001A.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSAdmision001A" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSAdmision001A" msprop:Generator_UserDSName="DSAdmision001A">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Admision" msprop:Generator_TableClassName="AdmisionDataTable" msprop:Generator_TableVarName="tableAdmision" msprop:Generator_RowChangedName="AdmisionRowChanged" msprop:Generator_TablePropName="Admision" msprop:Generator_RowDeletingName="AdmisionRowDeleting" msprop:Generator_RowChangingName="AdmisionRowChanging" msprop:Generator_RowEvHandlerName="AdmisionRowChangeEventHandler" msprop:Generator_RowDeletedName="AdmisionRowDeleted" msprop:Generator_RowClassName="AdmisionRow" msprop:Generator_UserTableName="Admision" msprop:Generator_RowEvArgName="AdmisionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="path" msprop:Generator_ColumnVarNameInTable="columnpath" msprop:Generator_ColumnPropNameInRow="path" msprop:Generator_ColumnPropNameInTable="pathColumn" msprop:Generator_UserColumnName="path" type="xs:string" minOccurs="0" />
+              <xs:element name="establecimiento" msprop:Generator_ColumnVarNameInTable="columnestablecimiento" msprop:Generator_ColumnPropNameInRow="establecimiento" msprop:Generator_ColumnPropNameInTable="establecimientoColumn" msprop:Generator_UserColumnName="establecimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="unicodigo" msprop:Generator_ColumnVarNameInTable="columnunicodigo" msprop:Generator_ColumnPropNameInRow="unicodigo" msprop:Generator_ColumnPropNameInTable="unicodigoColumn" msprop:Generator_UserColumnName="unicodigo" type="xs:string" minOccurs="0" />
+              <xs:element name="num_hc" msprop:Generator_ColumnVarNameInTable="columnnum_hc" msprop:Generator_ColumnPropNameInRow="num_hc" msprop:Generator_ColumnPropNameInTable="num_hcColumn" msprop:Generator_UserColumnName="num_hc" type="xs:string" minOccurs="0" />
+              <xs:element name="num_arch" msprop:Generator_ColumnVarNameInTable="columnnum_arch" msprop:Generator_ColumnPropNameInRow="num_arch" msprop:Generator_ColumnPropNameInTable="num_archColumn" msprop:Generator_UserColumnName="num_arch" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

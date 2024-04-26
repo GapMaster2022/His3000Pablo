@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="His.Parametros.AccesosModuloAcceso" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAQAogAACABIEMAAAAQAQBAAEAAAECAwACAAAAAQ=</HashCode>
+      <FileName>AccesosModuloAcceso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.AccesosModuloAdmision" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBIYIAAADASAAEQFoIECACIHAAACAgAABGAAAARiACA=</HashCode>
+      <FileName>AccesosModuloAdmision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.AccesosModuloHonorarios" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SQYImAiEGIJggBEABAADAAIEAIIgICAEBBABgIDkApA=</HashCode>
+      <FileName>AccesosModuloHonorarios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.AccesosModuloMantenimiento" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIACAAAAgABQAAEQAAABUigACIIQAEcgAQCAABAIQA=</HashCode>
+      <FileName>AccesosModuloMantenimiento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.AccesosModuloTarifario" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIBAAgBAAUegAAIDF0EDBZNAABRkAARQAIAgBECAYAY=</HashCode>
+      <FileName>AccesosModuloTarifario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.AdmisionParametros" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAoRJIgiKA4Eyi8RHDIkBgyJDgcICSG0miGAQo0CBiA=</HashCode>
+      <FileName>AdmisionParametros.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.ArchivoIni" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAgAAAAAAACAAACAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ArchivoIni.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.CuentasPacientes" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAoQqQKEEABwIBkQGICIBg8FAQQACgCEUoCABkYgEwA=</HashCode>
+      <FileName>CuentasPacientes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.EmergenciaForm" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAkAASABAAAgAAAAgAAQAIABAAAAAAAAAAAQACA=</HashCode>
+      <FileName>EmergenciaForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.EmergenciaPAR" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmergenciaPAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.FacturaPAR" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAEgAAAAACAAAAABAAAAAAAAEAACAAQABAAAAQA=</HashCode>
+      <FileName>FacturaPAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.FarmaciaPAR" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAAAAAAAAAAAAAAkAAAAgKAAAAAAAAAEAAAAgIAAA=</HashCode>
+      <FileName>FarmaciaPAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.GeneralPAR" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QMABECQAAgQgAgIUggEAkBADAAQCgxAAgQAEQPEOAEQ=</HashCode>
+      <FileName>GeneralPAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.CommonClassLibrary" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GroupedGridView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.HonorariosPAR" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAQghkgMARJBBA0IQEgwBShZFGIAABBGCgACAmUEAg=</HashCode>
+      <FileName>HonorariosPAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.LaboratorioClinico" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LaboratorioClinico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.ReporteFormularios" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAACAABAEAAAAQAAAAAAAAAEA=</HashCode>
+      <FileName>ReporteFormularios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.Parametros.UsuarioPAR" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAACAAAAAAAAAAAAAgAAAAAAAAAAAEAA=</HashCode>
+      <FileName>UsuarioPAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

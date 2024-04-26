@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SERIES3000_AUDITORIAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SERIES3000_AUDITORIA.dbo.CG_AUDTORIA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="CG_AUDTORIA">
+          <Key>
+            <PropertyRef Name="CG_CODIGO" />
+          </Key>
+          <Property Name="CG_CODIGO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CG_TIPO" Type="nvarchar" MaxLength="5" />
+          <Property Name="CG_NUMASI" Type="bigint" />
+          <Property Name="CG_CODCLI" Type="bigint" />
+          <Property Name="CG_USUARIO" Type="int" />
+          <Property Name="CG_DEBE" Type="float" />
+          <Property Name="CG_HABER" Type="float" />
+          <Property Name="CG_OBSERVACION" Type="nvarchar" MaxLength="500" />
+          <Property Name="CG_BENEFICIARIO" Type="nvarchar" MaxLength="225" />
+          <Property Name="CG_HOM_CODIGO" Type="bigint" />
+          <Property Name="CG_ESTADO" Type="nvarchar" MaxLength="100" />
+          <Property Name="CG_FECHA" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="SERIES3000_AUDITORIAModelStoreContainer">
+          <EntitySet Name="CG_AUDTORIA" EntityType="Self.CG_AUDTORIA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[CG_AUDTORIA].[CG_CODIGO] AS [CG_CODIGO], 
+[CG_AUDTORIA].[CG_TIPO] AS [CG_TIPO], 
+[CG_AUDTORIA].[CG_NUMASI] AS [CG_NUMASI], 
+[CG_AUDTORIA].[CG_CODCLI] AS [CG_CODCLI], 
+[CG_AUDTORIA].[CG_USUARIO] AS [CG_USUARIO], 
+[CG_AUDTORIA].[CG_DEBE] AS [CG_DEBE], 
+[CG_AUDTORIA].[CG_HABER] AS [CG_HABER], 
+[CG_AUDTORIA].[CG_OBSERVACION] AS [CG_OBSERVACION], 
+[CG_AUDTORIA].[CG_BENEFICIARIO] AS [CG_BENEFICIARIO], 
+[CG_AUDTORIA].[CG_HOM_CODIGO] AS [CG_HOM_CODIGO], 
+[CG_AUDTORIA].[CG_ESTADO] AS [CG_ESTADO], 
+[CG_AUDTORIA].[CG_FECHA] AS [CG_FECHA]
+FROM [dbo].[CG_AUDTORIA] AS [CG_AUDTORIA]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SERIES3000_AUDITORIAModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="CG_AUDTORIA">
+          <Key>
+            <PropertyRef Name="CG_CODIGO" />
+          </Key>
+          <Property Name="CG_CODIGO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CG_TIPO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CG_NUMASI" Type="Int64" />
+          <Property Name="CG_CODCLI" Type="Int64" />
+          <Property Name="CG_USUARIO" Type="Int32" />
+          <Property Name="CG_DEBE" Type="Double" />
+          <Property Name="CG_HABER" Type="Double" />
+          <Property Name="CG_OBSERVACION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CG_BENEFICIARIO" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="CG_HOM_CODIGO" Type="Int64" />
+          <Property Name="CG_ESTADO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CG_FECHA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="SERIES3000_AUDITORIAEntities">
+          <EntitySet Name="CG_AUDTORIA" EntityType="Self.CG_AUDTORIA" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="SERIES3000_AUDITORIAModelStoreContainer" CdmEntityContainer="SERIES3000_AUDITORIAEntities">
+          <EntitySetMapping Name="CG_AUDTORIA">
+            <EntityTypeMapping TypeName="SERIES3000_AUDITORIAModel.CG_AUDTORIA">
+              <MappingFragment StoreEntitySet="CG_AUDTORIA">
+                <ScalarProperty Name="CG_CODIGO" ColumnName="CG_CODIGO" />
+                <ScalarProperty Name="CG_TIPO" ColumnName="CG_TIPO" />
+                <ScalarProperty Name="CG_NUMASI" ColumnName="CG_NUMASI" />
+                <ScalarProperty Name="CG_CODCLI" ColumnName="CG_CODCLI" />
+                <ScalarProperty Name="CG_USUARIO" ColumnName="CG_USUARIO" />
+                <ScalarProperty Name="CG_DEBE" ColumnName="CG_DEBE" />
+                <ScalarProperty Name="CG_HABER" ColumnName="CG_HABER" />
+                <ScalarProperty Name="CG_OBSERVACION" ColumnName="CG_OBSERVACION" />
+                <ScalarProperty Name="CG_BENEFICIARIO" ColumnName="CG_BENEFICIARIO" />
+                <ScalarProperty Name="CG_HOM_CODIGO" ColumnName="CG_HOM_CODIGO" />
+                <ScalarProperty Name="CG_ESTADO" ColumnName="CG_ESTADO" />
+                <ScalarProperty Name="CG_FECHA" ColumnName="CG_FECHA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

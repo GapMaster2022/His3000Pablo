@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="His.General.CalculosCuentas" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CalculosCuentas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.General.FormularioFTP" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAhAAAAAQAAAAQAgAAEBAAEAABEAgAAAACACAEACEE=</HashCode>
+      <FileName>FormularioFTP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.General.FtpClient" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAEJgRQAMIIAAIDQKwIBkiiAACAAoCASdQIgyAgCI=</HashCode>
+      <FileName>FtpClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.General.Funciones" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Funciones.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.General.LinqExtension" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LinqExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="His.General.MyExcel" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAIAQAAIAAAAAIAQAAAAAAEAAABADAAAICEAAA=</HashCode>
+      <FileName>MyExcel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicQueryable" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAAAACAAAAAAAAAAAAAAAQAAAEAAAAAAAEAQAAAEAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicClass" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicProperty" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicExpression" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.DynamicOrdering" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.Signature" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Linq.Dynamic.ClassFactory" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAAAAAAABACAQAAAAAACAAAAASAAAAAABAAg=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.ParseException" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAkAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.ExpressionParser" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Co+4gUICBFAhMm7UoEgTE7BCIIzYpCqIKkUKBAmRAYI=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Linq.Dynamic.Res" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgMKhAIAgAAgEAgCIBSSAQAFDAgABEACoACAgLAA8A=</HashCode>
+      <FileName>Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.EmailAccounts" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUCAAAAACQAAAAQSAAAAAAAAAAAQAACAQIkQlAAAAA=</HashCode>
+      <FileName>EmailAccounts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.Entities.MailMessage" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BoAAgAAJAAgAgEAAFcEAAAAAAjAIAAiFEAAEISJAAAM=</HashCode>
+      <FileName>Entities\MailMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.Entities.MetaMessageInfo" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAQQAA=</HashCode>
+      <FileName>Entities\MetaMessageInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.Entities.POPMessage" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAAAAAIABAAAACEAAAAUAgAACECSAAAAAEAAAAA=</HashCode>
+      <FileName>Entities\POPMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.MailClients.EmailClient" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAIAAAACBAEABQQEAEAIAAAQAAQAACQQIAQhEACAA=</HashCode>
+      <FileName>MailClients\EmailClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.MailClients.POPEmailClient" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>MailClients\POPEmailClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="IMailPlusLibrary.EmailHeaders" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQAABAAAAAAAAAIAAAAAAAQCIAAABAgAAAAAABAA=</HashCode>
+      <FileName>EmailHeaders.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IMailPlusLibrary.MailClientType" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAE=</HashCode>
+      <FileName>EmailHeaders.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

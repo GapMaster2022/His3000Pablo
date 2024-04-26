@@ -1,0 +1,169 @@
+-- CREATE PROCEDURE sp_LiquidacionCABMAE
+-- @usuario float,
+-- @zona float,
+-- @tipo nvarchar(2),
+-- @numdoc float,
+-- @anio nvarchar(4),
+-- @fechatran datetime,
+-- @fechaingreso datetime,
+-- @observacion nvarchar(500),
+-- @debe float,
+-- @haber float,
+-- @fecha1 bigint,
+-- @fecha2 bigint,
+-- @beneficiario nvarchar(155),
+-- @vdolares float,
+-- @cierre nvarchar(1),
+-- @borrar bit,
+-- @solicitado nvarchar(255),
+-- @depto nvarchar(255),
+-- @autorizado nvarchar(255),
+-- @hom_codigo bigint
+-- AS
+-- INSERT INTO CG3000..Cgcabmae VALUES(@usuario, @zona, @tipo, @numdoc, @anio, @fechatran, @fechaingreso, @observacion, 
+-- @debe, @haber, @fecha1, @fecha2, @beneficiario, NULL, @vdolares, @cierre, NULL, @borrar, @solicitado, @depto, @autorizado, @hom_codigo)
+-- GO
+
+-- --------------------------------------------------------------------------------------------------
+
+-- alter PROCEDURE sp_LiquidacionDETMAE
+-- @tipo nvarchar(2),
+-- @numdoc float,
+-- @linea int,
+-- @anio nvarchar(4),
+-- @fechatran datetime,
+-- @zona int,
+-- @local float,
+-- @codcue_cp nvarchar(1),
+-- @cuenta_pc nvarchar(6),
+-- @subcta_pc nvarchar(3),
+-- @codpre_pc nvarchar(10),
+-- @codigo_c float,
+-- @nocomp nvarchar(20),
+-- @cheque float,
+-- @beneficiario nvarchar(255),
+-- @debe float,
+-- @haber float,
+-- @comentario nvarchar(255),
+-- @movbanc nvarchar(5),
+-- @fechaing datetime,
+-- @fecha1 float,
+-- @fecha2 float,
+-- @printed nvarchar(1),
+-- @cierre nvarchar(1),
+-- @conciliado nvarchar(1),
+-- @autorizacion nvarchar(49),
+-- @sustento nvarchar(2),
+-- @tipcomprobante nvarchar(2),
+-- @fechacaduca nvarchar(10),
+-- @codretencion nvarchar(5),
+-- @estado nvarchar(50)
+-- AS
+-- INSERT INTO CG3000..Cgdetmae VALUES(@tipo, @numdoc, @linea, @anio, @fechatran, @zona, @local, @codcue_cp, @cuenta_pc,
+-- @subcta_pc, @codpre_pc, @codigo_c, @nocomp, @cheque, @beneficiario, @debe, @haber, @comentario, @movbanc, @fechaing,
+-- @fecha1, @fecha2, NULL, 0, 0,@printed, @cierre, NULL, 0, @conciliado, NULL, 0, @sustento, @tipcomprobante, @autorizacion,
+-- @fechacaduca, @codretencion, 0, 0, 0, 0, NULL, @estado, 0, 0, @fechatran, NULL, 0, 0, NULL)
+-- GO
+
+-- -----------------------------------------------------------------------------
+-- alter PROCEDURE sp_LiquidacionDetalleSave
+-- @tipo nvarchar(3),
+-- @numdoc bigint,
+-- @fecha datetime,
+-- @cuenta nvarchar(10),
+-- @codigo_c float,
+-- @factura nvarchar(15),
+-- @debe float,
+-- @haber float,
+-- @usuario int
+-- AS
+-- INSERT INTO LIQUIDACION_DETALLE VALUES(@tipo, @numdoc, @fecha, @cuenta, @codigo_c, @factura, @debe, @haber, 1, NULL, @usuario, NULL);
+-- GO
+
+-- -------------------------------------------------------------------------------
+-- CREATE PROCEDURE sp_LiquidacionValidaFacturaCG
+-- @factura nvarchar(15),
+-- @codigo_c float
+-- AS
+-- SELECT * FROM CG3000..Cgdetmae WHERE codigo_c = @codigo_c AND nocomp = @factura
+-- GO
+
+-- ------------------------------------------------------------------------------
+-- alter PROCEDURE sp_LiquidacionReporte
+-- @numdoc float,
+-- @tipo nvarchar(3),
+-- @parametro int
+-- AS
+-- if(@parametro = 0)
+-- BEGIN
+	-- SELECT codrespon, c.beneficiario, c.fechatran, observacion, c.numdoc,
+	-- d.codpre_pc AS CODIGO, p.nomcue_pc, d.codigo_c, d.nocomp, d.debe, d.haber
+	-- FROM CG3000..Cgcabmae c
+	-- INNER JOIN Cg3000..Cgdetmae d on c.numdoc = d.numdoc and c.tipdoc = d.tipdoc
+	-- INNER JOIN Cg3000..Cgplacue p on d.codpre_pc = p.codpre_pc  
+	-- WHERE C.numdoc = @numdoc AND C.tipdoc = @tipo
+-- END
+-- ELSE
+-- BEGIN
+	-- SELECT d.numdoc, d.codpre_pc AS CODIGO, p.nomcue_pc, d.codigo_c, d.nocomp, d.debe, d.haber 
+	-- FROM Cg3000..Cgdetmae d  
+	-- INNER JOIN Cg3000..Cgplacue p on d.codpre_pc = p.codpre_pc  
+	-- WHERE numdoc = @numdoc AND tipdoc = @tipo
+-- END
+
+-- -----------------------------------------------------------------------------
+-- CREATE PROCEDURE sp_LiquidacionCG
+-- @tipo nvarchar(3),
+-- @numdoc bigint,
+-- @codcli bigint,
+-- @usuario int,
+-- @debe float,
+-- @haber float,
+-- @observacion nvarchar(500),
+-- @beneficiario nvarchar(255),
+-- @hom_codigo bigint,
+-- @estado nvarchar(500),
+-- @fecha datetime
+-- AS
+-- INSERT INTO SERIES3000_AUDITORIA..CG_AUDTORIA VALUES(@tipo, @numdoc, @codcli, @usuario, @debe, @haber, @observacion,
+-- @beneficiario, @hom_codigo, @estado, @fecha)
+-- go
+
+-- ------------------------------------------------------------------------------
+ -- alter PROCEDURE sp_AgendamientoView    
+ -- @desde date,    
+ -- @hasta date    
+ -- AS    
+ -- SELECT A.ID_AGENDAMIENTO as Codigo, FechaAgenda as 'Fecha Cita Medica', Hora as 'Hora Cita Medica', Consultorio,  
+ -- TRIM(Apellidos) + ' ' + TRIM(Nombres) as 'Paciente', Identificacion, TRIM(Direccion) as Direccion,    
+ -- Telefono, Celular, Email, Medico, Especialidad,   
+ -- --(select MED_TELEFONO_CELULAR from MEDICOS where Trim(MED_APELLIDO_PATERNO) + ' ' + Trim(MED_APELLIDO_MATERNO) + ' ' + Trim(MED_NOMBRE1) + ' ' + Trim(MED_NOMBRE2) = A.Medico and MED_ESTADO = 1 ) as CelularMedico,  
+ -- EmailMedico AS 'Email Medico', MotivoConsulta as 'Motivo de la Consulta',  
+ -- ObservacionesConsulta AS 'Observaciones'    
+ -- FROM AGENDA_PACIENTE AP    
+ -- INNER JOIN AGENDAMIENTO A ON AP.ID_AGENDAMIENTO = A.ID_AGENDA_PACIENTE    
+ -- WHERE FechaAgenda BETWEEN @desde and @hasta
+
+-- ------------------------------------------------------------------------------
+-- create PROCEDURE sp_LiquidacionAnulacion
+-- @numdoc float,
+-- @tipo nvarchar(3)
+-- AS
+-- delete from CG3000..Cgdetmae where numdoc = @numdoc and tipdoc = @tipo
+-- delete from CG3000..Cgcabmae where numdoc = @numdoc and tipdoc = @tipo
+-- update CG3000..CgCuentasXPagar set estado = 'E' where numasi = @numdoc and tipasi = @tipo
+-- go
+
+-- ------------------------------------------------------------------------------
+-- --PONER ESTE SP SOLO EN LA PASTEUR NO EN LA ALIANZA!!!!!
+-- alter PROCEDURE [dbo].[sp_RecuperaConsultorios]  
+-- AS  
+-- BEGIN  
+  
+ -- SELECT hab_Codigo, hab_Numero FROM HABITACIONES WHERE NIV_CODIGO=37 AND hab_Activo=1 AND HES_CODIGO=5  
+  
+-- END
+
+-- --PONER ESTE SP SOLO EN LA PASTEUR NO EN LA ALIANZA!!!!!
+
+-------------------------------------------------------------------------------------------------------------------------

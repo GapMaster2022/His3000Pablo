@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Negocio</RootNamespace>
+    <AssemblyName>His.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Servidor\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Intellibox, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGridViewCellExHelper.cs" />
+    <Compile Include="DataGridViewExtensions.cs" />
+    <Compile Include="DataGridViewHelper.cs" />
+    <Compile Include="DataGridViewTextBoxCellEx.cs" />
+    <Compile Include="establecimiento.cs" />
+    <Compile Include="HMergedCell.cs" />
+    <Compile Include="InformacionContribuyente.cs" />
+    <Compile Include="ISpannedCell.cs" />
+    <Compile Include="NegAccesoOpciones.cs" />
+    <Compile Include="NegAnamnesis.cs" />
+    <Compile Include="NegAnamnesisDetalle.cs" />
+    <Compile Include="NegAnexos.cs" />
+    <Compile Include="NegAseguradoras.cs" />
+    <Compile Include="NegAtencionDetalleCategorias.cs" />
+    <Compile Include="NegAtencionDetalleFormulariosHCU.cs" />
+    <Compile Include="NegAtencionDetalleGarantias.cs" />
+    <Compile Include="NegAtencionDetalleSeguros.cs" />
+    <Compile Include="NegAtenciones.cs" />
+    <Compile Include="NegAtencionesFormasLlegada.cs" />
+    <Compile Include="NegBancos.cs" />
+    <Compile Include="NegCadenaConexion.cs" />
+    <Compile Include="NegCajas.cs" />
+    <Compile Include="NegCatalogoCostos.cs" />
+    <Compile Include="NegCatalogoCostosTipo.cs" />
+    <Compile Include="NegCatalogos.cs" />
+    <Compile Include="NegCatalogosTipo.cs" />
+    <Compile Include="NegCategorias.cs" />
+    <Compile Include="NegCertificadoMedico.cs" />
+    <Compile Include="NegCg3000.cs" />
+    <Compile Include="NegCIE10.cs" />
+    <Compile Include="NegCiudad.cs" />
+    <Compile Include="NegConsentimiento.cs" />
+    <Compile Include="NegConsultaExterna.cs" />
+    <Compile Include="NegControlHc.cs" />
+    <Compile Include="NegCopago.cs" />
+    <Compile Include="NegCuentasPacientes.cs" />
+    <Compile Include="NegDepartamentos.cs" />
+    <Compile Include="NegDetalleCuenta.cs" />
+    <Compile Include="NegDivisionPolitica.cs" />
+    <Compile Include="NegEmail.cs" />
+    <Compile Include="NegEpicrisis.cs" />
+    <Compile Include="NegEspecialidades.cs" />
+    <Compile Include="NegEstadoCivil.cs" />
+    <Compile Include="NegEtnias.cs" />
+    <Compile Include="NegEvolucion.cs" />
+    <Compile Include="NegEvolucionDetalle.cs" />
+    <Compile Include="NegFactura.cs" />
+    <Compile Include="NegFacturaDetalle.cs" />
+    <Compile Include="NegFormaPago.cs" />
+    <Compile Include="NegFormulariosHCU.cs" />
+    <Compile Include="NegGeneracionesAutomaticas.cs" />
+    <Compile Include="NegGeneracionesAutomaticasDetalle.cs" />
+    <Compile Include="NegGrupoSanguineo.cs" />
+    <Compile Include="NegHabitaciones.cs" />
+    <Compile Include="NegHabitacionesHistorial.cs" />
+    <Compile Include="NegDietetica.cs" />
+    <Compile Include="NegHcCatalogoSubNivel.cs" />
+    <Compile Include="NegHcEmergencia.cs" />
+    <Compile Include="NegHcEmergenciaCirugias.cs" />
+    <Compile Include="NegHcEmergenciaComplicaciones.cs" />
+    <Compile Include="NegHcEmergenciaEnfPrevias.cs" />
+    <Compile Include="NegHcEmergenciaEvaluacion.cs" />
+    <Compile Include="NegHcEmergenciaExamenes.cs" />
+    <Compile Include="NegHcEmergenciaFDetalle.cs" />
+    <Compile Include="NegHcEmergenciaForm.cs" />
+    <Compile Include="NegHcEmergenciaImagenes.cs" />
+    <Compile Include="NegHcEmergenciaReferido.cs" />
+    <Compile Include="NegHcEmergenciaSubsintomas.cs" />
+    <Compile Include="NegHcEmergenciaTratamiento.cs" />
+    <Compile Include="NegHonorarioExplorador.cs" />
+    <Compile Include="NegHonorarios.cs" />
+    <Compile Include="NegHonorariosMedicos.cs" />
+    <Compile Include="NegIess.cs" />
+    <Compile Include="NegImagen.cs" />
+    <Compile Include="NegIngestaEliminacion.cs" />
+    <Compile Include="NegIngresoSalas.cs" />
+    <Compile Include="NegInterconsulta.cs" />
+    <Compile Include="NegLaboratorio.cs" />
+    <Compile Include="NegLiquidacion.cs" />
+    <Compile Include="NegLocales.cs" />
+    <Compile Include="NegMaintenance.cs" />
+    <Compile Include="NegMedicos.cs" />
+    <Compile Include="NegModulo.cs" />
+    <Compile Include="NegNotaCreditoDebito.cs" />
+    <Compile Include="NegNumControlCajas.cs" />
+    <Compile Include="NegNumeroControl.cs" />
+    <Compile Include="NegPacienteDatosAdicionales.cs" />
+    <Compile Include="NegPacienteGarantia.cs" />
+    <Compile Include="NegPacientes.cs" />
+    <Compile Include="NegPagosFacturasMedicos.cs" />
+    <Compile Include="NegPagosHonorariosMedicos.cs" />
+    <Compile Include="NegPais.cs" />
+    <Compile Include="NegParametros.cs" />
+    <Compile Include="NegPedidos.cs" />
+    <Compile Include="NegPerfil.cs" />
+    <Compile Include="NegPerfilesAcceso.cs" />
+    <Compile Include="NegEmpresa.cs" />
+    <Compile Include="NegPorcentajes.cs" />
+    <Compile Include="NegPorcentajesPorServicios.cs" />
+    <Compile Include="NegPreadmision.cs" />
+    <Compile Include="NegPreAtencion.cs" />
+    <Compile Include="NegPrecioConvenios.cs" />
+    <Compile Include="NegPrescripciones.cs" />
+    <Compile Include="NegProducto.cs" />
+    <Compile Include="NegProtocoloOperatorio.cs" />
+    <Compile Include="NegQuirofano.cs" />
+    <Compile Include="NegReporteEdades.cs" />
+    <Compile Include="NegRetenciones.cs" />
+    <Compile Include="NegRetencionesFuente.cs" />
+    <Compile Include="NegRubros.cs" />
+    <Compile Include="NegServicios.cs" />
+    <Compile Include="NegSignosVitales.cs" />
+    <Compile Include="NegTarifario.cs" />
+    <Compile Include="NegTipoCancelacion.cs" />
+    <Compile Include="NegTipoCiudadano.cs" />
+    <Compile Include="NegTipoEgreso.cs" />
+    <Compile Include="NegTipoGarantia.cs" />
+    <Compile Include="NegTipoIngreso.cs" />
+    <Compile Include="NegTipoTratamiento.cs" />
+    <Compile Include="NegTipoDocumentos.cs" />
+    <Compile Include="NegTipoHonorario.cs" />
+    <Compile Include="NegTipoMedico.cs" />
+    <Compile Include="NegTipoNegocio.cs" />
+    <Compile Include="NegTipoReferido.cs" />
+    <Compile Include="NegUsuarios.cs" />
+    <Compile Include="NegUtilitarios.cs" />
+    <Compile Include="NegValidaciones.cs" />
+    <Compile Include="NegVendedores.cs" />
+    <Compile Include="NegZonas.cs" />
+    <Compile Include="NegPrecios.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="representanteLegal.cs" />
+    <Compile Include="RUC.cs" />
+    <Compile Include="SRI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.Entidades\Core.Entidades.csproj">
+      <Project>{3D7A1A75-226E-441F-85C6-7A186ADF0BB4}</Project>
+      <Name>Core.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Datos\His.Datos.csproj">
+      <Project>{99494169-AF26-4DBF-B140-D566F3D9AEB1}</Project>
+      <Name>His.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.EntidadesAdmision\His.EntidadesAdmision.csproj">
+      <Project>{6C736C02-D03F-4ACA-B2E1-4FD3D49F23FC}</Project>
+      <Name>His.EntidadesAdmision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Parametros\His.Parametros.csproj">
+      <Project>{1BAE75B8-EB2A-49C7-A158-54AE397450CB}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000Entidades\His.Entidades.General\His.Entidades.General.csproj">
+      <Project>{D7465D15-7567-424B-BDCC-0FE2A75E3DA0}</Project>
+      <Name>His.Entidades.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

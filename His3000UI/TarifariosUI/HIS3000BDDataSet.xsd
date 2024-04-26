@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HIS3000BDDataSet" targetNamespace="http://tempuri.org/HIS3000BDDataSet.xsd" xmlns:mstns="http://tempuri.org/HIS3000BDDataSet.xsd" xmlns="http://tempuri.org/HIS3000BDDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HIS3000BDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HIS3000BDConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TarifariosUI.Properties.Settings.GlobalReference.Default.HIS3000BDConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vTarifario_FacturaTableAdapter" GeneratorDataComponentClassName="vTarifario_FacturaTableAdapter" Name="vTarifario_Factura" UserDataComponentName="vTarifario_FacturaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HIS3000BDConnectionString (Settings)" DbObjectName="HIS3000BD.dbo.vTarifario_Factura" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT HON_CODIGO, HON_FECHA, HON_TOTAL, HON_DIAGNOSTICO, nombre_Medico, ASE_NOMBRE, nombre_Paciente FROM dbo.vTarifario_Factura</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="HON_CODIGO" DataSetColumn="HON_CODIGO" />
+              <Mapping SourceColumn="HON_FECHA" DataSetColumn="HON_FECHA" />
+              <Mapping SourceColumn="HON_TOTAL" DataSetColumn="HON_TOTAL" />
+              <Mapping SourceColumn="HON_DIAGNOSTICO" DataSetColumn="HON_DIAGNOSTICO" />
+              <Mapping SourceColumn="nombre_Medico" DataSetColumn="nombre_Medico" />
+              <Mapping SourceColumn="ASE_NOMBRE" DataSetColumn="ASE_NOMBRE" />
+              <Mapping SourceColumn="nombre_Paciente" DataSetColumn="nombre_Paciente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vTarifario_FacturaDetalleTableAdapter" GeneratorDataComponentClassName="vTarifario_FacturaDetalleTableAdapter" Name="vTarifario_FacturaDetalle" UserDataComponentName="vTarifario_FacturaDetalleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HIS3000BDConnectionString (Settings)" DbObjectName="HIS3000BD.dbo.vTarifario_FacturaDetalle" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT HON_CODIGO, HOD_CODIGO, TAD_REFERENCIA, TAD_NOMBRE, HOD_CANTIDAD, HOD_UVR, HOD_ANESTESIA, HOD_VALOR_UVR, HOD_VALOR_ANESTESIA, HOD_SUBTOTAL FROM dbo.vTarifario_FacturaDetalle</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="HON_CODIGO" DataSetColumn="HON_CODIGO" />
+              <Mapping SourceColumn="HOD_CODIGO" DataSetColumn="HOD_CODIGO" />
+              <Mapping SourceColumn="TAD_REFERENCIA" DataSetColumn="TAD_REFERENCIA" />
+              <Mapping SourceColumn="TAD_NOMBRE" DataSetColumn="TAD_NOMBRE" />
+              <Mapping SourceColumn="HOD_CANTIDAD" DataSetColumn="HOD_CANTIDAD" />
+              <Mapping SourceColumn="HOD_UVR" DataSetColumn="HOD_UVR" />
+              <Mapping SourceColumn="HOD_ANESTESIA" DataSetColumn="HOD_ANESTESIA" />
+              <Mapping SourceColumn="HOD_VALOR_UVR" DataSetColumn="HOD_VALOR_UVR" />
+              <Mapping SourceColumn="HOD_VALOR_ANESTESIA" DataSetColumn="HOD_VALOR_ANESTESIA" />
+              <Mapping SourceColumn="HOD_SUBTOTAL" DataSetColumn="HOD_SUBTOTAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HIS3000BDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="HIS3000BDDataSet" msprop:Generator_DataSetName="HIS3000BDDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vTarifario_Factura" msprop:Generator_UserTableName="vTarifario_Factura" msprop:Generator_RowDeletedName="vTarifario_FacturaRowDeleted" msprop:Generator_RowChangedName="vTarifario_FacturaRowChanged" msprop:Generator_RowClassName="vTarifario_FacturaRow" msprop:Generator_RowChangingName="vTarifario_FacturaRowChanging" msprop:Generator_RowEvArgName="vTarifario_FacturaRowChangeEvent" msprop:Generator_RowEvHandlerName="vTarifario_FacturaRowChangeEventHandler" msprop:Generator_TableClassName="vTarifario_FacturaDataTable" msprop:Generator_TableVarName="tablevTarifario_Factura" msprop:Generator_RowDeletingName="vTarifario_FacturaRowDeleting" msprop:Generator_TablePropName="vTarifario_Factura">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HON_CODIGO" msprop:Generator_UserColumnName="HON_CODIGO" msprop:Generator_ColumnVarNameInTable="columnHON_CODIGO" msprop:Generator_ColumnPropNameInRow="HON_CODIGO" msprop:Generator_ColumnPropNameInTable="HON_CODIGOColumn" type="xs:int" />
+              <xs:element name="HON_FECHA" msprop:Generator_UserColumnName="HON_FECHA" msprop:Generator_ColumnVarNameInTable="columnHON_FECHA" msprop:Generator_ColumnPropNameInRow="HON_FECHA" msprop:Generator_ColumnPropNameInTable="HON_FECHAColumn" type="xs:dateTime" />
+              <xs:element name="HON_TOTAL" msprop:Generator_UserColumnName="HON_TOTAL" msprop:Generator_ColumnVarNameInTable="columnHON_TOTAL" msprop:Generator_ColumnPropNameInRow="HON_TOTAL" msprop:Generator_ColumnPropNameInTable="HON_TOTALColumn" type="xs:decimal" />
+              <xs:element name="HON_DIAGNOSTICO" msprop:Generator_UserColumnName="HON_DIAGNOSTICO" msprop:Generator_ColumnVarNameInTable="columnHON_DIAGNOSTICO" msprop:Generator_ColumnPropNameInRow="HON_DIAGNOSTICO" msprop:Generator_ColumnPropNameInTable="HON_DIAGNOSTICOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_Medico" msdata:ReadOnly="true" msprop:Generator_UserColumnName="nombre_Medico" msprop:Generator_ColumnVarNameInTable="columnnombre_Medico" msprop:Generator_ColumnPropNameInRow="nombre_Medico" msprop:Generator_ColumnPropNameInTable="nombre_MedicoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="57" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ASE_NOMBRE" msprop:Generator_UserColumnName="ASE_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnASE_NOMBRE" msprop:Generator_ColumnPropNameInRow="ASE_NOMBRE" msprop:Generator_ColumnPropNameInTable="ASE_NOMBREColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="120" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_Paciente" msdata:ReadOnly="true" msprop:Generator_UserColumnName="nombre_Paciente" msprop:Generator_ColumnVarNameInTable="columnnombre_Paciente" msprop:Generator_ColumnPropNameInRow="nombre_Paciente" msprop:Generator_ColumnPropNameInTable="nombre_PacienteColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="36" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vTarifario_FacturaDetalle" msprop:Generator_UserTableName="vTarifario_FacturaDetalle" msprop:Generator_RowDeletedName="vTarifario_FacturaDetalleRowDeleted" msprop:Generator_RowChangedName="vTarifario_FacturaDetalleRowChanged" msprop:Generator_RowClassName="vTarifario_FacturaDetalleRow" msprop:Generator_RowChangingName="vTarifario_FacturaDetalleRowChanging" msprop:Generator_RowEvArgName="vTarifario_FacturaDetalleRowChangeEvent" msprop:Generator_RowEvHandlerName="vTarifario_FacturaDetalleRowChangeEventHandler" msprop:Generator_TableClassName="vTarifario_FacturaDetalleDataTable" msprop:Generator_TableVarName="tablevTarifario_FacturaDetalle" msprop:Generator_RowDeletingName="vTarifario_FacturaDetalleRowDeleting" msprop:Generator_TablePropName="vTarifario_FacturaDetalle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HON_CODIGO" msprop:Generator_UserColumnName="HON_CODIGO" msprop:Generator_ColumnVarNameInTable="columnHON_CODIGO" msprop:Generator_ColumnPropNameInRow="HON_CODIGO" msprop:Generator_ColumnPropNameInTable="HON_CODIGOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="HOD_CODIGO" msprop:Generator_UserColumnName="HOD_CODIGO" msprop:Generator_ColumnVarNameInTable="columnHOD_CODIGO" msprop:Generator_ColumnPropNameInRow="HOD_CODIGO" msprop:Generator_ColumnPropNameInTable="HOD_CODIGOColumn" type="xs:int" />
+              <xs:element name="TAD_REFERENCIA" msprop:Generator_UserColumnName="TAD_REFERENCIA" msprop:Generator_ColumnVarNameInTable="columnTAD_REFERENCIA" msprop:Generator_ColumnPropNameInRow="TAD_REFERENCIA" msprop:Generator_ColumnPropNameInTable="TAD_REFERENCIAColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAD_NOMBRE" msprop:Generator_UserColumnName="TAD_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnTAD_NOMBRE" msprop:Generator_ColumnPropNameInRow="TAD_NOMBRE" msprop:Generator_ColumnPropNameInTable="TAD_NOMBREColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOD_CANTIDAD" msprop:Generator_UserColumnName="HOD_CANTIDAD" msprop:Generator_ColumnVarNameInTable="columnHOD_CANTIDAD" msprop:Generator_ColumnPropNameInRow="HOD_CANTIDAD" msprop:Generator_ColumnPropNameInTable="HOD_CANTIDADColumn" type="xs:short" />
+              <xs:element name="HOD_UVR" msprop:Generator_UserColumnName="HOD_UVR" msprop:Generator_ColumnVarNameInTable="columnHOD_UVR" msprop:Generator_ColumnPropNameInRow="HOD_UVR" msprop:Generator_ColumnPropNameInTable="HOD_UVRColumn" type="xs:float" minOccurs="0" />
+              <xs:element name="HOD_ANESTESIA" msprop:Generator_UserColumnName="HOD_ANESTESIA" msprop:Generator_ColumnVarNameInTable="columnHOD_ANESTESIA" msprop:Generator_ColumnPropNameInRow="HOD_ANESTESIA" msprop:Generator_ColumnPropNameInTable="HOD_ANESTESIAColumn" type="xs:float" minOccurs="0" />
+              <xs:element name="HOD_VALOR_UVR" msprop:Generator_UserColumnName="HOD_VALOR_UVR" msprop:Generator_ColumnVarNameInTable="columnHOD_VALOR_UVR" msprop:Generator_ColumnPropNameInRow="HOD_VALOR_UVR" msprop:Generator_ColumnPropNameInTable="HOD_VALOR_UVRColumn" type="xs:float" minOccurs="0" />
+              <xs:element name="HOD_VALOR_ANESTESIA" msprop:Generator_UserColumnName="HOD_VALOR_ANESTESIA" msprop:Generator_ColumnVarNameInTable="columnHOD_VALOR_ANESTESIA" msprop:Generator_ColumnPropNameInRow="HOD_VALOR_ANESTESIA" msprop:Generator_ColumnPropNameInTable="HOD_VALOR_ANESTESIAColumn" type="xs:float" minOccurs="0" />
+              <xs:element name="HOD_SUBTOTAL" msprop:Generator_UserColumnName="HOD_SUBTOTAL" msprop:Generator_ColumnVarNameInTable="columnHOD_SUBTOTAL" msprop:Generator_ColumnPropNameInRow="HOD_SUBTOTAL" msprop:Generator_ColumnPropNameInTable="HOD_SUBTOTALColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vTarifario_Factura" />
+      <xs:field xpath="mstns:HON_CODIGO" />
+    </xs:unique>
+    <xs:unique name="vTarifario_FacturaDetalle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vTarifario_FacturaDetalle" />
+      <xs:field xpath="mstns:HOD_CODIGO" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="vTarifario_Factura_vTarifario_FacturaDetalle" msdata:parent="vTarifario_Factura" msdata:child="vTarifario_FacturaDetalle" msdata:parentkey="HON_CODIGO" msdata:childkey="HON_CODIGO" msprop:Generator_UserRelationName="vTarifario_Factura_vTarifario_FacturaDetalle" msprop:Generator_RelationVarName="relationvTarifario_Factura_vTarifario_FacturaDetalle" msprop:Generator_UserChildTable="vTarifario_FacturaDetalle" msprop:Generator_UserParentTable="vTarifario_Factura" msprop:Generator_ParentPropName="vTarifario_FacturaRow" msprop:Generator_ChildPropName="GetvTarifario_FacturaDetalleRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

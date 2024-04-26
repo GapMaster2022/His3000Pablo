@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Datos_Defuncion" targetNamespace="http://tempuri.org/Datos_Defuncion.xsd" xmlns:mstns="http://tempuri.org/Datos_Defuncion.xsd" xmlns="http://tempuri.org/Datos_Defuncion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Datos_Defuncion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Datos_Defuncion" msprop:Generator_UserDSName="Datos_Defuncion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DEFUNCION" msprop:Generator_TableClassName="DEFUNCIONDataTable" msprop:Generator_TableVarName="tableDEFUNCION" msprop:Generator_TablePropName="DEFUNCION" msprop:Generator_RowDeletingName="DEFUNCIONRowDeleting" msprop:Generator_RowChangingName="DEFUNCIONRowChanging" msprop:Generator_RowEvHandlerName="DEFUNCIONRowChangeEventHandler" msprop:Generator_RowDeletedName="DEFUNCIONRowDeleted" msprop:Generator_UserTableName="DEFUNCION" msprop:Generator_RowChangedName="DEFUNCIONRowChanged" msprop:Generator_RowEvArgName="DEFUNCIONRowChangeEvent" msprop:Generator_RowClassName="DEFUNCIONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Paciente" msprop:Generator_ColumnVarNameInTable="columnPaciente" msprop:Generator_ColumnPropNameInRow="Paciente" msprop:Generator_ColumnPropNameInTable="PacienteColumn" msprop:Generator_UserColumnName="Paciente" type="xs:string" minOccurs="0" />
+              <xs:element name="Nacionalidad" msprop:Generator_ColumnVarNameInTable="columnNacionalidad" msprop:Generator_ColumnPropNameInRow="Nacionalidad" msprop:Generator_ColumnPropNameInTable="NacionalidadColumn" msprop:Generator_UserColumnName="Nacionalidad" type="xs:string" minOccurs="0" />
+              <xs:element name="Identificacion" msprop:Generator_ColumnVarNameInTable="columnIdentificacion" msprop:Generator_ColumnPropNameInRow="Identificacion" msprop:Generator_ColumnPropNameInTable="IdentificacionColumn" msprop:Generator_UserColumnName="Identificacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Genero" msprop:Generator_ColumnVarNameInTable="columnGenero" msprop:Generator_ColumnPropNameInRow="Genero" msprop:Generator_ColumnPropNameInTable="GeneroColumn" msprop:Generator_UserColumnName="Genero" type="xs:string" minOccurs="0" />
+              <xs:element name="F_Nacimiento" msprop:Generator_ColumnVarNameInTable="columnF_Nacimiento" msprop:Generator_ColumnPropNameInRow="F_Nacimiento" msprop:Generator_ColumnPropNameInTable="F_NacimientoColumn" msprop:Generator_UserColumnName="F_Nacimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="F_Fallecido" msprop:Generator_ColumnVarNameInTable="columnF_Fallecido" msprop:Generator_ColumnPropNameInRow="F_Fallecido" msprop:Generator_ColumnPropNameInTable="F_FallecidoColumn" msprop:Generator_UserColumnName="F_Fallecido" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

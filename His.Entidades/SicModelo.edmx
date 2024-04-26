@@ -1,0 +1,2378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Sic3000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityType Name="Anticipo">
+          <Key>
+            <PropertyRef Name="numrec" />
+            <PropertyRef Name="caja" />
+          </Key>
+          <Property Name="numrec" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="caja" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="responsable" Type="nvarchar" MaxLength="10" />
+          <Property Name="cajero" Type="nvarchar" MaxLength="10" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" />
+          <Property Name="monto" Type="float" />
+          <Property Name="concepto" Type="nvarchar" MaxLength="250" />
+          <Property Name="codlocal" Type="float" />
+          <Property Name="utilizado" Type="bit" Nullable="false" />
+          <Property Name="voriginal" Type="float" />
+          <Property Name="fecmod" Type="datetime" />
+          <Property Name="montoini" Type="float" />
+          <Property Name="cancelado" Type="bit" Nullable="false" />
+          <Property Name="forpag" Type="nvarchar" MaxLength="10" />
+          <Property Name="despag" Type="nvarchar" MaxLength="30" />
+          <Property Name="banco" Type="nvarchar" MaxLength="50" />
+          <Property Name="ncuenta" Type="nvarchar" MaxLength="20" />
+          <Property Name="ncheque" Type="nvarchar" MaxLength="20" />
+          <Property Name="dueño" Type="nvarchar" MaxLength="50" />
+          <Property Name="ndoc" Type="nvarchar" MaxLength="20" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="autorizacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="ATE_NUMERO_ATENCION" Type="bigint" />
+          <Property Name="PAC_HISTORIA_CLINICA" Type="bigint" />
+          <Property Name="arqueada" Type="bit" />
+          <Property Name="fecha_ingreso" Type="date" />
+          <Property Name="usuario_ingreso" Type="nvarchar" MaxLength="50" />
+          <Property Name="fecha_anula" Type="date" />
+          <Property Name="usuario_anula" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodPlazo" Type="nchar" MaxLength="10" />
+          <Property Name="estado" Type="bit" />
+          <Property Name="numdoc" Type="nchar" MaxLength="15" />
+          <Property Name="consec" Type="nchar" MaxLength="10" />
+          <Property Name="numpag" Type="nvarchar" MaxLength="13" />
+          <Property Name="numliquidacion" Type="bigint" Nullable="false" />
+          <Property Name="asientoContable" Type="float" />
+          <Property Name="tipoAsiento" Type="nchar" MaxLength="3" />
+          <Property Name="asientoContableDev" Type="float" />
+          <Property Name="tipoAsientoDev" Type="nchar" MaxLength="3" />
+          <Property Name="idTipoAnticipo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditora">
+          <Key>
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="fecfac" />
+            <PropertyRef Name="tipo" />
+          </Key>
+          <Property Name="numdoc" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="fecfac" Type="datetime" Nullable="false" />
+          <Property Name="tipo" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="obs" Type="ntext" />
+          <Property Name="monto" Type="nvarchar" MaxLength="20" />
+          <Property Name="codusu" Type="nvarchar" MaxLength="10" />
+          <Property Name="caja" Type="nvarchar" MaxLength="10" />
+          <Property Name="asientoContable" Type="float" />
+          <Property Name="tipoAsiento" Type="nchar" MaxLength="3" />
+          <Property Name="asientoContableAnulacion" Type="float" />
+          <Property Name="tipoAsientoAnulacion" Type="nchar" MaxLength="3" />
+          <Property Name="Arqueada" Type="bit" />
+          <Property Name="consec" Type="nvarchar" MaxLength="10" />
+          <Property Name="fechaIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bodega">
+          <Key>
+            <PropertyRef Name="codbod" />
+            <PropertyRef Name="codpro" />
+          </Key>
+          <Property Name="codbod" Type="float" Nullable="false" />
+          <Property Name="codpro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="existe" Type="float" />
+          <Property Name="feculmov" Type="datetime" />
+          <Property Name="fechacad1" Type="datetime" />
+          <Property Name="fechacad2" Type="datetime" />
+          <Property Name="fechacad3" Type="datetime" />
+          <Property Name="PVP" Type="float" />
+          <Property Name="feccad1" Type="nvarchar" MaxLength="8" />
+          <Property Name="feccad2" Type="nvarchar" MaxLength="8" />
+          <Property Name="feccad3" Type="nvarchar" MaxLength="8" />
+          <Property Name="reservado" Type="float" />
+        </EntityType>
+        <EntityType Name="Caja">
+          <Key>
+            <PropertyRef Name="caja" />
+          </Key>
+          <Property Name="caja" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="descaja" Type="nvarchar" MaxLength="20" />
+          <Property Name="local" Type="nvarchar" MaxLength="20" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="ruc" Type="nvarchar" MaxLength="13" />
+          <Property Name="empresa" Type="nvarchar" MaxLength="30" />
+          <Property Name="nComercial" Type="nvarchar" MaxLength="60" />
+          <Property Name="ruc1" Type="nvarchar" MaxLength="3" />
+          <Property Name="sri" Type="nvarchar" MaxLength="20" />
+          <Property Name="txt" Type="nvarchar" MaxLength="30" />
+          <Property Name="codlocal" Type="float" />
+          <Property Name="nimpresora" Type="nvarchar" MaxLength="50" />
+          <Property Name="fecvalidez" Type="datetime" />
+          <Property Name="tipocaja" Type="bit" Nullable="false" />
+          <Property Name="nlocal" Type="nvarchar" MaxLength="3" />
+          <Property Name="pesorapido" Type="bit" Nullable="false" />
+          <Property Name="estaut" Type="bit" />
+          <Property Name="consec" Type="int" />
+          <Property Name="nestablecimiento" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Clasificacion">
+          <Key>
+            <PropertyRef Name="codclas" />
+          </Key>
+          <Property Name="codclas" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="desclas" Type="nvarchar" MaxLength="30" />
+          <Property Name="codcue" Type="nvarchar" MaxLength="10" />
+          <Property Name="cartera" Type="bit" Nullable="false" />
+          <Property Name="reporte" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="codcli" />
+          </Key>
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tipcli" Type="nvarchar" MaxLength="10" />
+          <Property Name="nomcli" Type="nvarchar" MaxLength="150" />
+          <Property Name="dircli" Type="varchar" MaxLength="255" />
+          <Property Name="telcli" Type="nvarchar" MaxLength="20" />
+          <Property Name="telcli1" Type="nvarchar" MaxLength="20" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="ruccli" Type="nvarchar" MaxLength="13" />
+          <Property Name="concli" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="fecing" Type="datetime" />
+          <Property Name="fecnac" Type="datetime" />
+          <Property Name="fecfac1" Type="nvarchar" MaxLength="4" />
+          <Property Name="fecfac2" Type="nvarchar" MaxLength="4" />
+          <Property Name="fecfac3" Type="nvarchar" MaxLength="4" />
+          <Property Name="fecfac4" Type="nvarchar" MaxLength="4" />
+          <Property Name="fecfac5" Type="nvarchar" MaxLength="4" />
+          <Property Name="marca1" Type="nvarchar" MaxLength="1" />
+          <Property Name="marca2" Type="nvarchar" MaxLength="1" />
+          <Property Name="marca3" Type="nvarchar" MaxLength="1" />
+          <Property Name="marca4" Type="nvarchar" MaxLength="1" />
+          <Property Name="marca5" Type="nvarchar" MaxLength="10" />
+          <Property Name="codcue" Type="nvarchar" MaxLength="10" />
+          <Property Name="codven" Type="float" />
+          <Property Name="hello" Type="nvarchar" MaxLength="77" />
+          <Property Name="desde" Type="float" />
+          <Property Name="fechtre" Type="datetime" />
+          <Property Name="ncomercial" Type="nvarchar" MaxLength="50" />
+          <Property Name="codemp" Type="float" />
+          <Property Name="saldo" Type="money" />
+          <Property Name="fecfac" Type="nvarchar" MaxLength="10" />
+          <Property Name="ciudad" Type="nvarchar" MaxLength="30" />
+          <Property Name="Obs" Type="ntext" />
+          <Property Name="delestado" Type="bit" />
+          <Property Name="genero" Type="varchar" MaxLength="1" />
+          <Property Name="InfCamaHabitacion" Type="varchar" MaxLength="10" />
+          <Property Name="EMPID" Type="int" />
+          <Property Name="tiprep" Type="nvarchar" MaxLength="50" />
+          <Property Name="seguimiento" Type="bit" />
+          <Property Name="TipoIdentificacion" Type="nvarchar" MaxLength="2" />
+          <Property Name="CodProvincia" Type="nvarchar" MaxLength="5" />
+          <Property Name="CodCanton" Type="nvarchar" MaxLength="5" />
+          <Property Name="CodParroquia" Type="nvarchar" MaxLength="5" />
+          <Property Name="TipoSexo" Type="nvarchar" MaxLength="3" />
+          <Property Name="TipoEstadoCivil" Type="nvarchar" MaxLength="3" />
+          <Property Name="TipoOrigenIngresos" Type="nvarchar" MaxLength="3" />
+          <Property Name="Tipopersona" Type="nvarchar" MaxLength="3" />
+          <Property Name="FechaActInact" Type="datetime" />
+          <Property Name="Estado" Type="bit" />
+          <Property Name="FormatoDocumento" Type="int" Nullable="false" />
+          <Property Name="ImprimeObsTramite" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CxC">
+          <Key>
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="tipo" />
+            <PropertyRef Name="forpag" />
+            <PropertyRef Name="fila" />
+          </Key>
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="numdoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="tipo" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="debe" Type="nvarchar" MaxLength="20" />
+          <Property Name="haber" Type="nvarchar" MaxLength="20" />
+          <Property Name="saldo" Type="nvarchar" MaxLength="20" />
+          <Property Name="fecha1" Type="nvarchar" MaxLength="8" />
+          <Property Name="fechapago" Type="datetime" />
+          <Property Name="tipest" Type="nvarchar" MaxLength="1" />
+          <Property Name="fecven" Type="datetime" />
+          <Property Name="forpag" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="claspag" Type="nvarchar" MaxLength="10" />
+          <Property Name="fecven1" Type="nvarchar" MaxLength="8" />
+          <Property Name="fila" Type="float" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DetallePago">
+          <Key>
+            <PropertyRef Name="numpag" />
+            <PropertyRef Name="forpag" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="numpag" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="forpag" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="id" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="despag" Type="nvarchar" MaxLength="255" />
+          <Property Name="monto" Type="float" />
+          <Property Name="auxiliarcont" Type="float" />
+          <Property Name="facturaprov" Type="nvarchar" MaxLength="50" />
+          <Property Name="autorizacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="fechaautoriza" Type="nvarchar" MaxLength="50" />
+          <Property Name="banco" Type="nvarchar" MaxLength="100" />
+          <Property Name="numCT" Type="nvarchar" MaxLength="50" />
+          <Property Name="propietario" Type="nvarchar" MaxLength="150" />
+          <Property Name="Id_Pagos" Type="int" />
+          <Property Name="Observacion" Type="nvarchar(max)" />
+          <Property Name="LoteRecap" Type="nvarchar" MaxLength="50" />
+          <Property Name="NroDocumento" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaEmision" Type="date" />
+        </EntityType>
+        <EntityType Name="EstadoCuentas">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="numfac" />
+            <PropertyRef Name="tipodoc" />
+            <PropertyRef Name="iddoc" />
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="id" Type="smallint" Nullable="false" />
+          <Property Name="numfac" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="tipodoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="iddoc" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="numdoc" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="fecha" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="obs" Type="nvarchar" MaxLength="200" />
+          <Property Name="debe" Type="float" />
+          <Property Name="haber" Type="float" />
+          <Property Name="saldo" Type="float" />
+          <Property Name="fecha1" Type="nvarchar" MaxLength="8" />
+          <Property Name="forpag" Type="nvarchar" MaxLength="10" />
+          <Property Name="claspag" Type="nvarchar" MaxLength="10" />
+          <Property Name="caja" Type="nvarchar" MaxLength="3" />
+          <Property Name="fecha2" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="numnot" />
+          </Key>
+          <Property Name="numnot" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tipdoc" Type="float" />
+          <Property Name="codloc" Type="nvarchar" MaxLength="10" />
+          <Property Name="codven" Type="nvarchar" MaxLength="10" />
+          <Property Name="numfac" Type="nvarchar" MaxLength="10" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" />
+          <Property Name="tipcli" Type="nvarchar" MaxLength="10" />
+          <Property Name="fecfac" Type="datetime" />
+          <Property Name="hora" Type="nvarchar" MaxLength="50" />
+          <Property Name="ruc" Type="nvarchar" MaxLength="13" />
+          <Property Name="pordes" Type="nvarchar" MaxLength="53" />
+          <Property Name="subtotal" Type="float" />
+          <Property Name="desctot" Type="float" />
+          <Property Name="totsiva" Type="float" />
+          <Property Name="totciva" Type="float" />
+          <Property Name="iva" Type="float" />
+          <Property Name="total" Type="float" />
+          <Property Name="regalia" Type="float" />
+          <Property Name="fecha1" Type="nvarchar" MaxLength="8" />
+          <Property Name="cancelado" Type="nvarchar" MaxLength="20" />
+          <Property Name="items" Type="float" />
+          <Property Name="caja" Type="nvarchar" MaxLength="10" />
+          <Property Name="nomcli" Type="nvarchar" MaxLength="50" />
+          <Property Name="dircli" Type="nvarchar" MaxLength="50" />
+          <Property Name="telcli" Type="nvarchar" MaxLength="20" />
+          <Property Name="ruccli" Type="nvarchar" MaxLength="13" />
+          <Property Name="obs" Type="nvarchar" MaxLength="250" />
+          <Property Name="numguirem" Type="nvarchar" MaxLength="10" />
+          <Property Name="motivo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ructra" Type="nvarchar" MaxLength="13" />
+          <Property Name="nomtra" Type="nvarchar" MaxLength="50" />
+          <Property Name="codcobcli" Type="float" />
+          <Property Name="codvencli" Type="float" />
+          <Property Name="fecven" Type="datetime" />
+          <Property Name="numorden" Type="nvarchar" MaxLength="10" />
+          <Property Name="porven" Type="float" />
+          <Property Name="formpagPro" Type="nvarchar" MaxLength="50" />
+          <Property Name="validez" Type="nvarchar" MaxLength="50" />
+          <Property Name="tiempoentrega" Type="nvarchar" MaxLength="50" />
+          <Property Name="numfac2" Type="nvarchar" MaxLength="50" />
+          <Property Name="porcobrar" Type="bit" />
+          <Property Name="Impresa" Type="bit" />
+          <Property Name="cajero" Type="float" />
+          <Property Name="subt_Dev" Type="float" />
+          <Property Name="coniva_Dev" Type="float" />
+          <Property Name="siniva_Dev" Type="float" />
+          <Property Name="desct_Dev" Type="float" />
+          <Property Name="iva_Dev" Type="float" />
+          <Property Name="Tot_Dev" Type="float" />
+          <Property Name="pormayor" Type="bit" />
+          <Property Name="facturada" Type="bit" />
+          <Property Name="coniva" Type="bit" />
+          <Property Name="imprimedesct" Type="bit" />
+          <Property Name="tipest" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FacturaDatosAdicionales">
+          <Key>
+            <PropertyRef Name="Numdoc" />
+            <PropertyRef Name="RucCedula" />
+          </Key>
+          <Property Name="Numdoc" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="RucCedula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="128" />
+          <Property Name="Direccion" Type="varchar" MaxLength="128" />
+          <Property Name="Telefono" Type="varchar" MaxLength="128" />
+          <Property Name="HistoriaClinica" Type="varchar" MaxLength="20" />
+          <Property Name="FechaIngreso" Type="datetime" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="MedicoTratante" Type="varchar" MaxLength="200" />
+          <Property Name="ATE_CODIGO" Type="bigint" />
+        </EntityType>
+        <EntityType Name="FacturaPago">
+          <Key>
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="forpag" />
+            <PropertyRef Name="tipomov" />
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="fila" />
+          </Key>
+          <Property Name="numdoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="tipdoc" Type="float" Nullable="false" />
+          <Property Name="forpag" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tipomov" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="parcial" Type="nvarchar" MaxLength="20" />
+          <Property Name="parcial1" Type="nvarchar" MaxLength="20" />
+          <Property Name="claspag" Type="nvarchar" MaxLength="2" />
+          <Property Name="tipoventa" Type="nvarchar" MaxLength="10" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="fecha1" Type="nvarchar" MaxLength="8" />
+          <Property Name="banco" Type="nvarchar" MaxLength="20" />
+          <Property Name="numcuenta_tarj" Type="nvarchar" MaxLength="20" />
+          <Property Name="cheque_caduca" Type="nvarchar" MaxLength="20" />
+          <Property Name="dueño" Type="nvarchar" MaxLength="30" />
+          <Property Name="autoriza" Type="nvarchar" MaxLength="20" />
+          <Property Name="obs" Type="ntext" />
+          <Property Name="fila" Type="float" Nullable="false" />
+          <Property Name="caja" Type="nvarchar" MaxLength="10" />
+          <Property Name="cajero" Type="nvarchar" MaxLength="10" />
+          <Property Name="Vendedor" Type="nvarchar" MaxLength="10" />
+          <Property Name="local" Type="nvarchar" MaxLength="10" />
+          <Property Name="Arqueada" Type="bit" />
+          <Property Name="imprime" Type="bit" />
+          <Property Name="detalle" Type="bit" />
+          <Property Name="CodPlazo" Type="nchar" MaxLength="100" />
+          <Property Name="consec" Type="varchar" MaxLength="10" />
+          <Property Name="asientoContable" Type="float" />
+          <Property Name="tipoAsiento" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Forma_Pago">
+          <Key>
+            <PropertyRef Name="forpag" />
+          </Key>
+          <Property Name="forpag" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="despag" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="claspag" Type="nvarchar" MaxLength="2" />
+          <Property Name="codcue" Type="nvarchar" MaxLength="10" />
+          <Property Name="ActivarFactura" Type="bit" Nullable="false" />
+          <Property Name="ActivarCuentas" Type="bit" Nullable="false" />
+          <Property Name="ActivarProveedor" Type="bit" Nullable="false" />
+          <Property Name="comision" Type="float" />
+          <Property Name="tPago" Type="nvarchar" MaxLength="2" />
+          <Property Name="CXC" Type="bit" Nullable="false" />
+          <Property Name="tarjeta" Type="bit" Nullable="false" />
+          <Property Name="ActivarFacturaHis" Type="bit" />
+          <Property Name="activarLiqTarjeta" Type="bit" />
+          <Property Name="activarPagTarjeta" Type="bit" Nullable="false" />
+          <Property Name="CodigoSRI" Type="nchar" MaxLength="2" />
+          <Property Name="activaAnticipo" Type="int" Nullable="false" />
+          <Property Name="asientoContable" Type="float" />
+          <Property Name="tipoAsiento" Type="nchar" MaxLength="3" />
+          <Property Name="banco" Type="bit" Nullable="false" />
+          <Property Name="codigocg" Type="float" Nullable="false" />
+          <Property Name="codclisic" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Sic3000.dbo.FormasPago' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="FormasPago">
+          <Key>
+            <PropertyRef Name="banco" />
+          </Key>
+          <Property Name="forpag" Type="float" />
+          <Property Name="despag" Type="nvarchar" MaxLength="255" />
+          <Property Name="claspag" Type="float" />
+          <Property Name="codcue" Type="nvarchar" MaxLength="255" />
+          <Property Name="ActivarFactura" Type="float" />
+          <Property Name="ActivarCuentas" Type="float" />
+          <Property Name="ActivarProveedor" Type="float" />
+          <Property Name="comision" Type="float" />
+          <Property Name="tPago" Type="nvarchar" MaxLength="255" />
+          <Property Name="CXC" Type="float" />
+          <Property Name="tarjeta" Type="float" />
+          <Property Name="ActivarFacturaHis" Type="float" />
+          <Property Name="activarLiqTarjeta" Type="nvarchar" MaxLength="255" />
+          <Property Name="activarPagTarjeta" Type="float" />
+          <Property Name="CodigoSRI" Type="float" />
+          <Property Name="activaAnticipo" Type="float" />
+          <Property Name="asientoContable" Type="nvarchar" MaxLength="255" />
+          <Property Name="tipoAsiento" Type="nvarchar" MaxLength="255" />
+          <Property Name="banco" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kardex">
+          <Key>
+            <PropertyRef Name="codpro" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="codlocal" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="codpro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="numdoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="tipdoc" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="codlocal" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="id" Type="float" Nullable="false" />
+          <Property Name="ingreso" Type="nvarchar" MaxLength="100" />
+          <Property Name="egreso" Type="nvarchar" MaxLength="100" />
+          <Property Name="saldo" Type="nvarchar" MaxLength="100" />
+          <Property Name="descrip" Type="nvarchar" MaxLength="250" />
+          <Property Name="codusu" Type="nvarchar" MaxLength="10" />
+          <Property Name="costo" Type="float" />
+          <Property Name="costotot" Type="float" />
+          <Property Name="costo2" Type="float" />
+          <Property Name="fecha_aux" Type="nvarchar" MaxLength="15" />
+          <Property Name="codprv" Type="float" />
+          <Property Name="venta" Type="float" />
+          <Property Name="codgru" Type="float" />
+          <Property Name="codsec" Type="float" />
+          <Property Name="coddep" Type="float" />
+          <Property Name="codsub" Type="float" />
+          <Property Name="coddiv" Type="float" />
+          <Property Name="auxFecha" Type="float" />
+          <Property Name="totCosto2" Type="float" />
+          <Property Name="signo" Type="nvarchar" MaxLength="5" />
+          <Property Name="HistoriaClinica" Type="bigint" />
+          <Property Name="AtencionCodigo" Type="bigint" />
+          <Property Name="Factura" Type="nvarchar" MaxLength="40" />
+          <Property Name="IdKardex" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="asientoContable" Type="float" />
+          <Property Name="tipoAsiento" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Nota">
+          <Key>
+            <PropertyRef Name="numnot" />
+            <PropertyRef Name="tipdoc" />
+          </Key>
+          <Property Name="numnot" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="tipdoc" Type="float" Nullable="false" />
+          <Property Name="codloc" Type="nvarchar" MaxLength="10" />
+          <Property Name="codven" Type="nvarchar" MaxLength="10" />
+          <Property Name="numfac" Type="varchar" MaxLength="20" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" />
+          <Property Name="tipcli" Type="nvarchar" MaxLength="10" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="hora" Type="nvarchar" MaxLength="50" />
+          <Property Name="ruc" Type="nvarchar" MaxLength="13" />
+          <Property Name="pordes" Type="nvarchar" MaxLength="53" />
+          <Property Name="subtotal" Type="float" />
+          <Property Name="desctot" Type="float" />
+          <Property Name="totsiva" Type="float" />
+          <Property Name="totciva" Type="float" />
+          <Property Name="iva" Type="float" />
+          <Property Name="total" Type="float" />
+          <Property Name="regalia" Type="float" />
+          <Property Name="fecha1" Type="nvarchar" MaxLength="8" />
+          <Property Name="cancelado" Type="nvarchar" MaxLength="20" />
+          <Property Name="items" Type="float" />
+          <Property Name="caja" Type="nvarchar" MaxLength="10" />
+          <Property Name="nomcli" Type="nvarchar" MaxLength="200" />
+          <Property Name="dircli" Type="nvarchar" MaxLength="200" />
+          <Property Name="telcli" Type="nvarchar" MaxLength="20" />
+          <Property Name="ruccli" Type="nvarchar" MaxLength="13" />
+          <Property Name="obs" Type="nvarchar" MaxLength="250" />
+          <Property Name="numguirem" Type="nvarchar" MaxLength="10" />
+          <Property Name="motivo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ructra" Type="nvarchar" MaxLength="13" />
+          <Property Name="nomtra" Type="nvarchar" MaxLength="50" />
+          <Property Name="codcobcli" Type="float" />
+          <Property Name="codvencli" Type="float" />
+          <Property Name="fecven" Type="datetime" />
+          <Property Name="numorden" Type="nvarchar" MaxLength="10" />
+          <Property Name="porven" Type="float" />
+          <Property Name="formpagPro" Type="nvarchar" MaxLength="50" />
+          <Property Name="validez" Type="nvarchar" MaxLength="50" />
+          <Property Name="tiempoentrega" Type="nvarchar" MaxLength="50" />
+          <Property Name="numfac2" Type="nvarchar" MaxLength="50" />
+          <Property Name="porcobrar" Type="bit" Nullable="false" />
+          <Property Name="Impresa" Type="bit" Nullable="false" />
+          <Property Name="cajero" Type="float" />
+          <Property Name="subt_Dev" Type="float" />
+          <Property Name="coniva_Dev" Type="float" />
+          <Property Name="siniva_Dev" Type="float" />
+          <Property Name="desct_Dev" Type="float" />
+          <Property Name="iva_Dev" Type="float" />
+          <Property Name="Tot_Dev" Type="float" />
+          <Property Name="pormayor" Type="bit" Nullable="false" />
+          <Property Name="facturada" Type="bit" Nullable="false" />
+          <Property Name="coniva" Type="bit" Nullable="false" />
+          <Property Name="imprimedesct" Type="bit" />
+          <Property Name="autorizacion" Type="nvarchar" MaxLength="16" />
+          <Property Name="GrupoCliente" Type="bit" />
+          <Property Name="EmpId" Type="int" />
+          <Property Name="ConvId" Type="int" />
+          <Property Name="tipfac" Type="int" />
+          <Property Name="codpaciente" Type="nvarchar" MaxLength="11" />
+          <Property Name="formatoFactura" Type="int" Nullable="false" />
+          <Property Name="FecServicio" Type="nvarchar" MaxLength="10" />
+          <Property Name="porcentajeIva" Type="float" />
+        </EntityType>
+        <EntityType Name="Numero_Control">
+          <Key>
+            <PropertyRef Name="codcon" />
+          </Key>
+          <Property Name="codcon" Type="float" Nullable="false" />
+          <Property Name="modcon" Type="nvarchar" MaxLength="30" />
+          <Property Name="tipcon" Type="nvarchar" MaxLength="1" />
+          <Property Name="numcon" Type="nvarchar" MaxLength="14" />
+          <Property Name="ocupado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="Id_Pagos" />
+          </Key>
+          <Property Name="numpag" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tipo" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="codcli" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="numdoc" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="pago" Type="float" />
+          <Property Name="obs" Type="nvarchar" MaxLength="1" />
+          <Property Name="pagado" Type="nvarchar" MaxLength="20" />
+          <Property Name="reten_iva" Type="bit" Nullable="false" />
+          <Property Name="valor_ri" Type="nvarchar" MaxLength="20" />
+          <Property Name="reten_fuente" Type="bit" Nullable="false" />
+          <Property Name="valor_rf" Type="nvarchar" MaxLength="20" />
+          <Property Name="pagos" Type="ntext" />
+          <Property Name="fecha1" Type="nvarchar" MaxLength="8" />
+          <Property Name="codresp" Type="float" />
+          <Property Name="consec" Type="nchar" MaxLength="10" />
+          <Property Name="caja" Type="nchar" MaxLength="10" />
+          <Property Name="forpag" Type="varchar" MaxLength="10" />
+          <Property Name="numliquidacion" Type="bigint" />
+          <Property Name="asicon" Type="nvarchar" MaxLength="15" />
+          <Property Name="comentario" Type="nvarchar" MaxLength="250" />
+          <Property Name="Id_Pagos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fila_cxc" Type="float" />
+          <Property Name="Arqueada" Type="bit" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="codpro" />
+          </Key>
+          <Property Name="codpro" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="despro" Type="nvarchar" MaxLength="500" />
+          <Property Name="codbar" Type="nvarchar" MaxLength="20" />
+          <Property Name="tippro" Type="nvarchar" MaxLength="1" />
+          <Property Name="codgru" Type="float" />
+          <Property Name="codsec" Type="float" />
+          <Property Name="coddep" Type="float" />
+          <Property Name="codsub" Type="float" />
+          <Property Name="coddiv" Type="float" />
+          <Property Name="codmar" Type="float" />
+          <Property Name="despro2" Type="nvarchar" MaxLength="500" />
+          <Property Name="uniman" Type="nvarchar" MaxLength="10" />
+          <Property Name="feccre" Type="datetime" />
+          <Property Name="colsab" Type="nvarchar" MaxLength="20" />
+          <Property Name="talla" Type="nvarchar" MaxLength="30" />
+          <Property Name="preven" Type="float" />
+          <Property Name="preven2" Type="float" />
+          <Property Name="precos" Type="float" />
+          <Property Name="cospro" Type="float" />
+          <Property Name="exiqty" Type="int" />
+          <Property Name="exipdc" Type="float" />
+          <Property Name="exipdv" Type="float" />
+          <Property Name="exisic" Type="int" />
+          <Property Name="fecsic" Type="datetime" />
+          <Property Name="refer" Type="nvarchar" MaxLength="15" />
+          <Property Name="codcuedeb" Type="nvarchar" MaxLength="15" />
+          <Property Name="codcuehab" Type="nvarchar" MaxLength="15" />
+          <Property Name="codcuedes" Type="nvarchar" MaxLength="15" />
+          <Property Name="codcuedev" Type="nvarchar" MaxLength="15" />
+          <Property Name="iva" Type="nvarchar" MaxLength="6" />
+          <Property Name="tipo" Type="nvarchar" MaxLength="1" />
+          <Property Name="preuni" Type="nvarchar" MaxLength="20" />
+          <Property Name="regalia" Type="nvarchar" MaxLength="15" />
+          <Property Name="inv" Type="bit" Nullable="false" />
+          <Property Name="preven_sin_iva" Type="float" />
+          <Property Name="paga_iva" Type="bit" Nullable="false" />
+          <Property Name="paga_regalia" Type="bit" Nullable="false" />
+          <Property Name="desind" Type="nvarchar" MaxLength="6" />
+          <Property Name="codorigen" Type="nvarchar" MaxLength="13" />
+          <Property Name="codcol" Type="float" />
+          <Property Name="stock_max" Type="float" />
+          <Property Name="stock_min" Type="float" />
+          <Property Name="espesor" Type="float" />
+          <Property Name="largo" Type="float" />
+          <Property Name="ancho" Type="float" />
+          <Property Name="fechacad" Type="nvarchar" MaxLength="7" />
+          <Property Name="fechacad1" Type="float" />
+          <Property Name="fabricante" Type="float" />
+          <Property Name="obs" Type="varchar" MaxLength="255" />
+          <Property Name="peso" Type="bit" Nullable="false" />
+          <Property Name="fecing" Type="datetime" />
+          <Property Name="valorUnidad" Type="float" />
+          <Property Name="codsab" Type="nvarchar" MaxLength="10" />
+          <Property Name="fechaMod" Type="datetime" />
+          <Property Name="tamanio" Type="nvarchar" MaxLength="20" />
+          <Property Name="Modelo" Type="varchar" MaxLength="128" />
+          <Property Name="numserie" Type="nvarchar" MaxLength="30" />
+          <Property Name="coleccion" Type="nvarchar" MaxLength="30" />
+          <Property Name="Temporada" Type="nvarchar" MaxLength="30" />
+          <Property Name="PrePorMayor" Type="float" />
+          <Property Name="PreAnterior" Type="float" />
+          <Property Name="CosAnterior" Type="float" />
+          <Property Name="DescCosto1" Type="float" />
+          <Property Name="DescCosto2" Type="float" />
+          <Property Name="DescCosto3" Type="float" />
+          <Property Name="DescCosto4" Type="float" />
+          <Property Name="Descuento" Type="float" />
+          <Property Name="PreRebaja" Type="float" />
+          <Property Name="PreRebajaAntes" Type="float" />
+          <Property Name="fecIniPro" Type="datetime" />
+          <Property Name="fecFinPro" Type="datetime" />
+          <Property Name="fecIniPro1" Type="nvarchar" MaxLength="8" />
+          <Property Name="codubi" Type="nvarchar" MaxLength="10" />
+          <Property Name="fecFinPro1" Type="nvarchar" MaxLength="8" />
+          <Property Name="FecPreAct" Type="datetime" />
+          <Property Name="FecPreMod" Type="datetime" />
+          <Property Name="FecCosAct" Type="datetime" />
+          <Property Name="FecCosMod" Type="datetime" />
+          <Property Name="codNiv" Type="nvarchar" MaxLength="10" />
+          <Property Name="codColUbi" Type="nvarchar" MaxLength="10" />
+          <Property Name="MargenUtilidad" Type="float" />
+          <Property Name="PvPSinIva" Type="float" />
+          <Property Name="PorcenRecepcion" Type="float" />
+          <Property Name="Stocks" Type="bit" Nullable="false" />
+          <Property Name="Abrevia" Type="nvarchar" MaxLength="10" />
+          <Property Name="referencia" Type="nvarchar" MaxLength="20" />
+          <Property Name="MargenAntes" Type="float" />
+          <Property Name="fecMarAntes" Type="datetime" />
+          <Property Name="CantDecimal" Type="bit" Nullable="false" />
+          <Property Name="costsuminis" Type="float" />
+          <Property Name="cantconv" Type="float" />
+          <Property Name="costhelado" Type="float" />
+          <Property Name="receta" Type="bit" Nullable="false" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+          <Property Name="clasprod" Type="nchar" MaxLength="2" />
+          <Property Name="foto" Type="nvarchar" MaxLength="150" />
+          <Property Name="altoriesgo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductoDepartamento">
+          <Key>
+            <PropertyRef Name="coddep" />
+          </Key>
+          <Property Name="coddep" Type="float" Nullable="false" />
+          <Property Name="desdep" Type="nvarchar" MaxLength="80" />
+          <Property Name="codSub" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductoDivision">
+          <Key>
+            <PropertyRef Name="coddiv" />
+          </Key>
+          <Property Name="coddiv" Type="float" Nullable="false" />
+          <Property Name="desdiv" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="ProductoGrupo">
+          <Key>
+            <PropertyRef Name="codgru" />
+          </Key>
+          <Property Name="codgru" Type="float" Nullable="false" />
+          <Property Name="desgru" Type="nvarchar" MaxLength="80" />
+          <Property Name="codsec" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductoSeccion">
+          <Key>
+            <PropertyRef Name="codsec" />
+          </Key>
+          <Property Name="codsec" Type="float" Nullable="false" />
+          <Property Name="dessec" Type="nvarchar" MaxLength="80" />
+          <Property Name="coddep" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductoServicio">
+          <Key>
+            <PropertyRef Name="codpro" />
+          </Key>
+          <Property Name="codpro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="codpro1" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="codran" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="precio" Type="nvarchar" MaxLength="20" />
+          <Property Name="pvp_sin_iva" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ProductoSubdivision">
+          <Key>
+            <PropertyRef Name="codsub" />
+          </Key>
+          <Property Name="codsub" Type="float" Nullable="false" />
+          <Property Name="dessub" Type="nvarchar" MaxLength="80" />
+          <Property Name="coddiv" Type="nvarchar" MaxLength="10" />
+          <Property Name="Pea_Codigo_His" Type="int" />
+        </EntityType>
+        <Association Name="FK_clasificacion_formapago">
+          <End Role="Clasificacion" Type="Self.Clasificacion" Multiplicity="0..1" />
+          <End Role="Forma_Pago" Type="Self.Forma_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clasificacion">
+              <PropertyRef Name="codclas" />
+            </Principal>
+            <Dependent Role="Forma_Pago">
+              <PropertyRef Name="claspag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nota_CLiente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Nota" Type="Self.Nota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="codcli" />
+            </Principal>
+            <Dependent Role="Nota">
+              <PropertyRef Name="codcli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pago_DetallePgo">
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="0..1" />
+          <End Role="DetallePago" Type="Self.DetallePago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagos">
+              <PropertyRef Name="Id_Pagos" />
+            </Principal>
+            <Dependent Role="DetallePago">
+              <PropertyRef Name="Id_Pagos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Sic3000ModelStoreContainer">
+          <EntitySet Name="Anticipo" EntityType="Self.Anticipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Auditora" EntityType="Self.Auditora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bodega" EntityType="Self.Bodega" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Caja" EntityType="Self.Caja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clasificacion" EntityType="Self.Clasificacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CxC" EntityType="Self.CxC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetallePago" EntityType="Self.DetallePago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoCuentas" EntityType="Self.EstadoCuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FacturaDatosAdicionales" EntityType="Self.FacturaDatosAdicionales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FacturaPago" EntityType="Self.FacturaPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Forma_Pago" EntityType="Self.Forma_Pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kardex" EntityType="Self.Kardex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nota" EntityType="Self.Nota" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Numero_Control" EntityType="Self.Numero_Control" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoDepartamento" EntityType="Self.ProductoDepartamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoDivision" EntityType="Self.ProductoDivision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoGrupo" EntityType="Self.ProductoGrupo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoSeccion" EntityType="Self.ProductoSeccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoServicio" EntityType="Self.ProductoServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductoSubdivision" EntityType="Self.ProductoSubdivision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormasPago" EntityType="Self.FormasPago" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[FormasPago].[forpag] AS [forpag], 
+[FormasPago].[despag] AS [despag], 
+[FormasPago].[claspag] AS [claspag], 
+[FormasPago].[codcue] AS [codcue], 
+[FormasPago].[ActivarFactura] AS [ActivarFactura], 
+[FormasPago].[ActivarCuentas] AS [ActivarCuentas], 
+[FormasPago].[ActivarProveedor] AS [ActivarProveedor], 
+[FormasPago].[comision] AS [comision], 
+[FormasPago].[tPago] AS [tPago], 
+[FormasPago].[CXC] AS [CXC], 
+[FormasPago].[tarjeta] AS [tarjeta], 
+[FormasPago].[ActivarFacturaHis] AS [ActivarFacturaHis], 
+[FormasPago].[activarLiqTarjeta] AS [activarLiqTarjeta], 
+[FormasPago].[activarPagTarjeta] AS [activarPagTarjeta], 
+[FormasPago].[CodigoSRI] AS [CodigoSRI], 
+[FormasPago].[activaAnticipo] AS [activaAnticipo], 
+[FormasPago].[asientoContable] AS [asientoContable], 
+[FormasPago].[tipoAsiento] AS [tipoAsiento], 
+[FormasPago].[banco] AS [banco]
+FROM [dbo].[FormasPago] AS [FormasPago]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_clasificacion_formapago" Association="Self.FK_clasificacion_formapago">
+            <End Role="Clasificacion" EntitySet="Clasificacion" />
+            <End Role="Forma_Pago" EntitySet="Forma_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nota_CLiente" Association="Self.FK_Nota_CLiente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Nota" EntitySet="Nota" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pago_DetallePgo" Association="Self.FK_Pago_DetallePgo">
+            <End Role="Pagos" EntitySet="Pagos" />
+            <End Role="DetallePago" EntitySet="DetallePago" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Sic3000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="Anticipo">
+          <Key>
+            <PropertyRef Name="numrec" />
+            <PropertyRef Name="caja" />
+          </Key>
+          <Property Name="numrec" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="caja" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="responsable" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cajero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="monto" Type="Double" />
+          <Property Name="concepto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="codlocal" Type="Double" />
+          <Property Name="utilizado" Type="Boolean" Nullable="false" />
+          <Property Name="voriginal" Type="Double" />
+          <Property Name="fecmod" Type="DateTime" Precision="3" />
+          <Property Name="montoini" Type="Double" />
+          <Property Name="cancelado" Type="Boolean" Nullable="false" />
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="despag" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="banco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ncuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ncheque" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="dueño" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ndoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="autorizacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ATE_NUMERO_ATENCION" Type="Int64" />
+          <Property Name="PAC_HISTORIA_CLINICA" Type="Int64" />
+          <Property Name="arqueada" Type="Boolean" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="usuario_ingreso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_anula" Type="DateTime" Precision="0" />
+          <Property Name="usuario_anula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodPlazo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="estado" Type="Boolean" />
+          <Property Name="numdoc" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="consec" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="numpag" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="numliquidacion" Type="Int64" Nullable="false" />
+          <Property Name="asientoContable" Type="Double" />
+          <Property Name="tipoAsiento" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="asientoContableDev" Type="Double" />
+          <Property Name="tipoAsientoDev" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="idTipoAnticipo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditora">
+          <Key>
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="fecfac" />
+            <PropertyRef Name="tipo" />
+          </Key>
+          <Property Name="numdoc" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fecfac" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tipo" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="obs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="monto" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="codusu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="caja" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="asientoContable" Type="Double" />
+          <Property Name="tipoAsiento" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="asientoContableAnulacion" Type="Double" />
+          <Property Name="tipoAsientoAnulacion" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Arqueada" Type="Boolean" />
+          <Property Name="consec" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Bodega">
+          <Key>
+            <PropertyRef Name="codbod" />
+            <PropertyRef Name="codpro" />
+          </Key>
+          <Property Name="codbod" Type="Double" Nullable="false" />
+          <Property Name="codpro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="existe" Type="Double" />
+          <Property Name="feculmov" Type="DateTime" Precision="3" />
+          <Property Name="fechacad1" Type="DateTime" Precision="3" />
+          <Property Name="fechacad2" Type="DateTime" Precision="3" />
+          <Property Name="fechacad3" Type="DateTime" Precision="3" />
+          <Property Name="PVP" Type="Double" />
+          <Property Name="feccad1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="feccad2" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="feccad3" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="reservado" Type="Double" />
+        </EntityType>
+        <EntityType Name="Caja">
+          <Key>
+            <PropertyRef Name="caja1" />
+          </Key>
+          <Property Name="caja1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="descaja" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="local" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ruc" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="empresa" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="nComercial" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ruc1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="sri" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="txt" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="codlocal" Type="Double" />
+          <Property Name="nimpresora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fecvalidez" Type="DateTime" Precision="3" />
+          <Property Name="tipocaja" Type="Boolean" Nullable="false" />
+          <Property Name="nlocal" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="pesorapido" Type="Boolean" Nullable="false" />
+          <Property Name="estaut" Type="Boolean" />
+          <Property Name="consec" Type="Int32" />
+          <Property Name="nestablecimiento" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Clasificacion">
+          <Key>
+            <PropertyRef Name="codclas" />
+          </Key>
+          <Property Name="codclas" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="desclas" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="codcue" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cartera" Type="Boolean" Nullable="false" />
+          <Property Name="reporte" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Forma_Pago" Relationship="Self.FK_clasificacion_formapago" FromRole="Clasificacion" ToRole="Forma_Pago" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="codcli" />
+          </Key>
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nomcli" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="dircli" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="telcli" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="telcli1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ruccli" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="concli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fecing" Type="DateTime" Precision="3" />
+          <Property Name="fecnac" Type="DateTime" Precision="3" />
+          <Property Name="fecfac1" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="fecfac2" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="fecfac3" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="fecfac4" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="fecfac5" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="marca1" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="marca2" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="marca3" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="marca4" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="marca5" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="codcue" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="codven" Type="Double" />
+          <Property Name="hello" Type="String" MaxLength="77" FixedLength="false" Unicode="true" />
+          <Property Name="desde" Type="Double" />
+          <Property Name="fechtre" Type="DateTime" Precision="3" />
+          <Property Name="ncomercial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codemp" Type="Double" />
+          <Property Name="saldo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fecfac" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ciudad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Obs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="delestado" Type="Boolean" />
+          <Property Name="genero" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="InfCamaHabitacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="tiprep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="seguimiento" Type="Boolean" />
+          <Property Name="TipoIdentificacion" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CodProvincia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CodCanton" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CodParroquia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TipoSexo" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TipoEstadoCivil" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TipoOrigenIngresos" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Tipopersona" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FechaActInact" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="Boolean" />
+          <Property Name="FormatoDocumento" Type="Int32" Nullable="false" />
+          <Property Name="ImprimeObsTramite" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Nota" Relationship="Self.FK_Nota_CLiente" FromRole="Cliente" ToRole="Nota" />
+        </EntityType>
+        <EntityType Name="CxC">
+          <Key>
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="tipo" />
+            <PropertyRef Name="forpag" />
+            <PropertyRef Name="fila" />
+          </Key>
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="numdoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="debe" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="haber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="saldo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fecha1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="fechapago" Type="DateTime" Precision="3" />
+          <Property Name="tipest" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="fecven" Type="DateTime" Precision="3" />
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="claspag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fecven1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="fila" Type="Double" Nullable="false" />
+          <Property Name="Marca" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DetallePago">
+          <Key>
+            <PropertyRef Name="numpag" />
+            <PropertyRef Name="forpag" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="numpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="despag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="monto" Type="Double" />
+          <Property Name="auxiliarcont" Type="Double" />
+          <Property Name="facturaprov" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="autorizacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fechaautoriza" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="banco" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="numCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="propietario" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoteRecap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NroDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaEmision" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Pagos" Relationship="Self.FK_Pago_DetallePgo" FromRole="DetallePago" ToRole="Pagos" />
+        </EntityType>
+        <EntityType Name="EstadoCuentas">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="numfac" />
+            <PropertyRef Name="tipodoc" />
+            <PropertyRef Name="iddoc" />
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" />
+          <Property Name="numfac" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipodoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="iddoc" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="numdoc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="obs" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="debe" Type="Double" />
+          <Property Name="haber" Type="Double" />
+          <Property Name="saldo" Type="Double" />
+          <Property Name="fecha1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="claspag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="caja" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="fecha2" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="numnot" />
+          </Key>
+          <Property Name="numnot" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipdoc" Type="Double" />
+          <Property Name="codloc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="codven" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="numfac" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="tipcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fecfac" Type="DateTime" Precision="3" />
+          <Property Name="hora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ruc" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="pordes" Type="String" MaxLength="53" FixedLength="false" Unicode="true" />
+          <Property Name="subtotal" Type="Double" />
+          <Property Name="desctot" Type="Double" />
+          <Property Name="totsiva" Type="Double" />
+          <Property Name="totciva" Type="Double" />
+          <Property Name="iva" Type="Double" />
+          <Property Name="total" Type="Double" />
+          <Property Name="regalia" Type="Double" />
+          <Property Name="fecha1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="cancelado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="items" Type="Double" />
+          <Property Name="caja" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nomcli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dircli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telcli" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ruccli" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="obs" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="numguirem" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ructra" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="nomtra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codcobcli" Type="Double" />
+          <Property Name="codvencli" Type="Double" />
+          <Property Name="fecven" Type="DateTime" Precision="3" />
+          <Property Name="numorden" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="porven" Type="Double" />
+          <Property Name="formpagPro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="validez" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tiempoentrega" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numfac2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="porcobrar" Type="Boolean" />
+          <Property Name="Impresa" Type="Boolean" />
+          <Property Name="cajero" Type="Double" />
+          <Property Name="subt_Dev" Type="Double" />
+          <Property Name="coniva_Dev" Type="Double" />
+          <Property Name="siniva_Dev" Type="Double" />
+          <Property Name="desct_Dev" Type="Double" />
+          <Property Name="iva_Dev" Type="Double" />
+          <Property Name="Tot_Dev" Type="Double" />
+          <Property Name="pormayor" Type="Boolean" />
+          <Property Name="facturada" Type="Boolean" />
+          <Property Name="coniva" Type="Boolean" />
+          <Property Name="imprimedesct" Type="Boolean" />
+          <Property Name="tipest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FacturaDatosAdicionales">
+          <Key>
+            <PropertyRef Name="Numdoc" />
+            <PropertyRef Name="RucCedula" />
+          </Key>
+          <Property Name="Numdoc" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RucCedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombres" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="HistoriaClinica" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="MedicoTratante" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ATE_CODIGO" Type="Int64" />
+        </EntityType>
+        <EntityType Name="FacturaPago">
+          <Key>
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="forpag" />
+            <PropertyRef Name="tipomov" />
+            <PropertyRef Name="codcli" />
+            <PropertyRef Name="fila" />
+          </Key>
+          <Property Name="numdoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipdoc" Type="Double" Nullable="false" />
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipomov" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="parcial" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="parcial1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="claspag" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="tipoventa" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="fecha1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="banco" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="numcuenta_tarj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="cheque_caduca" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="dueño" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="autoriza" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="obs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fila" Type="Double" Nullable="false" />
+          <Property Name="caja" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cajero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Vendedor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="local" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Arqueada" Type="Boolean" />
+          <Property Name="imprime" Type="Boolean" />
+          <Property Name="detalle" Type="Boolean" />
+          <Property Name="CodPlazo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="consec" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="asientoContable" Type="Double" />
+          <Property Name="tipoAsiento" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Forma_Pago">
+          <Key>
+            <PropertyRef Name="forpag" />
+          </Key>
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="despag" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codcue" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ActivarFactura" Type="Boolean" Nullable="false" />
+          <Property Name="ActivarCuentas" Type="Boolean" Nullable="false" />
+          <Property Name="ActivarProveedor" Type="Boolean" Nullable="false" />
+          <Property Name="comision" Type="Double" />
+          <Property Name="tPago" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CXC" Type="Boolean" Nullable="false" />
+          <Property Name="tarjeta" Type="Boolean" Nullable="false" />
+          <Property Name="ActivarFacturaHis" Type="Boolean" />
+          <Property Name="activarLiqTarjeta" Type="Boolean" />
+          <Property Name="activarPagTarjeta" Type="Boolean" Nullable="false" />
+          <Property Name="CodigoSRI" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="activaAnticipo" Type="Int32" Nullable="false" />
+          <Property Name="asientoContable" Type="Double" />
+          <Property Name="tipoAsiento" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="banco" Type="Boolean" Nullable="false" />
+          <Property Name="codigocg" Type="Double" Nullable="false" />
+          <Property Name="codclisic" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Clasificacion" Relationship="Self.FK_clasificacion_formapago" FromRole="Forma_Pago" ToRole="Clasificacion" />
+        </EntityType>
+        <EntityType Name="Kardex">
+          <Key>
+            <PropertyRef Name="codpro" />
+            <PropertyRef Name="fecha" />
+            <PropertyRef Name="numdoc" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="codlocal" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="codpro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="numdoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipdoc" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codlocal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Double" Nullable="false" />
+          <Property Name="ingreso" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="egreso" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="saldo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="descrip" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="codusu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="costo" Type="Double" />
+          <Property Name="costotot" Type="Double" />
+          <Property Name="costo2" Type="Double" />
+          <Property Name="fecha_aux" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="codprv" Type="Double" />
+          <Property Name="venta" Type="Double" />
+          <Property Name="codgru" Type="Double" />
+          <Property Name="codsec" Type="Double" />
+          <Property Name="coddep" Type="Double" />
+          <Property Name="codsub" Type="Double" />
+          <Property Name="coddiv" Type="Double" />
+          <Property Name="auxFecha" Type="Double" />
+          <Property Name="totCosto2" Type="Double" />
+          <Property Name="signo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="HistoriaClinica" Type="Int64" />
+          <Property Name="AtencionCodigo" Type="Int64" />
+          <Property Name="Factura" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="IdKardex" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="asientoContable" Type="Double" />
+          <Property Name="tipoAsiento" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Nota">
+          <Key>
+            <PropertyRef Name="numnot" />
+            <PropertyRef Name="tipdoc" />
+          </Key>
+          <Property Name="numnot" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipdoc" Type="Double" Nullable="false" />
+          <Property Name="codloc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="codven" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="numfac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tipcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="hora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ruc" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="pordes" Type="String" MaxLength="53" FixedLength="false" Unicode="true" />
+          <Property Name="subtotal" Type="Double" />
+          <Property Name="desctot" Type="Double" />
+          <Property Name="totsiva" Type="Double" />
+          <Property Name="totciva" Type="Double" />
+          <Property Name="iva" Type="Double" />
+          <Property Name="total" Type="Double" />
+          <Property Name="regalia" Type="Double" />
+          <Property Name="fecha1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="cancelado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="items" Type="Double" />
+          <Property Name="caja" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nomcli" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="dircli" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="telcli" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ruccli" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="obs" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="numguirem" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ructra" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="nomtra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codcobcli" Type="Double" />
+          <Property Name="codvencli" Type="Double" />
+          <Property Name="fecven" Type="DateTime" Precision="3" />
+          <Property Name="numorden" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="porven" Type="Double" />
+          <Property Name="formpagPro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="validez" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tiempoentrega" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numfac2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="porcobrar" Type="Boolean" Nullable="false" />
+          <Property Name="Impresa" Type="Boolean" Nullable="false" />
+          <Property Name="cajero" Type="Double" />
+          <Property Name="subt_Dev" Type="Double" />
+          <Property Name="coniva_Dev" Type="Double" />
+          <Property Name="siniva_Dev" Type="Double" />
+          <Property Name="desct_Dev" Type="Double" />
+          <Property Name="iva_Dev" Type="Double" />
+          <Property Name="Tot_Dev" Type="Double" />
+          <Property Name="pormayor" Type="Boolean" Nullable="false" />
+          <Property Name="facturada" Type="Boolean" Nullable="false" />
+          <Property Name="coniva" Type="Boolean" Nullable="false" />
+          <Property Name="imprimedesct" Type="Boolean" />
+          <Property Name="autorizacion" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="GrupoCliente" Type="Boolean" />
+          <Property Name="EmpId" Type="Int32" />
+          <Property Name="ConvId" Type="Int32" />
+          <Property Name="tipfac" Type="Int32" />
+          <Property Name="codpaciente" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="formatoFactura" Type="Int32" Nullable="false" />
+          <Property Name="FecServicio" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="porcentajeIva" Type="Double" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Nota_CLiente" FromRole="Nota" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Numero_Control">
+          <Key>
+            <PropertyRef Name="codcon" />
+          </Key>
+          <Property Name="codcon" Type="Double" Nullable="false" />
+          <Property Name="modcon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="tipcon" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="numcon" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="ocupado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="Id_Pagos" />
+          </Key>
+          <Property Name="numpag" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codcli" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="numdoc" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pago" Type="Double" />
+          <Property Name="obs" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="pagado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="reten_iva" Type="Boolean" Nullable="false" />
+          <Property Name="valor_ri" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="reten_fuente" Type="Boolean" Nullable="false" />
+          <Property Name="valor_rf" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="pagos1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fecha1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="codresp" Type="Double" />
+          <Property Name="consec" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="caja" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="forpag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="numliquidacion" Type="Int64" />
+          <Property Name="asicon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="comentario" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Pagos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fila_cxc" Type="Double" />
+          <Property Name="Arqueada" Type="Boolean" />
+          <NavigationProperty Name="DetallePago" Relationship="Self.FK_Pago_DetallePgo" FromRole="Pagos" ToRole="DetallePago" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="codpro" />
+          </Key>
+          <Property Name="codpro" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="despro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="codbar" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tippro" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="codgru" Type="Double" />
+          <Property Name="codsec" Type="Double" />
+          <Property Name="coddep" Type="Double" />
+          <Property Name="codsub" Type="Double" />
+          <Property Name="coddiv" Type="Double" />
+          <Property Name="codmar" Type="Double" />
+          <Property Name="despro2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="uniman" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="feccre" Type="DateTime" Precision="3" />
+          <Property Name="colsab" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="talla" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="preven" Type="Double" />
+          <Property Name="preven2" Type="Double" />
+          <Property Name="precos" Type="Double" />
+          <Property Name="cospro" Type="Double" />
+          <Property Name="exiqty" Type="Int32" />
+          <Property Name="exipdc" Type="Double" />
+          <Property Name="exipdv" Type="Double" />
+          <Property Name="exisic" Type="Int32" />
+          <Property Name="fecsic" Type="DateTime" Precision="3" />
+          <Property Name="refer" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="codcuedeb" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="codcuehab" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="codcuedes" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="codcuedev" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="iva" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="preuni" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="regalia" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="inv" Type="Boolean" Nullable="false" />
+          <Property Name="preven_sin_iva" Type="Double" />
+          <Property Name="paga_iva" Type="Boolean" Nullable="false" />
+          <Property Name="paga_regalia" Type="Boolean" Nullable="false" />
+          <Property Name="desind" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="codorigen" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="codcol" Type="Double" />
+          <Property Name="stock_max" Type="Double" />
+          <Property Name="stock_min" Type="Double" />
+          <Property Name="espesor" Type="Double" />
+          <Property Name="largo" Type="Double" />
+          <Property Name="ancho" Type="Double" />
+          <Property Name="fechacad" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="fechacad1" Type="Double" />
+          <Property Name="fabricante" Type="Double" />
+          <Property Name="obs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="peso" Type="Boolean" Nullable="false" />
+          <Property Name="fecing" Type="DateTime" Precision="3" />
+          <Property Name="valorUnidad" Type="Double" />
+          <Property Name="codsab" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fechaMod" Type="DateTime" Precision="3" />
+          <Property Name="tamanio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="numserie" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="coleccion" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Temporada" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PrePorMayor" Type="Double" />
+          <Property Name="PreAnterior" Type="Double" />
+          <Property Name="CosAnterior" Type="Double" />
+          <Property Name="DescCosto1" Type="Double" />
+          <Property Name="DescCosto2" Type="Double" />
+          <Property Name="DescCosto3" Type="Double" />
+          <Property Name="DescCosto4" Type="Double" />
+          <Property Name="Descuento" Type="Double" />
+          <Property Name="PreRebaja" Type="Double" />
+          <Property Name="PreRebajaAntes" Type="Double" />
+          <Property Name="fecIniPro" Type="DateTime" Precision="3" />
+          <Property Name="fecFinPro" Type="DateTime" Precision="3" />
+          <Property Name="fecIniPro1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="codubi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fecFinPro1" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FecPreAct" Type="DateTime" Precision="3" />
+          <Property Name="FecPreMod" Type="DateTime" Precision="3" />
+          <Property Name="FecCosAct" Type="DateTime" Precision="3" />
+          <Property Name="FecCosMod" Type="DateTime" Precision="3" />
+          <Property Name="codNiv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="codColUbi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MargenUtilidad" Type="Double" />
+          <Property Name="PvPSinIva" Type="Double" />
+          <Property Name="PorcenRecepcion" Type="Double" />
+          <Property Name="Stocks" Type="Boolean" Nullable="false" />
+          <Property Name="Abrevia" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="referencia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MargenAntes" Type="Double" />
+          <Property Name="fecMarAntes" Type="DateTime" Precision="3" />
+          <Property Name="CantDecimal" Type="Boolean" Nullable="false" />
+          <Property Name="costsuminis" Type="Double" />
+          <Property Name="cantconv" Type="Double" />
+          <Property Name="costhelado" Type="Double" />
+          <Property Name="receta" Type="Boolean" Nullable="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <Property Name="clasprod" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="foto" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="altoriesgo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductoDepartamento">
+          <Key>
+            <PropertyRef Name="coddep" />
+          </Key>
+          <Property Name="coddep" Type="Double" Nullable="false" />
+          <Property Name="desdep" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="codSub" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductoDivision">
+          <Key>
+            <PropertyRef Name="coddiv" />
+          </Key>
+          <Property Name="coddiv" Type="Double" Nullable="false" />
+          <Property Name="desdiv" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductoGrupo">
+          <Key>
+            <PropertyRef Name="codgru" />
+          </Key>
+          <Property Name="codgru" Type="Double" Nullable="false" />
+          <Property Name="desgru" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="codsec" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductoSeccion">
+          <Key>
+            <PropertyRef Name="codsec" />
+          </Key>
+          <Property Name="codsec" Type="Double" Nullable="false" />
+          <Property Name="dessec" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="coddep" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductoServicio">
+          <Key>
+            <PropertyRef Name="codpro" />
+          </Key>
+          <Property Name="codpro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codpro1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="codran" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="precio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="pvp_sin_iva" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductoSubdivision">
+          <Key>
+            <PropertyRef Name="codsub" />
+          </Key>
+          <Property Name="codsub" Type="Double" Nullable="false" />
+          <Property Name="dessub" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="coddiv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Pea_Codigo_His" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FormasPago">
+          <Key>
+            <PropertyRef Name="banco" />
+          </Key>
+          <Property Name="forpag" Type="Double" />
+          <Property Name="despag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="claspag" Type="Double" />
+          <Property Name="codcue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ActivarFactura" Type="Double" />
+          <Property Name="ActivarCuentas" Type="Double" />
+          <Property Name="ActivarProveedor" Type="Double" />
+          <Property Name="comision" Type="Double" />
+          <Property Name="tPago" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CXC" Type="Double" />
+          <Property Name="tarjeta" Type="Double" />
+          <Property Name="ActivarFacturaHis" Type="Double" />
+          <Property Name="activarLiqTarjeta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="activarPagTarjeta" Type="Double" />
+          <Property Name="CodigoSRI" Type="Double" />
+          <Property Name="activaAnticipo" Type="Double" />
+          <Property Name="asientoContable" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tipoAsiento" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="banco" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_clasificacion_formapago">
+          <End Role="Clasificacion" Type="Self.Clasificacion" Multiplicity="0..1" />
+          <End Role="Forma_Pago" Type="Self.Forma_Pago" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Nota_CLiente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Nota" Type="Self.Nota" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Pago_DetallePgo">
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="0..1" />
+          <End Role="DetallePago" Type="Self.DetallePago" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Sic3000Entities">
+          <EntitySet Name="Anticipo" EntityType="Self.Anticipo" />
+          <EntitySet Name="Auditora" EntityType="Self.Auditora" />
+          <EntitySet Name="Bodega" EntityType="Self.Bodega" />
+          <EntitySet Name="Caja" EntityType="Self.Caja" />
+          <EntitySet Name="Clasificacion" EntityType="Self.Clasificacion" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="CxC" EntityType="Self.CxC" />
+          <EntitySet Name="DetallePago" EntityType="Self.DetallePago" />
+          <EntitySet Name="EstadoCuentas" EntityType="Self.EstadoCuentas" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" />
+          <EntitySet Name="FacturaDatosAdicionales" EntityType="Self.FacturaDatosAdicionales" />
+          <EntitySet Name="FacturaPago" EntityType="Self.FacturaPago" />
+          <EntitySet Name="Forma_Pago" EntityType="Self.Forma_Pago" />
+          <EntitySet Name="Kardex" EntityType="Self.Kardex" />
+          <EntitySet Name="Nota" EntityType="Self.Nota" />
+          <EntitySet Name="Numero_Control" EntityType="Self.Numero_Control" />
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="ProductoDepartamento" EntityType="Self.ProductoDepartamento" />
+          <EntitySet Name="ProductoDivision" EntityType="Self.ProductoDivision" />
+          <EntitySet Name="ProductoGrupo" EntityType="Self.ProductoGrupo" />
+          <EntitySet Name="ProductoSeccion" EntityType="Self.ProductoSeccion" />
+          <EntitySet Name="ProductoServicio" EntityType="Self.ProductoServicio" />
+          <EntitySet Name="ProductoSubdivision" EntityType="Self.ProductoSubdivision" />
+          <EntitySet Name="FormasPago" EntityType="Self.FormasPago" />
+          <AssociationSet Name="FK_clasificacion_formapago" Association="Self.FK_clasificacion_formapago">
+            <End Role="Clasificacion" EntitySet="Clasificacion" />
+            <End Role="Forma_Pago" EntitySet="Forma_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nota_CLiente" Association="Self.FK_Nota_CLiente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Nota" EntitySet="Nota" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pago_DetallePgo" Association="Self.FK_Pago_DetallePgo">
+            <End Role="Pagos" EntitySet="Pagos" />
+            <End Role="DetallePago" EntitySet="DetallePago" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="Sic3000ModelStoreContainer" CdmEntityContainer="Sic3000Entities">
+          <EntitySetMapping Name="Anticipo">
+            <EntityTypeMapping TypeName="Sic3000Model.Anticipo">
+              <MappingFragment StoreEntitySet="Anticipo">
+                <ScalarProperty Name="numrec" ColumnName="numrec" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="responsable" ColumnName="responsable" />
+                <ScalarProperty Name="cajero" ColumnName="cajero" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="codlocal" ColumnName="codlocal" />
+                <ScalarProperty Name="utilizado" ColumnName="utilizado" />
+                <ScalarProperty Name="voriginal" ColumnName="voriginal" />
+                <ScalarProperty Name="fecmod" ColumnName="fecmod" />
+                <ScalarProperty Name="montoini" ColumnName="montoini" />
+                <ScalarProperty Name="cancelado" ColumnName="cancelado" />
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="despag" ColumnName="despag" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="ncuenta" ColumnName="ncuenta" />
+                <ScalarProperty Name="ncheque" ColumnName="ncheque" />
+                <ScalarProperty Name="dueño" ColumnName="dueño" />
+                <ScalarProperty Name="ndoc" ColumnName="ndoc" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="autorizacion" ColumnName="autorizacion" />
+                <ScalarProperty Name="ATE_NUMERO_ATENCION" ColumnName="ATE_NUMERO_ATENCION" />
+                <ScalarProperty Name="PAC_HISTORIA_CLINICA" ColumnName="PAC_HISTORIA_CLINICA" />
+                <ScalarProperty Name="arqueada" ColumnName="arqueada" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="usuario_ingreso" ColumnName="usuario_ingreso" />
+                <ScalarProperty Name="fecha_anula" ColumnName="fecha_anula" />
+                <ScalarProperty Name="usuario_anula" ColumnName="usuario_anula" />
+                <ScalarProperty Name="CodPlazo" ColumnName="CodPlazo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="consec" ColumnName="consec" />
+                <ScalarProperty Name="numpag" ColumnName="numpag" />
+                <ScalarProperty Name="numliquidacion" ColumnName="numliquidacion" />
+                <ScalarProperty Name="asientoContable" ColumnName="asientoContable" />
+                <ScalarProperty Name="tipoAsiento" ColumnName="tipoAsiento" />
+                <ScalarProperty Name="asientoContableDev" ColumnName="asientoContableDev" />
+                <ScalarProperty Name="tipoAsientoDev" ColumnName="tipoAsientoDev" />
+                <ScalarProperty Name="idTipoAnticipo" ColumnName="idTipoAnticipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Auditora">
+            <EntityTypeMapping TypeName="Sic3000Model.Auditora">
+              <MappingFragment StoreEntitySet="Auditora">
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="fecfac" ColumnName="fecfac" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="codusu" ColumnName="codusu" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="asientoContable" ColumnName="asientoContable" />
+                <ScalarProperty Name="tipoAsiento" ColumnName="tipoAsiento" />
+                <ScalarProperty Name="asientoContableAnulacion" ColumnName="asientoContableAnulacion" />
+                <ScalarProperty Name="tipoAsientoAnulacion" ColumnName="tipoAsientoAnulacion" />
+                <ScalarProperty Name="Arqueada" ColumnName="Arqueada" />
+                <ScalarProperty Name="consec" ColumnName="consec" />
+                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bodega">
+            <EntityTypeMapping TypeName="Sic3000Model.Bodega">
+              <MappingFragment StoreEntitySet="Bodega">
+                <ScalarProperty Name="codbod" ColumnName="codbod" />
+                <ScalarProperty Name="codpro" ColumnName="codpro" />
+                <ScalarProperty Name="existe" ColumnName="existe" />
+                <ScalarProperty Name="feculmov" ColumnName="feculmov" />
+                <ScalarProperty Name="fechacad1" ColumnName="fechacad1" />
+                <ScalarProperty Name="fechacad2" ColumnName="fechacad2" />
+                <ScalarProperty Name="fechacad3" ColumnName="fechacad3" />
+                <ScalarProperty Name="PVP" ColumnName="PVP" />
+                <ScalarProperty Name="feccad1" ColumnName="feccad1" />
+                <ScalarProperty Name="feccad2" ColumnName="feccad2" />
+                <ScalarProperty Name="feccad3" ColumnName="feccad3" />
+                <ScalarProperty Name="reservado" ColumnName="reservado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Caja">
+            <EntityTypeMapping TypeName="Sic3000Model.Caja">
+              <MappingFragment StoreEntitySet="Caja">
+                <ScalarProperty Name="caja1" ColumnName="caja" />
+                <ScalarProperty Name="descaja" ColumnName="descaja" />
+                <ScalarProperty Name="local" ColumnName="local" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="nComercial" ColumnName="nComercial" />
+                <ScalarProperty Name="ruc1" ColumnName="ruc1" />
+                <ScalarProperty Name="sri" ColumnName="sri" />
+                <ScalarProperty Name="txt" ColumnName="txt" />
+                <ScalarProperty Name="codlocal" ColumnName="codlocal" />
+                <ScalarProperty Name="nimpresora" ColumnName="nimpresora" />
+                <ScalarProperty Name="fecvalidez" ColumnName="fecvalidez" />
+                <ScalarProperty Name="tipocaja" ColumnName="tipocaja" />
+                <ScalarProperty Name="nlocal" ColumnName="nlocal" />
+                <ScalarProperty Name="pesorapido" ColumnName="pesorapido" />
+                <ScalarProperty Name="estaut" ColumnName="estaut" />
+                <ScalarProperty Name="consec" ColumnName="consec" />
+                <ScalarProperty Name="nestablecimiento" ColumnName="nestablecimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clasificacion">
+            <EntityTypeMapping TypeName="Sic3000Model.Clasificacion">
+              <MappingFragment StoreEntitySet="Clasificacion">
+                <ScalarProperty Name="codclas" ColumnName="codclas" />
+                <ScalarProperty Name="desclas" ColumnName="desclas" />
+                <ScalarProperty Name="codcue" ColumnName="codcue" />
+                <ScalarProperty Name="cartera" ColumnName="cartera" />
+                <ScalarProperty Name="reporte" ColumnName="reporte" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="Sic3000Model.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="tipcli" ColumnName="tipcli" />
+                <ScalarProperty Name="nomcli" ColumnName="nomcli" />
+                <ScalarProperty Name="dircli" ColumnName="dircli" />
+                <ScalarProperty Name="telcli" ColumnName="telcli" />
+                <ScalarProperty Name="telcli1" ColumnName="telcli1" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="ruccli" ColumnName="ruccli" />
+                <ScalarProperty Name="concli" ColumnName="concli" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fecing" ColumnName="fecing" />
+                <ScalarProperty Name="fecnac" ColumnName="fecnac" />
+                <ScalarProperty Name="fecfac1" ColumnName="fecfac1" />
+                <ScalarProperty Name="fecfac2" ColumnName="fecfac2" />
+                <ScalarProperty Name="fecfac3" ColumnName="fecfac3" />
+                <ScalarProperty Name="fecfac4" ColumnName="fecfac4" />
+                <ScalarProperty Name="fecfac5" ColumnName="fecfac5" />
+                <ScalarProperty Name="marca1" ColumnName="marca1" />
+                <ScalarProperty Name="marca2" ColumnName="marca2" />
+                <ScalarProperty Name="marca3" ColumnName="marca3" />
+                <ScalarProperty Name="marca4" ColumnName="marca4" />
+                <ScalarProperty Name="marca5" ColumnName="marca5" />
+                <ScalarProperty Name="codcue" ColumnName="codcue" />
+                <ScalarProperty Name="codven" ColumnName="codven" />
+                <ScalarProperty Name="hello" ColumnName="hello" />
+                <ScalarProperty Name="desde" ColumnName="desde" />
+                <ScalarProperty Name="fechtre" ColumnName="fechtre" />
+                <ScalarProperty Name="ncomercial" ColumnName="ncomercial" />
+                <ScalarProperty Name="codemp" ColumnName="codemp" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="fecfac" ColumnName="fecfac" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="Obs" ColumnName="Obs" />
+                <ScalarProperty Name="delestado" ColumnName="delestado" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="InfCamaHabitacion" ColumnName="InfCamaHabitacion" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="tiprep" ColumnName="tiprep" />
+                <ScalarProperty Name="seguimiento" ColumnName="seguimiento" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="CodProvincia" ColumnName="CodProvincia" />
+                <ScalarProperty Name="CodCanton" ColumnName="CodCanton" />
+                <ScalarProperty Name="CodParroquia" ColumnName="CodParroquia" />
+                <ScalarProperty Name="TipoSexo" ColumnName="TipoSexo" />
+                <ScalarProperty Name="TipoEstadoCivil" ColumnName="TipoEstadoCivil" />
+                <ScalarProperty Name="TipoOrigenIngresos" ColumnName="TipoOrigenIngresos" />
+                <ScalarProperty Name="Tipopersona" ColumnName="Tipopersona" />
+                <ScalarProperty Name="FechaActInact" ColumnName="FechaActInact" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FormatoDocumento" ColumnName="FormatoDocumento" />
+                <ScalarProperty Name="ImprimeObsTramite" ColumnName="ImprimeObsTramite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CxC">
+            <EntityTypeMapping TypeName="Sic3000Model.CxC">
+              <MappingFragment StoreEntitySet="CxC">
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="debe" ColumnName="debe" />
+                <ScalarProperty Name="haber" ColumnName="haber" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+                <ScalarProperty Name="fechapago" ColumnName="fechapago" />
+                <ScalarProperty Name="tipest" ColumnName="tipest" />
+                <ScalarProperty Name="fecven" ColumnName="fecven" />
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="claspag" ColumnName="claspag" />
+                <ScalarProperty Name="fecven1" ColumnName="fecven1" />
+                <ScalarProperty Name="fila" ColumnName="fila" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetallePago">
+            <EntityTypeMapping TypeName="Sic3000Model.DetallePago">
+              <MappingFragment StoreEntitySet="DetallePago">
+                <ScalarProperty Name="numpag" ColumnName="numpag" />
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="despag" ColumnName="despag" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="auxiliarcont" ColumnName="auxiliarcont" />
+                <ScalarProperty Name="facturaprov" ColumnName="facturaprov" />
+                <ScalarProperty Name="autorizacion" ColumnName="autorizacion" />
+                <ScalarProperty Name="fechaautoriza" ColumnName="fechaautoriza" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="numCT" ColumnName="numCT" />
+                <ScalarProperty Name="propietario" ColumnName="propietario" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="LoteRecap" ColumnName="LoteRecap" />
+                <ScalarProperty Name="NroDocumento" ColumnName="NroDocumento" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCuentas">
+            <EntityTypeMapping TypeName="Sic3000Model.EstadoCuentas">
+              <MappingFragment StoreEntitySet="EstadoCuentas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="numfac" ColumnName="numfac" />
+                <ScalarProperty Name="tipodoc" ColumnName="tipodoc" />
+                <ScalarProperty Name="iddoc" ColumnName="iddoc" />
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="debe" ColumnName="debe" />
+                <ScalarProperty Name="haber" ColumnName="haber" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="claspag" ColumnName="claspag" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="fecha2" ColumnName="fecha2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Factura">
+            <EntityTypeMapping TypeName="Sic3000Model.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="numnot" ColumnName="numnot" />
+                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+                <ScalarProperty Name="codloc" ColumnName="codloc" />
+                <ScalarProperty Name="codven" ColumnName="codven" />
+                <ScalarProperty Name="numfac" ColumnName="numfac" />
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="tipcli" ColumnName="tipcli" />
+                <ScalarProperty Name="fecfac" ColumnName="fecfac" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="pordes" ColumnName="pordes" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="desctot" ColumnName="desctot" />
+                <ScalarProperty Name="totsiva" ColumnName="totsiva" />
+                <ScalarProperty Name="totciva" ColumnName="totciva" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="regalia" ColumnName="regalia" />
+                <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+                <ScalarProperty Name="cancelado" ColumnName="cancelado" />
+                <ScalarProperty Name="items" ColumnName="items" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="nomcli" ColumnName="nomcli" />
+                <ScalarProperty Name="dircli" ColumnName="dircli" />
+                <ScalarProperty Name="telcli" ColumnName="telcli" />
+                <ScalarProperty Name="ruccli" ColumnName="ruccli" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="numguirem" ColumnName="numguirem" />
+                <ScalarProperty Name="motivo" ColumnName="motivo" />
+                <ScalarProperty Name="ructra" ColumnName="ructra" />
+                <ScalarProperty Name="nomtra" ColumnName="nomtra" />
+                <ScalarProperty Name="codcobcli" ColumnName="codcobcli" />
+                <ScalarProperty Name="codvencli" ColumnName="codvencli" />
+                <ScalarProperty Name="fecven" ColumnName="fecven" />
+                <ScalarProperty Name="numorden" ColumnName="numorden" />
+                <ScalarProperty Name="porven" ColumnName="porven" />
+                <ScalarProperty Name="formpagPro" ColumnName="formpagPro" />
+                <ScalarProperty Name="validez" ColumnName="validez" />
+                <ScalarProperty Name="tiempoentrega" ColumnName="tiempoentrega" />
+                <ScalarProperty Name="numfac2" ColumnName="numfac2" />
+                <ScalarProperty Name="porcobrar" ColumnName="porcobrar" />
+                <ScalarProperty Name="Impresa" ColumnName="Impresa" />
+                <ScalarProperty Name="cajero" ColumnName="cajero" />
+                <ScalarProperty Name="subt_Dev" ColumnName="subt_Dev" />
+                <ScalarProperty Name="coniva_Dev" ColumnName="coniva_Dev" />
+                <ScalarProperty Name="siniva_Dev" ColumnName="siniva_Dev" />
+                <ScalarProperty Name="desct_Dev" ColumnName="desct_Dev" />
+                <ScalarProperty Name="iva_Dev" ColumnName="iva_Dev" />
+                <ScalarProperty Name="Tot_Dev" ColumnName="Tot_Dev" />
+                <ScalarProperty Name="pormayor" ColumnName="pormayor" />
+                <ScalarProperty Name="facturada" ColumnName="facturada" />
+                <ScalarProperty Name="coniva" ColumnName="coniva" />
+                <ScalarProperty Name="imprimedesct" ColumnName="imprimedesct" />
+                <ScalarProperty Name="tipest" ColumnName="tipest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacturaDatosAdicionales">
+            <EntityTypeMapping TypeName="Sic3000Model.FacturaDatosAdicionales">
+              <MappingFragment StoreEntitySet="FacturaDatosAdicionales">
+                <ScalarProperty Name="Numdoc" ColumnName="Numdoc" />
+                <ScalarProperty Name="RucCedula" ColumnName="RucCedula" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="MedicoTratante" ColumnName="MedicoTratante" />
+                <ScalarProperty Name="ATE_CODIGO" ColumnName="ATE_CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacturaPago">
+            <EntityTypeMapping TypeName="Sic3000Model.FacturaPago">
+              <MappingFragment StoreEntitySet="FacturaPago">
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="tipomov" ColumnName="tipomov" />
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="parcial" ColumnName="parcial" />
+                <ScalarProperty Name="parcial1" ColumnName="parcial1" />
+                <ScalarProperty Name="claspag" ColumnName="claspag" />
+                <ScalarProperty Name="tipoventa" ColumnName="tipoventa" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="numcuenta_tarj" ColumnName="numcuenta_tarj" />
+                <ScalarProperty Name="cheque_caduca" ColumnName="cheque_caduca" />
+                <ScalarProperty Name="dueño" ColumnName="dueño" />
+                <ScalarProperty Name="autoriza" ColumnName="autoriza" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="fila" ColumnName="fila" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="cajero" ColumnName="cajero" />
+                <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+                <ScalarProperty Name="local" ColumnName="local" />
+                <ScalarProperty Name="Arqueada" ColumnName="Arqueada" />
+                <ScalarProperty Name="imprime" ColumnName="imprime" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="CodPlazo" ColumnName="CodPlazo" />
+                <ScalarProperty Name="consec" ColumnName="consec" />
+                <ScalarProperty Name="asientoContable" ColumnName="asientoContable" />
+                <ScalarProperty Name="tipoAsiento" ColumnName="tipoAsiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Forma_Pago">
+            <EntityTypeMapping TypeName="Sic3000Model.Forma_Pago">
+              <MappingFragment StoreEntitySet="Forma_Pago">
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="despag" ColumnName="despag" />
+                <ScalarProperty Name="codcue" ColumnName="codcue" />
+                <ScalarProperty Name="ActivarFactura" ColumnName="ActivarFactura" />
+                <ScalarProperty Name="ActivarCuentas" ColumnName="ActivarCuentas" />
+                <ScalarProperty Name="ActivarProveedor" ColumnName="ActivarProveedor" />
+                <ScalarProperty Name="comision" ColumnName="comision" />
+                <ScalarProperty Name="tPago" ColumnName="tPago" />
+                <ScalarProperty Name="CXC" ColumnName="CXC" />
+                <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+                <ScalarProperty Name="ActivarFacturaHis" ColumnName="ActivarFacturaHis" />
+                <ScalarProperty Name="activarLiqTarjeta" ColumnName="activarLiqTarjeta" />
+                <ScalarProperty Name="activarPagTarjeta" ColumnName="activarPagTarjeta" />
+                <ScalarProperty Name="CodigoSRI" ColumnName="CodigoSRI" />
+                <ScalarProperty Name="activaAnticipo" ColumnName="activaAnticipo" />
+                <ScalarProperty Name="asientoContable" ColumnName="asientoContable" />
+                <ScalarProperty Name="tipoAsiento" ColumnName="tipoAsiento" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="codigocg" ColumnName="codigocg" />
+                <ScalarProperty Name="codclisic" ColumnName="codclisic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kardex">
+            <EntityTypeMapping TypeName="Sic3000Model.Kardex">
+              <MappingFragment StoreEntitySet="Kardex">
+                <ScalarProperty Name="codpro" ColumnName="codpro" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+                <ScalarProperty Name="codlocal" ColumnName="codlocal" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ingreso" ColumnName="ingreso" />
+                <ScalarProperty Name="egreso" ColumnName="egreso" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+                <ScalarProperty Name="codusu" ColumnName="codusu" />
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="costotot" ColumnName="costotot" />
+                <ScalarProperty Name="costo2" ColumnName="costo2" />
+                <ScalarProperty Name="fecha_aux" ColumnName="fecha_aux" />
+                <ScalarProperty Name="codprv" ColumnName="codprv" />
+                <ScalarProperty Name="venta" ColumnName="venta" />
+                <ScalarProperty Name="codgru" ColumnName="codgru" />
+                <ScalarProperty Name="codsec" ColumnName="codsec" />
+                <ScalarProperty Name="coddep" ColumnName="coddep" />
+                <ScalarProperty Name="codsub" ColumnName="codsub" />
+                <ScalarProperty Name="coddiv" ColumnName="coddiv" />
+                <ScalarProperty Name="auxFecha" ColumnName="auxFecha" />
+                <ScalarProperty Name="totCosto2" ColumnName="totCosto2" />
+                <ScalarProperty Name="signo" ColumnName="signo" />
+                <ScalarProperty Name="HistoriaClinica" ColumnName="HistoriaClinica" />
+                <ScalarProperty Name="AtencionCodigo" ColumnName="AtencionCodigo" />
+                <ScalarProperty Name="Factura" ColumnName="Factura" />
+                <ScalarProperty Name="IdKardex" ColumnName="IdKardex" />
+                <ScalarProperty Name="asientoContable" ColumnName="asientoContable" />
+                <ScalarProperty Name="tipoAsiento" ColumnName="tipoAsiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nota">
+            <EntityTypeMapping TypeName="Sic3000Model.Nota">
+              <MappingFragment StoreEntitySet="Nota">
+                <ScalarProperty Name="numnot" ColumnName="numnot" />
+                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+                <ScalarProperty Name="codloc" ColumnName="codloc" />
+                <ScalarProperty Name="codven" ColumnName="codven" />
+                <ScalarProperty Name="numfac" ColumnName="numfac" />
+                <ScalarProperty Name="tipcli" ColumnName="tipcli" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="pordes" ColumnName="pordes" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="desctot" ColumnName="desctot" />
+                <ScalarProperty Name="totsiva" ColumnName="totsiva" />
+                <ScalarProperty Name="totciva" ColumnName="totciva" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="regalia" ColumnName="regalia" />
+                <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+                <ScalarProperty Name="cancelado" ColumnName="cancelado" />
+                <ScalarProperty Name="items" ColumnName="items" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="nomcli" ColumnName="nomcli" />
+                <ScalarProperty Name="dircli" ColumnName="dircli" />
+                <ScalarProperty Name="telcli" ColumnName="telcli" />
+                <ScalarProperty Name="ruccli" ColumnName="ruccli" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="numguirem" ColumnName="numguirem" />
+                <ScalarProperty Name="motivo" ColumnName="motivo" />
+                <ScalarProperty Name="ructra" ColumnName="ructra" />
+                <ScalarProperty Name="nomtra" ColumnName="nomtra" />
+                <ScalarProperty Name="codcobcli" ColumnName="codcobcli" />
+                <ScalarProperty Name="codvencli" ColumnName="codvencli" />
+                <ScalarProperty Name="fecven" ColumnName="fecven" />
+                <ScalarProperty Name="numorden" ColumnName="numorden" />
+                <ScalarProperty Name="porven" ColumnName="porven" />
+                <ScalarProperty Name="formpagPro" ColumnName="formpagPro" />
+                <ScalarProperty Name="validez" ColumnName="validez" />
+                <ScalarProperty Name="tiempoentrega" ColumnName="tiempoentrega" />
+                <ScalarProperty Name="numfac2" ColumnName="numfac2" />
+                <ScalarProperty Name="porcobrar" ColumnName="porcobrar" />
+                <ScalarProperty Name="Impresa" ColumnName="Impresa" />
+                <ScalarProperty Name="cajero" ColumnName="cajero" />
+                <ScalarProperty Name="subt_Dev" ColumnName="subt_Dev" />
+                <ScalarProperty Name="coniva_Dev" ColumnName="coniva_Dev" />
+                <ScalarProperty Name="siniva_Dev" ColumnName="siniva_Dev" />
+                <ScalarProperty Name="desct_Dev" ColumnName="desct_Dev" />
+                <ScalarProperty Name="iva_Dev" ColumnName="iva_Dev" />
+                <ScalarProperty Name="Tot_Dev" ColumnName="Tot_Dev" />
+                <ScalarProperty Name="pormayor" ColumnName="pormayor" />
+                <ScalarProperty Name="facturada" ColumnName="facturada" />
+                <ScalarProperty Name="coniva" ColumnName="coniva" />
+                <ScalarProperty Name="imprimedesct" ColumnName="imprimedesct" />
+                <ScalarProperty Name="autorizacion" ColumnName="autorizacion" />
+                <ScalarProperty Name="GrupoCliente" ColumnName="GrupoCliente" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="ConvId" ColumnName="ConvId" />
+                <ScalarProperty Name="tipfac" ColumnName="tipfac" />
+                <ScalarProperty Name="codpaciente" ColumnName="codpaciente" />
+                <ScalarProperty Name="formatoFactura" ColumnName="formatoFactura" />
+                <ScalarProperty Name="FecServicio" ColumnName="FecServicio" />
+                <ScalarProperty Name="porcentajeIva" ColumnName="porcentajeIva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Numero_Control">
+            <EntityTypeMapping TypeName="Sic3000Model.Numero_Control">
+              <MappingFragment StoreEntitySet="Numero_Control">
+                <ScalarProperty Name="codcon" ColumnName="codcon" />
+                <ScalarProperty Name="modcon" ColumnName="modcon" />
+                <ScalarProperty Name="tipcon" ColumnName="tipcon" />
+                <ScalarProperty Name="numcon" ColumnName="numcon" />
+                <ScalarProperty Name="ocupado" ColumnName="ocupado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagos">
+            <EntityTypeMapping TypeName="Sic3000Model.Pagos">
+              <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="numpag" ColumnName="numpag" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="codcli" ColumnName="codcli" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="pago" ColumnName="pago" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="pagado" ColumnName="pagado" />
+                <ScalarProperty Name="reten_iva" ColumnName="reten_iva" />
+                <ScalarProperty Name="valor_ri" ColumnName="valor_ri" />
+                <ScalarProperty Name="reten_fuente" ColumnName="reten_fuente" />
+                <ScalarProperty Name="valor_rf" ColumnName="valor_rf" />
+                <ScalarProperty Name="pagos1" ColumnName="pagos" />
+                <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+                <ScalarProperty Name="codresp" ColumnName="codresp" />
+                <ScalarProperty Name="consec" ColumnName="consec" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="numliquidacion" ColumnName="numliquidacion" />
+                <ScalarProperty Name="asicon" ColumnName="asicon" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="Id_Pagos" ColumnName="Id_Pagos" />
+                <ScalarProperty Name="fila_cxc" ColumnName="fila_cxc" />
+                <ScalarProperty Name="Arqueada" ColumnName="Arqueada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="Sic3000Model.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="codpro" ColumnName="codpro" />
+                <ScalarProperty Name="despro" ColumnName="despro" />
+                <ScalarProperty Name="codbar" ColumnName="codbar" />
+                <ScalarProperty Name="tippro" ColumnName="tippro" />
+                <ScalarProperty Name="codgru" ColumnName="codgru" />
+                <ScalarProperty Name="codsec" ColumnName="codsec" />
+                <ScalarProperty Name="coddep" ColumnName="coddep" />
+                <ScalarProperty Name="codsub" ColumnName="codsub" />
+                <ScalarProperty Name="coddiv" ColumnName="coddiv" />
+                <ScalarProperty Name="codmar" ColumnName="codmar" />
+                <ScalarProperty Name="despro2" ColumnName="despro2" />
+                <ScalarProperty Name="uniman" ColumnName="uniman" />
+                <ScalarProperty Name="feccre" ColumnName="feccre" />
+                <ScalarProperty Name="colsab" ColumnName="colsab" />
+                <ScalarProperty Name="talla" ColumnName="talla" />
+                <ScalarProperty Name="preven" ColumnName="preven" />
+                <ScalarProperty Name="preven2" ColumnName="preven2" />
+                <ScalarProperty Name="precos" ColumnName="precos" />
+                <ScalarProperty Name="cospro" ColumnName="cospro" />
+                <ScalarProperty Name="exiqty" ColumnName="exiqty" />
+                <ScalarProperty Name="exipdc" ColumnName="exipdc" />
+                <ScalarProperty Name="exipdv" ColumnName="exipdv" />
+                <ScalarProperty Name="exisic" ColumnName="exisic" />
+                <ScalarProperty Name="fecsic" ColumnName="fecsic" />
+                <ScalarProperty Name="refer" ColumnName="refer" />
+                <ScalarProperty Name="codcuedeb" ColumnName="codcuedeb" />
+                <ScalarProperty Name="codcuehab" ColumnName="codcuehab" />
+                <ScalarProperty Name="codcuedes" ColumnName="codcuedes" />
+                <ScalarProperty Name="codcuedev" ColumnName="codcuedev" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="preuni" ColumnName="preuni" />
+                <ScalarProperty Name="regalia" ColumnName="regalia" />
+                <ScalarProperty Name="inv" ColumnName="inv" />
+                <ScalarProperty Name="preven_sin_iva" ColumnName="preven_sin_iva" />
+                <ScalarProperty Name="paga_iva" ColumnName="paga_iva" />
+                <ScalarProperty Name="paga_regalia" ColumnName="paga_regalia" />
+                <ScalarProperty Name="desind" ColumnName="desind" />
+                <ScalarProperty Name="codorigen" ColumnName="codorigen" />
+                <ScalarProperty Name="codcol" ColumnName="codcol" />
+                <ScalarProperty Name="stock_max" ColumnName="stock_max" />
+                <ScalarProperty Name="stock_min" ColumnName="stock_min" />
+                <ScalarProperty Name="espesor" ColumnName="espesor" />
+                <ScalarProperty Name="largo" ColumnName="largo" />
+                <ScalarProperty Name="ancho" ColumnName="ancho" />
+                <ScalarProperty Name="fechacad" ColumnName="fechacad" />
+                <ScalarProperty Name="fechacad1" ColumnName="fechacad1" />
+                <ScalarProperty Name="fabricante" ColumnName="fabricante" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="fecing" ColumnName="fecing" />
+                <ScalarProperty Name="valorUnidad" ColumnName="valorUnidad" />
+                <ScalarProperty Name="codsab" ColumnName="codsab" />
+                <ScalarProperty Name="fechaMod" ColumnName="fechaMod" />
+                <ScalarProperty Name="tamanio" ColumnName="tamanio" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="numserie" ColumnName="numserie" />
+                <ScalarProperty Name="coleccion" ColumnName="coleccion" />
+                <ScalarProperty Name="Temporada" ColumnName="Temporada" />
+                <ScalarProperty Name="PrePorMayor" ColumnName="PrePorMayor" />
+                <ScalarProperty Name="PreAnterior" ColumnName="PreAnterior" />
+                <ScalarProperty Name="CosAnterior" ColumnName="CosAnterior" />
+                <ScalarProperty Name="DescCosto1" ColumnName="DescCosto1" />
+                <ScalarProperty Name="DescCosto2" ColumnName="DescCosto2" />
+                <ScalarProperty Name="DescCosto3" ColumnName="DescCosto3" />
+                <ScalarProperty Name="DescCosto4" ColumnName="DescCosto4" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="PreRebaja" ColumnName="PreRebaja" />
+                <ScalarProperty Name="PreRebajaAntes" ColumnName="PreRebajaAntes" />
+                <ScalarProperty Name="fecIniPro" ColumnName="fecIniPro" />
+                <ScalarProperty Name="fecFinPro" ColumnName="fecFinPro" />
+                <ScalarProperty Name="fecIniPro1" ColumnName="fecIniPro1" />
+                <ScalarProperty Name="codubi" ColumnName="codubi" />
+                <ScalarProperty Name="fecFinPro1" ColumnName="fecFinPro1" />
+                <ScalarProperty Name="FecPreAct" ColumnName="FecPreAct" />
+                <ScalarProperty Name="FecPreMod" ColumnName="FecPreMod" />
+                <ScalarProperty Name="FecCosAct" ColumnName="FecCosAct" />
+                <ScalarProperty Name="FecCosMod" ColumnName="FecCosMod" />
+                <ScalarProperty Name="codNiv" ColumnName="codNiv" />
+                <ScalarProperty Name="codColUbi" ColumnName="codColUbi" />
+                <ScalarProperty Name="MargenUtilidad" ColumnName="MargenUtilidad" />
+                <ScalarProperty Name="PvPSinIva" ColumnName="PvPSinIva" />
+                <ScalarProperty Name="PorcenRecepcion" ColumnName="PorcenRecepcion" />
+                <ScalarProperty Name="Stocks" ColumnName="Stocks" />
+                <ScalarProperty Name="Abrevia" ColumnName="Abrevia" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="MargenAntes" ColumnName="MargenAntes" />
+                <ScalarProperty Name="fecMarAntes" ColumnName="fecMarAntes" />
+                <ScalarProperty Name="CantDecimal" ColumnName="CantDecimal" />
+                <ScalarProperty Name="costsuminis" ColumnName="costsuminis" />
+                <ScalarProperty Name="cantconv" ColumnName="cantconv" />
+                <ScalarProperty Name="costhelado" ColumnName="costhelado" />
+                <ScalarProperty Name="receta" ColumnName="receta" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="clasprod" ColumnName="clasprod" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="altoriesgo" ColumnName="altoriesgo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoDepartamento">
+            <EntityTypeMapping TypeName="Sic3000Model.ProductoDepartamento">
+              <MappingFragment StoreEntitySet="ProductoDepartamento">
+                <ScalarProperty Name="coddep" ColumnName="coddep" />
+                <ScalarProperty Name="desdep" ColumnName="desdep" />
+                <ScalarProperty Name="codSub" ColumnName="codSub" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoDivision">
+            <EntityTypeMapping TypeName="Sic3000Model.ProductoDivision">
+              <MappingFragment StoreEntitySet="ProductoDivision">
+                <ScalarProperty Name="coddiv" ColumnName="coddiv" />
+                <ScalarProperty Name="desdiv" ColumnName="desdiv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoGrupo">
+            <EntityTypeMapping TypeName="Sic3000Model.ProductoGrupo">
+              <MappingFragment StoreEntitySet="ProductoGrupo">
+                <ScalarProperty Name="codgru" ColumnName="codgru" />
+                <ScalarProperty Name="desgru" ColumnName="desgru" />
+                <ScalarProperty Name="codsec" ColumnName="codsec" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoSeccion">
+            <EntityTypeMapping TypeName="Sic3000Model.ProductoSeccion">
+              <MappingFragment StoreEntitySet="ProductoSeccion">
+                <ScalarProperty Name="codsec" ColumnName="codsec" />
+                <ScalarProperty Name="dessec" ColumnName="dessec" />
+                <ScalarProperty Name="coddep" ColumnName="coddep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoServicio">
+            <EntityTypeMapping TypeName="Sic3000Model.ProductoServicio">
+              <MappingFragment StoreEntitySet="ProductoServicio">
+                <ScalarProperty Name="codpro" ColumnName="codpro" />
+                <ScalarProperty Name="codpro1" ColumnName="codpro1" />
+                <ScalarProperty Name="codran" ColumnName="codran" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="pvp_sin_iva" ColumnName="pvp_sin_iva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductoSubdivision">
+            <EntityTypeMapping TypeName="Sic3000Model.ProductoSubdivision">
+              <MappingFragment StoreEntitySet="ProductoSubdivision">
+                <ScalarProperty Name="codsub" ColumnName="codsub" />
+                <ScalarProperty Name="dessub" ColumnName="dessub" />
+                <ScalarProperty Name="coddiv" ColumnName="coddiv" />
+                <ScalarProperty Name="Pea_Codigo_His" ColumnName="Pea_Codigo_His" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormasPago">
+            <EntityTypeMapping TypeName="Sic3000Model.FormasPago">
+              <MappingFragment StoreEntitySet="FormasPago">
+                <ScalarProperty Name="forpag" ColumnName="forpag" />
+                <ScalarProperty Name="despag" ColumnName="despag" />
+                <ScalarProperty Name="claspag" ColumnName="claspag" />
+                <ScalarProperty Name="codcue" ColumnName="codcue" />
+                <ScalarProperty Name="ActivarFactura" ColumnName="ActivarFactura" />
+                <ScalarProperty Name="ActivarCuentas" ColumnName="ActivarCuentas" />
+                <ScalarProperty Name="ActivarProveedor" ColumnName="ActivarProveedor" />
+                <ScalarProperty Name="comision" ColumnName="comision" />
+                <ScalarProperty Name="tPago" ColumnName="tPago" />
+                <ScalarProperty Name="CXC" ColumnName="CXC" />
+                <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+                <ScalarProperty Name="ActivarFacturaHis" ColumnName="ActivarFacturaHis" />
+                <ScalarProperty Name="activarLiqTarjeta" ColumnName="activarLiqTarjeta" />
+                <ScalarProperty Name="activarPagTarjeta" ColumnName="activarPagTarjeta" />
+                <ScalarProperty Name="CodigoSRI" ColumnName="CodigoSRI" />
+                <ScalarProperty Name="activaAnticipo" ColumnName="activaAnticipo" />
+                <ScalarProperty Name="asientoContable" ColumnName="asientoContable" />
+                <ScalarProperty Name="tipoAsiento" ColumnName="tipoAsiento" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_clasificacion_formapago" TypeName="Sic3000Model.FK_clasificacion_formapago" StoreEntitySet="Forma_Pago">
+            <EndProperty Name="Clasificacion">
+              <ScalarProperty Name="codclas" ColumnName="claspag" />
+            </EndProperty>
+            <EndProperty Name="Forma_Pago">
+              <ScalarProperty Name="forpag" ColumnName="forpag" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="claspag" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Nota_CLiente" TypeName="Sic3000Model.FK_Nota_CLiente" StoreEntitySet="Nota">
+            <EndProperty Name="Cliente">
+              <ScalarProperty Name="codcli" ColumnName="codcli" />
+            </EndProperty>
+            <EndProperty Name="Nota">
+              <ScalarProperty Name="numnot" ColumnName="numnot" />
+              <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="codcli" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Pago_DetallePgo" TypeName="Sic3000Model.FK_Pago_DetallePgo" StoreEntitySet="DetallePago">
+            <EndProperty Name="Pagos">
+              <ScalarProperty Name="Id_Pagos" ColumnName="Id_Pagos" />
+            </EndProperty>
+            <EndProperty Name="DetallePago">
+              <ScalarProperty Name="numpag" ColumnName="numpag" />
+              <ScalarProperty Name="forpag" ColumnName="forpag" />
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="Id_Pagos" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

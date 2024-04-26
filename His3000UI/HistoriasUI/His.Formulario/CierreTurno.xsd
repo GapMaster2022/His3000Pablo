@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CierreTurno" targetNamespace="http://tempuri.org/CierreTurno.xsd" xmlns:mstns="http://tempuri.org/CierreTurno.xsd" xmlns="http://tempuri.org/CierreTurno.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CierreTurno" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CierreTurno" msprop:Generator_UserDSName="CierreTurno">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CIERRE_TURNO" msprop:Generator_TableClassName="CIERRE_TURNODataTable" msprop:Generator_TableVarName="tableCIERRE_TURNO" msprop:Generator_RowChangedName="CIERRE_TURNORowChanged" msprop:Generator_TablePropName="CIERRE_TURNO" msprop:Generator_RowDeletingName="CIERRE_TURNORowDeleting" msprop:Generator_RowChangingName="CIERRE_TURNORowChanging" msprop:Generator_RowEvHandlerName="CIERRE_TURNORowChangeEventHandler" msprop:Generator_RowDeletedName="CIERRE_TURNORowDeleted" msprop:Generator_RowClassName="CIERRE_TURNORow" msprop:Generator_UserTableName="CIERRE_TURNO" msprop:Generator_RowEvArgName="CIERRE_TURNORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Paciente" msprop:Generator_ColumnVarNameInTable="columnPaciente" msprop:Generator_ColumnPropNameInRow="Paciente" msprop:Generator_ColumnPropNameInTable="PacienteColumn" msprop:Generator_UserColumnName="Paciente" type="xs:string" minOccurs="0" />
+              <xs:element name="Habitacion" msprop:Generator_ColumnVarNameInTable="columnHabitacion" msprop:Generator_ColumnPropNameInRow="Habitacion" msprop:Generator_ColumnPropNameInTable="HabitacionColumn" msprop:Generator_UserColumnName="Habitacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Hc" msprop:Generator_ColumnVarNameInTable="columnHc" msprop:Generator_ColumnPropNameInRow="Hc" msprop:Generator_ColumnPropNameInTable="HcColumn" msprop:Generator_UserColumnName="Hc" type="xs:string" minOccurs="0" />
+              <xs:element name="Atencion" msprop:Generator_ColumnVarNameInTable="columnAtencion" msprop:Generator_ColumnPropNameInRow="Atencion" msprop:Generator_ColumnPropNameInTable="AtencionColumn" msprop:Generator_UserColumnName="Atencion" type="xs:string" minOccurs="0" />
+              <xs:element name="Identificacion" msprop:Generator_ColumnVarNameInTable="columnIdentificacion" msprop:Generator_ColumnPropNameInRow="Identificacion" msprop:Generator_ColumnPropNameInTable="IdentificacionColumn" msprop:Generator_UserColumnName="Identificacion" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaIngreso" msprop:Generator_ColumnVarNameInTable="columnFechaIngreso" msprop:Generator_ColumnPropNameInRow="FechaIngreso" msprop:Generator_ColumnPropNameInTable="FechaIngresoColumn" msprop:Generator_UserColumnName="FechaIngreso" type="xs:string" minOccurs="0" />
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnPropNameInTable="LogoColumn" msprop:Generator_UserColumnName="Logo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Entidades</RootNamespace>
+    <AssemblyName>His.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Cliente\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CgModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CgModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Constantes.cs" />
+    <Compile Include="DsHonorarios.cs">
+      <DependentUpon>DsHonorarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsHonorarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsHonorarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsLiquidacion.cs">
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsLiquidacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtoAccesosHis.cs" />
+    <Compile Include="DtoAccesosPorPerfil.cs" />
+    <Compile Include="DtoAccesosSic.cs" />
+    <Compile Include="DtoAgendados.cs" />
+    <Compile Include="DtoAnamnesis.cs" />
+    <Compile Include="DtoAnamnesis_DA.cs" />
+    <Compile Include="DtoAtencionDatosAdicionales.cs" />
+    <Compile Include="DtoAtenciones.cs" />
+    <Compile Include="DtoAtencionesIng.cs" />
+    <Compile Include="DtoCajas.cs" />
+    <Compile Include="DtoCatalogoRecursivo.cs" />
+    <Compile Include="DtoCatalogos.cs" />
+    <Compile Include="DtoCatalogosLista.cs" />
+    <Compile Include="DtoCgDetmae.cs" />
+    <Compile Include="DtoCierreTurno.cs" />
+    <Compile Include="DtoCiudad.cs" />
+    <Compile Include="DtoConsultasWeb.cs" />
+    <Compile Include="DtoCopago.cs" />
+    <Compile Include="DtoCuentaAtencionesIESS.cs" />
+    <Compile Include="DtoCuentaCargas.cs" />
+    <Compile Include="DtoCuentasPacientes.cs" />
+    <Compile Include="DtoCXC.cs" />
+    <Compile Include="DtoDatosMicrofilms.cs" />
+    <Compile Include="DtoDepartamentos.cs" />
+    <Compile Include="DtoDespachos.cs" />
+    <Compile Include="DtoDetalleFactura.cs" />
+    <Compile Include="DtoDetalleHonorariosMedicos.cs" />
+    <Compile Include="DtoDetallePrefactura.cs" />
+    <Compile Include="DtoEstadoCuenta.cs" />
+    <Compile Include="DtoEstadoHabitacion.cs" />
+    <Compile Include="DtoExploSignosVitales.cs" />
+    <Compile Include="DtoFactura.cs" />
+    <Compile Include="DtoFacturaDetalleSic3000.cs" />
+    <Compile Include="DtoFacturaPago.cs" />
+    <Compile Include="DtoFacturaSic3000.cs" />
+    <Compile Include="DtoForm002.cs" />
+    <Compile Include="DtoFormaPago.cs" />
+    <Compile Include="DtoHabitaciones.cs" />
+    <Compile Include="DtoHabitacionesNiveles.cs" />
+    <Compile Include="DtoHabitacionesOcupadas.cs" />
+    <Compile Include="DtoHcCatalogoSubNivel.cs" />
+    <Compile Include="DtoHcEmergencias.cs" />
+    <Compile Include="DtoHCEX.cs" />
+    <Compile Include="DtoHonorariosMedicos.cs" />
+    <Compile Include="DtoHonorariosNotasDebito.cs" />
+    <Compile Include="DtoIess.cs" />
+    <Compile Include="DtoItemEliminadoCuentas.cs" />
+    <Compile Include="DtoLaboratorio.cs" />
+    <Compile Include="DtoLaboratorioEstructura.cs" />
+    <Compile Include="DtoLaboratorioVarios.cs" />
+    <Compile Include="DtoLocales.cs" />
+    <Compile Include="DtoMedicoCuentaContable.cs" />
+    <Compile Include="DtoMedicos.cs" />
+    <Compile Include="DtoMedicosConsulta.cs" />
+    <Compile Include="DtoModulo.cs" />
+    <Compile Include="DtoNotaCreditoDebito.cs" />
+    <Compile Include="DtoNumeroControlCajas.cs" />
+    <Compile Include="DtopAccesosOpciones.cs" />
+    <Compile Include="DtoPacienteDatosAdicioanles2.cs" />
+    <Compile Include="DtoPacienteDatosAdicionales.cs" />
+    <Compile Include="DtoPacienteReceta.cs" />
+    <Compile Include="DtoPacientes.cs" />
+    <Compile Include="DTOPacientesAtencion.cs" />
+    <Compile Include="DtoPacientesAud.cs" />
+    <Compile Include="DtoPacientesEmergencia.cs" />
+    <Compile Include="DtoPacientesImagen.cs" />
+    <Compile Include="DtoPacientesInfo.cs" />
+    <Compile Include="DtopAnulaCopago.cs" />
+    <Compile Include="DtoParametros.cs" />
+    <Compile Include="DtopCuenta.cs" />
+    <Compile Include="DtoPedidoDetalleOtros.cs" />
+    <Compile Include="DtoPedidoDevolucion.cs" />
+    <Compile Include="DtoPedidoDevolucionDetalle.cs" />
+    <Compile Include="DtoPedidoOtros.cs" />
+    <Compile Include="DtoPerfilAcceso.cs" />
+    <Compile Include="Clases\Sesion.cs" />
+    <Compile Include="DtoAccesoOpciones.cs" />
+    <Compile Include="DtoPerfilesProtocolo.cs" />
+    <Compile Include="DtoPreAdmision.cs" />
+    <Compile Include="DtoPreAtencion.cs" />
+    <Compile Include="DtoPreciosConvenios.cs" />
+    <Compile Include="DtoPreFactura.cs" />
+    <Compile Include="DtoProtocolos.cs" />
+    <Compile Include="DtopUsuariosPerfilesCg.cs" />
+    <Compile Include="DtoRegistrosAdmision.cs" />
+    <Compile Include="DtoReporteCopago.cs" />
+    <Compile Include="DtoRetenciones.cs" />
+    <Compile Include="DtoRetencionesAutomaticas.cs" />
+    <Compile Include="DtoRetencionFuente.cs" />
+    <Compile Include="DtoSignosVitales.cs" />
+    <Compile Include="DtoUsuarioReposion.cs" />
+    <Compile Include="DtoUsuarios.cs" />
+    <Compile Include="DtoUsuariosPerfil.cs" />
+    <Compile Include="DtoUsuariosPerfilesSic.cs" />
+    <Compile Include="DtoVistaCopago.cs" />
+    <Compile Include="DtoZonas.cs" />
+    <Compile Include="Enumerados.cs" />
+    <Compile Include="Especialidades.cs" />
+    <Compile Include="EVOLUCIONDETALLE.cs" />
+    <Compile Include="HisModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HisModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntHonorariosMedicos2.cs" />
+    <Compile Include="IngresaKardex.cs" />
+    <Compile Include="KardexCompuesto.cs" />
+    <Compile Include="KardexEnfermeriaMEdicamentos.cs" />
+    <Compile Include="ListaHonorariosTeam.cs" />
+    <Compile Include="NuevoAuditoria.cs" />
+    <Compile Include="OrganosSistemas.cs" />
+    <Compile Include="PedidoImagen.cs" />
+    <Compile Include="PedidoImagen_diagnostico.cs" />
+    <Compile Include="PedidoImagen_estudios.cs" />
+    <Compile Include="PedidoImagen_reporte.cs" />
+    <Compile Include="PedidoImagen_reporteDiagnosticos.cs" />
+    <Compile Include="Pedidos\DtoDetalleCuentaPaciente.cs" />
+    <Compile Include="Pedidos\DtoPedidos.cs" />
+    <Compile Include="PersonaCedula.cs" />
+    <Compile Include="PRODUCTOCOPAGO.cs" />
+    <Compile Include="Productos\DtoProductos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCivil.cs" />
+    <Compile Include="RegistroCivilV2.cs" />
+    <Compile Include="RepoQuirofano.cs" />
+    <Compile Include="Reportes\ReporteAdmisionEgreso.cs" />
+    <Compile Include="Reportes\ReporteAdmisionPrimeraAtencion.cs" />
+    <Compile Include="Reportes\ReporteAdmisionPrimeraCambios.cs" />
+    <Compile Include="Reportes\ReporteAdmisionPrimeraRegistro.cs" />
+    <Compile Include="Reportes\ReporteAnamnesis.cs" />
+    <Compile Include="Reportes\ReporteCertiticadoMedico.cs" />
+    <Compile Include="Reportes\ReporteCuentaPaciente.cs" />
+    <Compile Include="Reportes\ReporteDetalleCuenta.cs" />
+    <Compile Include="Reportes\ReporteEgresoHospitalario.cs" />
+    <Compile Include="Reportes\ReporteEpicrisis2.cs" />
+    <Compile Include="Reportes\ReporteEvolucion.cs" />
+    <Compile Include="Reportes\ReporteEvolucionDetalle.cs" />
+    <Compile Include="Reportes\ReporteFactura.cs" />
+    <Compile Include="Reportes\ReporteFacturaDetalle.cs" />
+    <Compile Include="Reportes\ReporteForm008.cs" />
+    <Compile Include="Reportes\ReporteForm008E.cs" />
+    <Compile Include="Reportes\ReporteInterconsulta.cs" />
+    <Compile Include="Reportes\ReporteOdontologia.cs" />
+    <Compile Include="Reportes\ReporteProtocoloOperatorio.cs" />
+    <Compile Include="SeriesModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SeriesModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\DtoLstIngresoSala.cs" />
+    <Compile Include="SicModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SicModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs" />
+    <Compile Include="ValidaNube.cs" />
+    <Compile Include="vendedor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="HisModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HisModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="CgModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CgModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CgModelo.edmx.diagram">
+      <DependentUpon>CgModelo.edmx</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="DsHonorarios.xsc">
+      <DependentUpon>DsHonorarios.xsd</DependentUpon>
+    </None>
+    <None Include="DsHonorarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsHonorarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsHonorarios.xss">
+      <DependentUpon>DsHonorarios.xsd</DependentUpon>
+    </None>
+    <None Include="DsLiquidacion.xsc">
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </None>
+    <None Include="DsLiquidacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsLiquidacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsLiquidacion.xss">
+      <DependentUpon>DsLiquidacion.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="SeriesModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SeriesModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SeriesModelo.edmx.diagram">
+      <DependentUpon>SeriesModelo.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SicModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SicModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SicModelo.edmx.diagram">
+      <DependentUpon>SicModelo.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

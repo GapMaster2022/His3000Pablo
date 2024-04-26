@@ -1,0 +1,15 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="His.HabitacionesUI.EstadosHabitaciones"
+	x:Name="Window"
+	Title="EstadosHabitaciones"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot" Background="LightGray" >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.136*"/>
+			<ColumnDefinition Width="0.864*"/>
+		</Grid.ColumnDefinitions>
+	</Grid>
+</Window>

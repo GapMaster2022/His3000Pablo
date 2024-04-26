@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsAdmision" targetNamespace="http://tempuri.org/dtsAdmision.xsd" xmlns:mstns="http://tempuri.org/dtsAdmision.xsd" xmlns="http://tempuri.org/dtsAdmision.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsAdmision" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsAdmision" msprop:Generator_UserDSName="dtsAdmision">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Garantias" msprop:Generator_TableClassName="GarantiasDataTable" msprop:Generator_RowEvArgName="GarantiasRowChangeEvent" msprop:Generator_TableVarName="tableGarantias" msprop:Generator_TablePropName="Garantias" msprop:Generator_RowDeletingName="GarantiasRowDeleting" msprop:Generator_RowChangingName="GarantiasRowChanging" msprop:Generator_RowEvHandlerName="GarantiasRowChangeEventHandler" msprop:Generator_RowDeletedName="GarantiasRowDeleted" msprop:Generator_RowChangedName="GarantiasRowChanged" msprop:Generator_UserTableName="Garantias" msprop:Generator_RowClassName="GarantiasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombrePaciente" msprop:Generator_ColumnVarNameInTable="columnNombrePaciente" msprop:Generator_ColumnPropNameInRow="NombrePaciente" msprop:Generator_ColumnPropNameInTable="NombrePacienteColumn" msprop:Generator_UserColumnName="NombrePaciente" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaGarantia" msprop:Generator_ColumnVarNameInTable="columnFechaGarantia" msprop:Generator_ColumnPropNameInRow="FechaGarantia" msprop:Generator_ColumnPropNameInTable="FechaGarantiaColumn" msprop:Generator_UserColumnName="FechaGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="Cajero" msprop:Generator_ColumnVarNameInTable="columnCajero" msprop:Generator_ColumnPropNameInRow="Cajero" msprop:Generator_ColumnPropNameInTable="CajeroColumn" msprop:Generator_UserColumnName="Cajero" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoGarantia" msprop:Generator_ColumnVarNameInTable="columnTipoGarantia" msprop:Generator_ColumnPropNameInRow="TipoGarantia" msprop:Generator_ColumnPropNameInTable="TipoGarantiaColumn" msprop:Generator_UserColumnName="TipoGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="ValorGarantia" msprop:Generator_ColumnVarNameInTable="columnValorGarantia" msprop:Generator_ColumnPropNameInRow="ValorGarantia" msprop:Generator_ColumnPropNameInTable="ValorGarantiaColumn" msprop:Generator_UserColumnName="ValorGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="DescripcionGarantia" msprop:Generator_ColumnVarNameInTable="columnDescripcionGarantia" msprop:Generator_ColumnPropNameInRow="DescripcionGarantia" msprop:Generator_ColumnPropNameInTable="DescripcionGarantiaColumn" msprop:Generator_UserColumnName="DescripcionGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="NumDocumentoGarantia" msprop:Generator_ColumnVarNameInTable="columnNumDocumentoGarantia" msprop:Generator_ColumnPropNameInRow="NumDocumentoGarantia" msprop:Generator_ColumnPropNameInTable="NumDocumentoGarantiaColumn" msprop:Generator_UserColumnName="NumDocumentoGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="CedulaPaciente" msprop:Generator_ColumnVarNameInTable="columnCedulaPaciente" msprop:Generator_ColumnPropNameInRow="CedulaPaciente" msprop:Generator_ColumnPropNameInTable="CedulaPacienteColumn" msprop:Generator_UserColumnName="CedulaPaciente" type="xs:string" minOccurs="0" />
+              <xs:element name="CedulaGarante" msprop:Generator_ColumnVarNameInTable="columnCedulaGarante" msprop:Generator_ColumnPropNameInRow="CedulaGarante" msprop:Generator_ColumnPropNameInTable="CedulaGaranteColumn" msprop:Generator_UserColumnName="CedulaGarante" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreGarante" msprop:Generator_ColumnVarNameInTable="columnNombreGarante" msprop:Generator_ColumnPropNameInRow="NombreGarante" msprop:Generator_ColumnPropNameInTable="NombreGaranteColumn" msprop:Generator_UserColumnName="NombreGarante" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GarantiaBloque" msprop:Generator_TableClassName="GarantiaBloqueDataTable" msprop:Generator_RowEvArgName="GarantiaBloqueRowChangeEvent" msprop:Generator_TableVarName="tableGarantiaBloque" msprop:Generator_TablePropName="GarantiaBloque" msprop:Generator_RowDeletingName="GarantiaBloqueRowDeleting" msprop:Generator_RowChangingName="GarantiaBloqueRowChanging" msprop:Generator_RowEvHandlerName="GarantiaBloqueRowChangeEventHandler" msprop:Generator_RowDeletedName="GarantiaBloqueRowDeleted" msprop:Generator_RowChangedName="GarantiaBloqueRowChanged" msprop:Generator_UserTableName="GarantiaBloque" msprop:Generator_RowClassName="GarantiaBloqueRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombrePaciente" msprop:Generator_ColumnVarNameInTable="columnNombrePaciente" msprop:Generator_ColumnPropNameInRow="NombrePaciente" msprop:Generator_ColumnPropNameInTable="NombrePacienteColumn" msprop:Generator_UserColumnName="NombrePaciente" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaGarantia" msprop:Generator_ColumnVarNameInTable="columnFechaGarantia" msprop:Generator_ColumnPropNameInRow="FechaGarantia" msprop:Generator_ColumnPropNameInTable="FechaGarantiaColumn" msprop:Generator_UserColumnName="FechaGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoGarantia" msprop:Generator_ColumnVarNameInTable="columnTipoGarantia" msprop:Generator_ColumnPropNameInRow="TipoGarantia" msprop:Generator_ColumnPropNameInTable="TipoGarantiaColumn" msprop:Generator_UserColumnName="TipoGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="ValorGarantia" msprop:Generator_ColumnVarNameInTable="columnValorGarantia" msprop:Generator_ColumnPropNameInRow="ValorGarantia" msprop:Generator_ColumnPropNameInTable="ValorGarantiaColumn" msprop:Generator_UserColumnName="ValorGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="ObservacionGarantia" msprop:Generator_ColumnVarNameInTable="columnObservacionGarantia" msprop:Generator_ColumnPropNameInRow="ObservacionGarantia" msprop:Generator_ColumnPropNameInTable="ObservacionGarantiaColumn" msprop:Generator_UserColumnName="ObservacionGarantia" type="xs:string" minOccurs="0" />
+              <xs:element name="Responsable" msprop:Generator_ColumnVarNameInTable="columnResponsable" msprop:Generator_ColumnPropNameInRow="Responsable" msprop:Generator_ColumnPropNameInTable="ResponsableColumn" msprop:Generator_UserColumnName="Responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

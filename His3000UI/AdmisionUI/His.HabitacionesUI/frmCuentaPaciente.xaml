@@ -1,0 +1,58 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:igDP="http://infragistics.com/DataPresenter" xmlns:igEditors="http://infragistics.com/Editors" mc:Ignorable="d" x:Class="His.HabitacionesUI.frmCuentaPaciente"
+    Title="frmCuentaPaciente" Height="522" Width="712">
+	<Grid Background="{DynamicResource backGroundVentana1}">
+		<Rectangle Margin="24,22,20.624,0" Stroke="#FF9F9F9F" RadiusX="15" RadiusY="15" Height="175" VerticalAlignment="Top" StrokeThickness="3" d:LayoutOverrides="VerticalAlignment">
+			<Rectangle.Fill>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FFEFEFEF" Offset="0.953"/>
+					<GradientStop Color="#FFD0E3FB" Offset="1"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+        
+		<igDP:XamDataPresenter Margin="24,217,20.624,24.5" x:Name="xamDataPresenterProductos" Theme="Office2k7Blue"  Background="White" d:LayoutOverrides="GridBox">
+			<igDP:XamDataPresenter.FieldLayoutSettings>
+				<igDP:FieldLayoutSettings AllowDelete="False" />
+			</igDP:XamDataPresenter.FieldLayoutSettings>
+			<igDP:XamDataPresenter.FieldLayouts>
+				<igDP:FieldLayout Key="ProductosLayout">
+					<igDP:Field Name='PRO_CODIGO'  Label=' Código ' Width='50'/>
+					<igDP:Field Name='PRO_NOMBRE_GENERICO'  Label=' Nombre genérico' Width='100'/>
+					<igDP:Field Name='PRO_NOMBRE_COMERCIAL'  Label=' Nombre comercial ' Width='100'/>
+					<igDP:Field Name='PRO_CANTIDAD'  Label=' Cantidad ' Width='40'/>
+					<igDP:Field Name='PRO_DESCRIPCION'  Label=' Descripción ' Width='150'/>
+					<igDP:Field Name='PRO_CONC'  Label=' Concentración ' Width='70'/>
+					<igDP:Field Name='PRO_FF'  Label=' Forma farmacéutica ' Width='100'/>
+					<igDP:Field Name='PRO_PRESENTACION'  Label=' Presentación ' Width='100'/>
+					<igDP:Field Name='PRO_VIA_ADMINISTRACION'  Label=' Vía administración ' Width='70'/>
+					<igDP:Field Name='PRO_REFERENCIA'  Label=' Referencia ' Width='70'/>
+					<igDP:Field Name='PRO_ACCION_TERAPEUTICA'  Label=' Acción terapéutica ' Width='70'/>
+					<igDP:Field Name='PRO_OBSERVACION'  Label=' Observación ' Width='120'/>
+					<igDP:Field Name='PRO_PRECIO'  Label=' Precio ' Width='60'/>
+					<igDP:Field Name='PRO_IVA'  Label=' Iva ' Width='60'/>
+					<igDP:Field Name='PRO_CODIGO_BARRAS' Visibility='Collapsed' />
+					<igDP:Field Name='PRO_ESTADO' Visibility='Collapsed' />
+				</igDP:FieldLayout>
+			</igDP:XamDataPresenter.FieldLayouts>
+			<igDP:XamDataPresenter.FieldSettings>
+				<igDP:FieldSettings AllowEdit="False" AllowRecordFiltering="True" CellClickAction="SelectCell" FilterOperatorDefaultValue="Contains" />
+			</igDP:XamDataPresenter.FieldSettings>
+		</igDP:XamDataPresenter>
+		<Label Height="20" Margin="274.086,41,290,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Datos del Paciente" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15"/>
+		<Label Height="20" Margin="101.586,69,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Nombres:" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15" HorizontalAlignment="Left" Width="119.414"/>
+		<Label Height="20" Margin="101.758,169,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Datos de Paciente" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15" HorizontalAlignment="Left" Width="119.414"/>
+		<Label Height="20" Margin="101.758,143,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Telefono:" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15" HorizontalAlignment="Left" Width="119.414"/>
+		<Label Height="20" Margin="0,115,146,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Edad:" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15" HorizontalAlignment="Right" Width="82"/>
+		<Label Height="20" Margin="101.586,117,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Sexo:" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15" HorizontalAlignment="Left" Width="119.414"/>
+		<Label Height="20" Margin="101.586,93,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" FontSize="12" Content="Dirección:" FontWeight="Bold" Foreground="#FF151352" RenderTransformOrigin="0.498,-0.15" HorizontalAlignment="Left" Width="119.414"/>
+        
+		<igEditors:XamTextEditor Height="16" Margin="221,69,65,0" x:Name="txtBuscar" VerticalAlignment="Top" Theme="Office2k7Silver" Background="White"  d:LayoutOverrides="GridBox" />
+		<igEditors:XamTextEditor Height="16" Margin="221,93,65,0" x:Name="txtBuscar_Copy" VerticalAlignment="Top" Theme="Office2k7Silver" Background="White"  d:LayoutOverrides="GridBox" />
+		<igEditors:XamTextEditor Height="16" Margin="221,117,0,0" x:Name="txtBuscar_Copy1" VerticalAlignment="Top" Theme="Office2k7Silver" Background="White"  d:LayoutOverrides="GridBox" HorizontalAlignment="Left" Width="120" />
+		<igEditors:XamTextEditor Height="16" Margin="0,115,65,0" x:Name="txtBuscar_Copy2" VerticalAlignment="Top" Theme="Office2k7Silver" Background="White"  d:LayoutOverrides="GridBox" HorizontalAlignment="Right" Width="120" />
+		<igEditors:XamTextEditor Height="16" Margin="221,139,329.166,0" x:Name="txtBuscar_Copy3" VerticalAlignment="Top" Theme="Office2k7Silver" Background="White"  d:LayoutOverrides="GridBox" />
+    </Grid>
+</Window>

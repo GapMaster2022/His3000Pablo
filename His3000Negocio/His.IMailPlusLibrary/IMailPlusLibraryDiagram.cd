@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="IMailPlusLibrary.Entities.MailMessage">
+    <Position X="0.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Entities\MailMessage.cs</FileName>
+      <HashCode>BoAAgAAJAAgAgEAAFcEAAAAAAjAIAAiFEAAEISJAAAM=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="IMailPlusLibrary.Entities.POPMessage">
+    <Position X="0.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Entities\POPMessage.cs</FileName>
+      <HashCode>AAAIgAAAAAIABAAAACEAAAAUAgAACECSAAAAAEAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="IMailPlusLibrary.Entities.MetaMessageInfo">
+    <Position X="5.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Entities\MetaMessageInfo.cs</FileName>
+      <HashCode>AAAAgAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAQQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.MailClients.EmailClient">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MailClients\EmailClient.cs</FileName>
+      <HashCode>AIQAIAAAACBAEABQQEAEAIAAAQAAQAACQQIAQhEACAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="IMailPlusLibrary.MailClients.POPEmailClient">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MailClients\POPEmailClient.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IMailPlusLibrary.EmailAccounts">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EmailAccounts.cs</FileName>
+      <HashCode>AAUCAAAAACQAAAAQSAAAAAAAAAAAQAACAQIkQlAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Enum Name="IMailPlusLibrary.EmailHeaders">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>EmailHeaders.cs</FileName>
+      <HashCode>AgAAQAABAAAAAAAAAIAAAAAAAQCIAAABAgAAAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

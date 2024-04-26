@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07DEBF16-2D60-4498-B511-FD2734659BEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Dietetica</RootNamespace>
+    <AssemblyName>His.Dietetica</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/His.Admision/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>food-meal_icon-icons.com_58144.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlexPilotti.FTPS.Client, Version=1.1.0.27735, Culture=neutral, PublicKeyToken=48316da1e84b328d, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="GeneralApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Documents.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinChart.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDock.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinMaskedEdit.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTree.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinCalcManager.v10.3.FormulaBuilder, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.SupportDialogs.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics3.Excel.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics3.Win.UltraWinGrid.ExcelExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="InfragisticsWPF3.DataPresenter.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="InfragisticsWPF3.Editors.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="InfragisticsWPF3.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutPE.Designer.cs">
+      <DependentUpon>AboutPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda.Designer.cs">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatosQuirofanoPedido.cs" />
+    <Compile Include="Datos\CambioEstadosCuentas.cs" />
+    <Compile Include="Datos\CuentaPaciente.cs" />
+    <Compile Include="Datos\Estaciones.cs" />
+    <Compile Include="Datos\GenerarPdf.cs" />
+    <Compile Include="Datos\ParametrosFTP.cs" />
+    <Compile Include="Datos\PedidosAreas.cs" />
+    <Compile Include="dsProcedimiento.cs">
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsProcedimiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EnviaEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnviaEmail.Designer.cs">
+      <DependentUpon>EnviaEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExploradorPedidoImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExploradorPedidoImagen.designer.cs">
+      <DependentUpon>ExploradorPedidoImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuxViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuxViewer.Designer.cs">
+      <DependentUpon>frmAuxViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmayudaProcedimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmayudaProcedimiento.designer.cs">
+      <DependentUpon>frmayudaProcedimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmayudaQuirofano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmayudaQuirofano.designer.cs">
+      <DependentUpon>frmayudaQuirofano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCargaDietas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargaDietas.Designer.cs">
+      <DependentUpon>frmCargaDietas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExploradorLaboratorioClinico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExploradorLaboratorioClinico.Designer.cs">
+      <DependentUpon>FrmExploradorLaboratorioClinico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExploradorLaboratorioPatologico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExploradorLaboratorioPatologico.Designer.cs">
+      <DependentUpon>FrmExploradorLaboratorioPatologico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExploradorProcedimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExploradorProcedimiento.Designer.cs">
+      <DependentUpon>frmExploradorProcedimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExploradorRubrosProcedimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExploradorRubrosProcedimiento.Designer.cs">
+      <DependentUpon>frmExploradorRubrosProcedimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGraficosProcedimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraficosProcedimientos.Designer.cs">
+      <DependentUpon>frmGraficosProcedimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPerfilesLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerfilesLaboratorio.Designer.cs">
+      <DependentUpon>FrmPerfilesLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuirofanoAgregarProcedimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuirofanoAgregarProcedimiento.designer.cs">
+      <DependentUpon>frmQuirofanoAgregarProcedimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuirofanoAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuirofanoAgregarProducto.designer.cs">
+      <DependentUpon>frmQuirofanoAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuirofanoAyudaRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuirofanoAyudaRegistro.designer.cs">
+      <DependentUpon>frmQuirofanoAyudaRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmquirofanopedidoadicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmquirofanopedidoadicional.designer.cs">
+      <DependentUpon>frmquirofanopedidoadicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuirofanoPedidoPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuirofanoPedidoPaciente.designer.cs">
+      <DependentUpon>frmQuirofanoPedidoPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuirofanoProductosDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuirofanoProductosDetalle.Designer.cs">
+      <DependentUpon>frmQuirofanoProductosDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuirofanoRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuirofanoRegistro.designer.cs">
+      <DependentUpon>frmQuirofanoRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AgregarProductosNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AgregarProductosNew.Designer.cs">
+      <DependentUpon>frm_AgregarProductosNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AyudaImagenPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AyudaImagenPaciente.Designer.cs">
+      <DependentUpon>frm_AyudaImagenPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HorarioExplorador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HorarioExplorador.Designer.cs">
+      <DependentUpon>frm_HorarioExplorador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HorarioLaboral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HorarioLaboral.Designer.cs">
+      <DependentUpon>frm_HorarioLaboral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ListaPedidosQuirofano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ListaPedidosQuirofano.Designer.cs">
+      <DependentUpon>frm_ListaPedidosQuirofano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuirofanoAgregarVarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuirofanoAgregarVarios.Designer.cs">
+      <DependentUpon>frm_QuirofanoAgregarVarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuirofanoDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuirofanoDevolucion.Designer.cs">
+      <DependentUpon>frm_QuirofanoDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuirofanoExploradorNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuirofanoExploradorNew.Designer.cs">
+      <DependentUpon>frm_QuirofanoExploradorNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuirofanoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuirofanoNuevo.Designer.cs">
+      <DependentUpon>frm_QuirofanoNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SolicitarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SolicitarProductos.Designer.cs">
+      <DependentUpon>frm_SolicitarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenAgendamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagenAgendamiento.designer.cs">
+      <DependentUpon>ImagenAgendamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenExamenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagenExamenes.Designer.cs">
+      <DependentUpon>ImagenExamenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenExamenesRealizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagenExamenesRealizados.Designer.cs">
+      <DependentUpon>ImagenExamenesRealizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagenInforme.Designer.cs">
+      <DependentUpon>ImagenInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagenInformeIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagenInformeIndex.Designer.cs">
+      <DependentUpon>ImagenInformeIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI_PE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_PE.Designer.cs">
+      <DependentUpon>MDI_PE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumerosLetras.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutPE.resx">
+      <DependentUpon>AboutPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda.resx">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnviaEmail.resx">
+      <DependentUpon>EnviaEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExploradorPedidoImagen.resx">
+      <DependentUpon>ExploradorPedidoImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuxViewer.resx">
+      <DependentUpon>frmAuxViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmayudaProcedimiento.resx">
+      <DependentUpon>frmayudaProcedimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmayudaQuirofano.resx">
+      <DependentUpon>frmayudaQuirofano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCargaDietas.resx">
+      <DependentUpon>frmCargaDietas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExploradorLaboratorioClinico.resx">
+      <DependentUpon>FrmExploradorLaboratorioClinico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExploradorLaboratorioPatologico.resx">
+      <DependentUpon>FrmExploradorLaboratorioPatologico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExploradorProcedimiento.resx">
+      <DependentUpon>frmExploradorProcedimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExploradorRubrosProcedimiento.resx">
+      <DependentUpon>frmExploradorRubrosProcedimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGraficosProcedimientos.resx">
+      <DependentUpon>frmGraficosProcedimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerfilesLaboratorio.resx">
+      <DependentUpon>FrmPerfilesLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuirofanoAgregarProcedimiento.resx">
+      <DependentUpon>frmQuirofanoAgregarProcedimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuirofanoAgregarProducto.resx">
+      <DependentUpon>frmQuirofanoAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuirofanoAyudaRegistro.resx">
+      <DependentUpon>frmQuirofanoAyudaRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmquirofanopedidoadicional.resx">
+      <DependentUpon>frmquirofanopedidoadicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuirofanoPedidoPaciente.resx">
+      <DependentUpon>frmQuirofanoPedidoPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuirofanoProductosDetalle.resx">
+      <DependentUpon>frmQuirofanoProductosDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuirofanoRegistro.resx">
+      <DependentUpon>frmQuirofanoRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AgregarProductosNew.resx">
+      <DependentUpon>frm_AgregarProductosNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AyudaImagenPaciente.resx">
+      <DependentUpon>frm_AyudaImagenPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HorarioExplorador.resx">
+      <DependentUpon>frm_HorarioExplorador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HorarioLaboral.resx">
+      <DependentUpon>frm_HorarioLaboral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ListaPedidosQuirofano.resx">
+      <DependentUpon>frm_ListaPedidosQuirofano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuirofanoAgregarVarios.resx">
+      <DependentUpon>frm_QuirofanoAgregarVarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuirofanoDevolucion.resx">
+      <DependentUpon>frm_QuirofanoDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuirofanoExploradorNew.resx">
+      <DependentUpon>frm_QuirofanoExploradorNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuirofanoNuevo.resx">
+      <DependentUpon>frm_QuirofanoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SolicitarProductos.resx">
+      <DependentUpon>frm_SolicitarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagenAgendamiento.resx">
+      <DependentUpon>ImagenAgendamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagenExamenes.resx">
+      <DependentUpon>ImagenExamenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagenExamenesRealizados.resx">
+      <DependentUpon>ImagenExamenesRealizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagenInforme.resx">
+      <DependentUpon>ImagenInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagenInformeIndex.resx">
+      <DependentUpon>ImagenInformeIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirPedido.rdlc" />
+    <EmbeddedResource Include="MDI_PE.resx">
+      <DependentUpon>MDI_PE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="dsProcedimiento.xsc">
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </None>
+    <None Include="dsProcedimiento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProcedimiento.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsProcedimiento.xss">
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CertificadoMedico.datasource" />
+    <None Include="Properties\DataSources\DatosQuirofanoPedido.datasource" />
+    <None Include="Properties\DataSources\His.Entidades.PACIENTES.datasource" />
+    <None Include="Properties\DataSources\ImpresionCertificado.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core.Utilitarios\Core.Utilitarios.csproj">
+      <Project>{E713939C-9F9D-43AE-A95D-A2844313D39A}</Project>
+      <Name>Core.Utilitarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Core.Datos\Core.Datos.csproj">
+      <Project>{19ACEFD2-D37B-4FD6-A5B8-A36E437AC94A}</Project>
+      <Name>Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Core.Entidades\Core.Entidades.csproj">
+      <Project>{3D7A1A75-226E-441F-85C6-7A186ADF0BB4}</Project>
+      <Name>Core.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Admision\His.Admision.csproj">
+      <Project>{5FDFD8B7-8C24-4568-91E8-C99C89108D6F}</Project>
+      <Name>His.Admision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.DatosReportes\His.DatosReportes.csproj">
+      <Project>{053A1C21-4C30-4B7E-BE9A-ED2D8F7DB7CF}</Project>
+      <Name>His.DatosReportes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Datos\His.Datos.csproj">
+      <Project>{99494169-AF26-4DBF-B140-D566F3D9AEB1}</Project>
+      <Name>His.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.EntidadesAdmision\His.EntidadesAdmision.csproj">
+      <Project>{6C736C02-D03F-4ACA-B2E1-4FD3D49F23FC}</Project>
+      <Name>His.EntidadesAdmision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Negocio\His.Negocio.csproj">
+      <Project>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</Project>
+      <Name>His.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Parametros\His.Parametros.csproj">
+      <Project>{1BAE75B8-EB2A-49C7-A158-54AE397450CB}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His3000Entidades\His.Entidades.General\His.Entidades.General.csproj">
+      <Project>{D7465D15-7567-424B-BDCC-0FE2A75E3DA0}</Project>
+      <Name>His.Entidades.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His3000Negocio\His.General\His.General.csproj">
+      <Project>{8A713189-DCE0-4674-A95C-0FB17EFED0D4}</Project>
+      <Name>His.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CuentaPacienteUI\CuentaPaciente\CuentaPacientes.csproj">
+      <Project>{42D897B6-B341-45F3-97CB-FE3C5670B3BD}</Project>
+      <Name>CuentaPacientes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.HabitacionesUI\His.HabitacionesUI.csproj">
+      <Project>{B4C01955-97D1-4E27-B1E2-536C9B8FFC4F}</Project>
+      <Name>His.HabitacionesUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\His.Honorarios\His.Honorarios.csproj">
+      <Project>{46D13EBA-7A43-457B-A0F7-0833C55C17A2}</Project>
+      <Name>His.Honorarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HistoriasUI\His.Formulario\His.Formulario.csproj">
+      <Project>{6E44C066-8AAE-40FA-97BA-ED6EF7DA08D5}</Project>
+      <Name>His.Formulario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recursos\His.Recursos.csproj">
+      <Project>{AD16CB7B-FCE5-40C2-B91B-12149F725119}</Project>
+      <Name>His.Recursos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="food-meal_icon-icons.com_58144.ico" />
+    <None Include="Resources\shopping-basket-remove_40512 %281%29.png" />
+    <None Include="Resources\shopping-basket-remove_40512.png" />
+    <None Include="Resources\HIS-SALIR.png" />
+    <None Include="Resources\HIS-IMPRIMIR.png" />
+    <None Include="Resources\HIS-EXPORT_TO_EXCEL.png" />
+    <None Include="Resources\HIS-REFRESH2.png" />
+    <None Include="Resources\HIS-REFRESH1.png" />
+    <None Include="Resources\Apply_32x32.png" />
+    <None Include="Resources\HIS-REFRESH.png" />
+    <None Include="Resources\file-edit_114433 %281%29.png" />
+    <None Include="Resources\HIS-CANCELAR.png" />
+    <None Include="Resources\file_type_excel_icon_130611.png" />
+    <None Include="Resources\microsoft_office_excel_logo_icon_145720.png" />
+    <None Include="Resources\Documents-blue.png" />
+    <None Include="Resources\Gnome-Document-Open-48.png" />
+    <None Include="Resources\Gnome-View-Sort-Descending-32.png" />
+    <None Include="Resources\shopping-basket-accept_40506.png" />
+    <None Include="Resources\document-edit_icon-icons.com_52428.png" />
+    <None Include="Resources\Save_37110.png" />
+    <None Include="Resources\Catalog_36769.png" />
+    <None Include="Resources\Options_36736.png" />
+    <None Include="Resources\logout_icon-icons.com_51025.png" />
+    <None Include="Resources\cancel_77947.png" />
+    <None Include="Resources\padlock_icon_129399.png" />
+    <None Include="Resources\businesspackage_additionalpackage_box_add_insert_negoci_2335.png" />
+    <None Include="Resources\add_insert_new_16746.png" />
+    <None Include="Resources\businesspackagewarningbox_negocio_paquete_advertencia_2337.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

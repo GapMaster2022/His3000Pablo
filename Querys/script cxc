@@ -1,0 +1,11 @@
+select * from Cg3000..Cgdetmae where nocomp = '001001000009828'
+
+select * from Sic3000..Forma_Pago where forpag = 123
+
+SELECT * FROM Sic3000..EstadoCuentas order by fecha2 desc
+
+select * from HONORARIOS_MEDICOS where HOM_CODIGO = 526
+
+select * from Cg3000..Cgdetmae where debe = 124.99 or haber = 124.99
+
+select * from Sic3000..Pagos where numpag = 2381

@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E44C066-8AAE-40FA-97BA-ED6EF7DA08D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Formulario</RootNamespace>
+    <AssemblyName>His.Formulario</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="GeneralApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\GeneralUI\obj\Debug\GeneralApp.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Documents.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinSpellChecker.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinListView.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\His.Honorarios\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\His.Honorarios\bin\Debug\office.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConexionEntidades.cs" />
+    <Compile Include="frmLaboratorioClinico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLaboratorioClinico.Designer.cs">
+      <DependentUpon>frmLaboratorioClinico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Anemnesis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Anemnesis.Designer.cs">
+      <DependentUpon>frm_Anemnesis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AyudaMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AyudaMedicos.Designer.cs">
+      <DependentUpon>frm_AyudaMedicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Ayudas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ayudas.Designer.cs">
+      <DependentUpon>frm_Ayudas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_BusquedaCIE10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BusquedaCIE10.Designer.cs">
+      <DependentUpon>frm_BusquedaCIE10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Documentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Documentos.Designer.cs">
+      <DependentUpon>frm_Documentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Emergencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Emergencia.Designer.cs">
+      <DependentUpon>frm_Emergencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Epicrisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Epicrisis.Designer.cs">
+      <DependentUpon>frm_Epicrisis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Evolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Evolucion.Designer.cs">
+      <DependentUpon>frm_Evolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_EvolucionEnfermeras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_EvolucionEnfermeras.Designer.cs">
+      <DependentUpon>frm_EvolucionEnfermeras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Imagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ImagenAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Interconsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Interconsulta.Designer.cs">
+      <DependentUpon>frm_Interconsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Odontograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Odontograma.Designer.cs">
+      <DependentUpon>frm_Odontograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Protocolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Protocolo.Designer.cs">
+      <DependentUpon>frm_Protocolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimeNotasEvolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimeNotasEvolucion.Designer.cs">
+      <DependentUpon>ImprimeNotasEvolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaEvoluciones.cs" />
+    <Compile Include="NotasEvolucionMedicos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasEvolucionMedicos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NotasIndividualesMedicos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasIndividualesMedicos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\DataGridViewCellEventArgs.cs" />
+    <EmbeddedResource Include="frmLaboratorioClinico.resx">
+      <DependentUpon>frmLaboratorioClinico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Anemnesis.resx">
+      <DependentUpon>frm_Anemnesis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ayudas.resx">
+      <DependentUpon>frm_Ayudas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_BusquedaCIE10.resx">
+      <DependentUpon>frm_BusquedaCIE10.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Documentos.resx">
+      <DependentUpon>frm_Documentos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Emergencia.resx">
+      <DependentUpon>frm_Emergencia.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Epicrisis.resx">
+      <DependentUpon>frm_Epicrisis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Evolucion.resx">
+      <DependentUpon>frm_Evolucion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_EvolucionEnfermeras.resx">
+      <DependentUpon>frm_EvolucionEnfermeras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Imagen.resx">
+      <DependentUpon>frm_Imagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ImagenAyuda.resx">
+      <DependentUpon>frm_ImagenAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Interconsulta.resx">
+      <DependentUpon>frm_Interconsulta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Odontograma.resx">
+      <DependentUpon>frm_Odontograma.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Protocolo.resx">
+      <DependentUpon>frm_Protocolo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimeNotasEvolucion.resx">
+      <DependentUpon>ImprimeNotasEvolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotasIndividuales.rdlc" />
+    <EmbeddedResource Include="NotasIndividualesMedicos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotasIndividualesMedicos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="NotasEvolucionMedicos.xsc">
+      <DependentUpon>NotasEvolucionMedicos.xsd</DependentUpon>
+    </None>
+    <None Include="NotasEvolucionMedicos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NotasEvolucionMedicos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NotasEvolucionMedicos.xss">
+      <DependentUpon>NotasEvolucionMedicos.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\NotaEvoluciones.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Recursos\es-spanish-v2-whole.dict">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Core.Datos\Core.Datos.csproj">
+      <Project>{19ACEFD2-D37B-4FD6-A5B8-A36E437AC94A}</Project>
+      <Name>Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.DatosReportes\His.DatosReportes.csproj">
+      <Project>{053A1C21-4C30-4B7E-BE9A-ED2D8F7DB7CF}</Project>
+      <Name>His.DatosReportes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Negocio\His.Negocio.csproj">
+      <Project>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</Project>
+      <Name>His.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Parametros\His.Parametros.csproj">
+      <Project>{1BAE75B8-EB2A-49C7-A158-54AE397450CB}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His3000Negocio\His.General\His.General.csproj">
+      <Project>{8A713189-DCE0-4674-A95C-0FB17EFED0D4}</Project>
+      <Name>His.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Recursos\His.Recursos.csproj">
+      <Project>{AD16CB7B-FCE5-40C2-B91B-12149F725119}</Project>
+      <Name>His.Recursos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

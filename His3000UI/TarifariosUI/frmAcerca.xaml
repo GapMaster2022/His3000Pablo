@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="TarifariosUI.frmAcerca"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="300" Width="375">
+    <UserControl.Resources>
+        <RadialGradientBrush x:Key="Milton4">
+            <GradientStop Color="#FFC2C2C2" Offset="0.536"/>
+            <GradientStop Color="#FF585858" Offset="1"/>
+            <GradientStop Color="#FF453838"/>
+        </RadialGradientBrush>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Height="300" Width="374">
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFCCCCCC" Offset="1"/>
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FFDBDBDB" Offset="0.684"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <TextBlock Margin="0,19,24,0" TextWrapping="Wrap" FontSize="14" Height="25" VerticalAlignment="Top" FontFamily="Stencil" HorizontalAlignment="Right" Width="91" Opacity="0.9">
+			<TextBlock.Foreground>
+				<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+					<GradientStop Color="#FF817F7F" Offset="0.536"/>
+					<GradientStop Color="#FF585858" Offset="1"/>
+					<GradientStop Color="#FF453838"/>
+				</LinearGradientBrush>
+			</TextBlock.Foreground><Run Language="es-ec" Text="GAP SYSTEM"/></TextBlock>
+        <TextBlock Height="33" Margin="24,0,12,67" TextWrapping="Wrap" VerticalAlignment="Bottom"><Run Language="es-ec" Text="Sistema de administración de Convenios sobre procedimientos medicos y calculo de Honorarios medicos"/></TextBlock>
+        <TextBlock Margin="0,40,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" RenderTransformOrigin="0.894,0.985" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="121" Opacity="0.8">
+			<TextBlock.Foreground>
+				<RadialGradientBrush>
+					<GradientStop Color="#FF6C6A6A" Offset="0.536"/>
+					<GradientStop Color="#FF585858" Offset="1"/>
+					<GradientStop Color="#FF453838"/>
+				</RadialGradientBrush>
+			</TextBlock.Foreground><Run Language="es-ec" Text="His 3000"/><LineBreak/></TextBlock>
+        <TextBlock Margin="34,88,46,144" TextWrapping="Wrap" FontSize="48" FontFamily="Estrangelo Edessa" RenderTransformOrigin="0.5,0" FontWeight="Bold"><TextBlock.TextEffects><TextEffect Foreground="AliceBlue" PositionCount="10" /></TextBlock.TextEffects>
+			<TextBlock.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleY="2"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</TextBlock.RenderTransform>
+			<TextBlock.Foreground>
+				<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+					<GradientStop Color="#FFAF9F9F" Offset="0"/>
+					<GradientStop Color="#FF706161" Offset="1"/>
+				</LinearGradientBrush>
+			</TextBlock.Foreground><Run Language="es-ec" Text="His Tarifario"/></TextBlock>
+        <TextBlock Margin="30,138,35,131" TextWrapping="Wrap" FontSize="48" FontFamily="Estrangelo Edessa" RenderTransformOrigin="0.5,0.5" Opacity="0.3" FontWeight="Bold">
+			<TextBlock.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleY="-1" ScaleX="1"/>
+					<SkewTransform AngleY="0" AngleX="30.141"/>
+					<RotateTransform Angle="0"/>
+					<TranslateTransform X="8.419"/>
+				</TransformGroup>
+			</TextBlock.RenderTransform><TextBlock.Foreground>
+				<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+					<GradientStop Color="#FFAF9F9F" Offset="0"/>
+					<GradientStop Color="#FF745050" Offset="1"/>
+				</LinearGradientBrush>
+			</TextBlock.Foreground><Run Language="es-ec" Text="His Tarifario"/></TextBlock>
+        <TextBlock Height="16" Margin="131,0,77,37" TextWrapping="Wrap" VerticalAlignment="Bottom"><Hyperlink NavigateUri="http://www.gapsystem.net">www.gapsystem.net</Hyperlink></TextBlock>
+    </Grid>
+</UserControl>

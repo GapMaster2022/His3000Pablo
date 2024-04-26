@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99494169-AF26-4DBF-B140-D566F3D9AEB1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Datos</RootNamespace>
+    <AssemblyName>His.Datos</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Servidor\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConexionEntidades.cs" />
+    <Compile Include="ConexionSic3000\DatProducto.cs" />
+    <Compile Include="ControllerCgAuditoria.cs" />
+    <Compile Include="ControllerCgMaestro.cs" />
+    <Compile Include="DatAccesoOpciones.cs" />
+    <Compile Include="DatAnamnesis.cs" />
+    <Compile Include="DatAnamnesisDetalle.cs" />
+    <Compile Include="DatAnexos.cs" />
+    <Compile Include="DatAseguradoras.cs" />
+    <Compile Include="DatAtencionDetalleCategorias.cs" />
+    <Compile Include="DatAtencionDetalleFormulariosHCU.cs" />
+    <Compile Include="DatAtencionDetalleGarantias.cs" />
+    <Compile Include="DatAtencionDetalleSeguros.cs" />
+    <Compile Include="DatAtenciones.cs" />
+    <Compile Include="DatAtencionesFormasLlegada.cs" />
+    <Compile Include="DatAuditoria.cs" />
+    <Compile Include="DatBancos.cs" />
+    <Compile Include="DatCadenaConexion.cs" />
+    <Compile Include="DatCajas.cs" />
+    <Compile Include="DatCatalogos.cs" />
+    <Compile Include="DatCatalogosCostos.cs" />
+    <Compile Include="DatCatalogosCostosTipo.cs" />
+    <Compile Include="DatCatalogosTipo.cs" />
+    <Compile Include="DatCategoria.cs" />
+    <Compile Include="DatCertificadoMedico.cs" />
+    <Compile Include="DatCIE10.cs" />
+    <Compile Include="DatCiudad.cs" />
+    <Compile Include="DatConsultaExterna.cs" />
+    <Compile Include="DatControlHc.cs" />
+    <Compile Include="DatCopago.cs" />
+    <Compile Include="DatCuentasPacientes.cs" />
+    <Compile Include="DatDatos.cs" />
+    <Compile Include="DatDepartamentos.cs" />
+    <Compile Include="DatDetalleCuenta.cs" />
+    <Compile Include="DatDietetica.cs" />
+    <Compile Include="DatDivisionPolitica.cs" />
+    <Compile Include="DatEmpresa.cs" />
+    <Compile Include="DatEpicrisis.cs" />
+    <Compile Include="DatEspecialidades.cs" />
+    <Compile Include="DatEstadoCivil.cs" />
+    <Compile Include="DatEtnias.cs" />
+    <Compile Include="DatEvolucion.cs" />
+    <Compile Include="DatEvolucionDetalle.cs" />
+    <Compile Include="DatFactura.cs" />
+    <Compile Include="DatFacturaDetalle.cs" />
+    <Compile Include="DatFormaPago.cs" />
+    <Compile Include="DatFormulariosHCU.cs" />
+    <Compile Include="DatGeneracionesAutomaticas.cs" />
+    <Compile Include="DatGeneracionesAutomaticasDetalle.cs" />
+    <Compile Include="DatGrupoSanguineo.cs" />
+    <Compile Include="DatHabitaciones.cs" />
+    <Compile Include="DatHabitacionHistorial.cs" />
+    <Compile Include="DatHcCatalogoSubNivel.cs" />
+    <Compile Include="DatHcEmergencia.cs" />
+    <Compile Include="DatHcEmergenciaCirugias.cs" />
+    <Compile Include="DatHcEmergenciaComplicaciones.cs" />
+    <Compile Include="DatHcEmergenciaEnfPrevias.cs" />
+    <Compile Include="DatHcEmergenciaEvaluacion.cs" />
+    <Compile Include="DatHcEmergenciaExamenes.cs" />
+    <Compile Include="DatHcEmergenciaFDetalle.cs" />
+    <Compile Include="DatHcEmergenciaForm.cs" />
+    <Compile Include="DatHcEmergenciaImagen.cs" />
+    <Compile Include="DatHcEmergenciaReferido.cs" />
+    <Compile Include="DatHcEmergenciaSubsintomas.cs" />
+    <Compile Include="DatHcEmergenciaTratamiento.cs" />
+    <Compile Include="DatHC_Consentimiento.cs" />
+    <Compile Include="DatHC_SignosVitales.cs" />
+    <Compile Include="DatHonorario.cs" />
+    <Compile Include="DatHonorarios.cs" />
+    <Compile Include="DatHonorariosMedicos.cs" />
+    <Compile Include="DatIess.cs" />
+    <Compile Include="DatImagen.cs" />
+    <Compile Include="DatIngestaEliminacion.cs" />
+    <Compile Include="DatInterconsulta.cs" />
+    <Compile Include="DatLaboratorio.cs" />
+    <Compile Include="DatLocales.cs" />
+    <Compile Include="DatMaintenance.cs" />
+    <Compile Include="DatMedicos.cs" />
+    <Compile Include="DatModulo.cs" />
+    <Compile Include="DatNotaCreditoDebito.cs" />
+    <Compile Include="DatNumeroControl.cs" />
+    <Compile Include="DatNumeroControlCajas.cs" />
+    <Compile Include="DatosGarantias.cs" />
+    <Compile Include="DatPacientes.cs" />
+    <Compile Include="DatPacientesDatosAdicionales.cs" />
+    <Compile Include="DatPagosFacturasMedicos.cs" />
+    <Compile Include="DatPagosHonorariosMedicos.cs" />
+    <Compile Include="DatPais.cs" />
+    <Compile Include="DatParametros.cs" />
+    <Compile Include="DatPedidos.cs" />
+    <Compile Include="DatPerfiles.cs" />
+    <Compile Include="DatPerfilesAcceso.cs" />
+    <Compile Include="DatPorcentajes.cs" />
+    <Compile Include="DatPorcentajesPorSevicio.cs" />
+    <Compile Include="DatPreAtencion.cs" />
+    <Compile Include="DatPreciosConvenios.cs" />
+    <Compile Include="DatPreciosPorcentajes.cs" />
+    <Compile Include="DatPrescripciones.cs" />
+    <Compile Include="DatProducto.cs" />
+    <Compile Include="DatProtocoloOperatorio.cs" />
+    <Compile Include="DatQuirofano.cs" />
+    <Compile Include="DatReporteEdades.cs" />
+    <Compile Include="DatRetenciones.cs" />
+    <Compile Include="DatRetencionesFuente.cs" />
+    <Compile Include="DatRubros.cs" />
+    <Compile Include="DatIngresoSalas.cs" />
+    <Compile Include="DatServicios.cs" />
+    <Compile Include="DatSoporteMail.cs" />
+    <Compile Include="DatTarifario.cs" />
+    <Compile Include="DatTipoCancelacion.cs" />
+    <Compile Include="DatTipoCiudadano.cs" />
+    <Compile Include="DatTipoEgreso.cs" />
+    <Compile Include="DatTipoGarantias.cs" />
+    <Compile Include="DatTipoIngreso.cs" />
+    <Compile Include="DatTipoTratamiento.cs" />
+    <Compile Include="DatTipoDocumentos.cs" />
+    <Compile Include="DatTipoHonorario.cs" />
+    <Compile Include="DatTipoMedico.cs" />
+    <Compile Include="DatTipoNegocio.cs" />
+    <Compile Include="DatTipoReferido.cs" />
+    <Compile Include="DatUsuarios.cs" />
+    <Compile Include="DatVendedores.cs" />
+    <Compile Include="DatZonas.cs" />
+    <Compile Include="DSAyudaIngElm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAyudaIngElm.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsProcedimiento.cs">
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsProcedimiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtoExplotadorUsuariosHis.cs" />
+    <Compile Include="DtoPreadmision.cs" />
+    <Compile Include="MasterEmail.cs" />
+    <Compile Include="DatLiquidaciones.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.Datos\Core.Datos.csproj">
+      <Project>{19ACEFD2-D37B-4FD6-A5B8-A36E437AC94A}</Project>
+      <Name>Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.Entidades\Core.Entidades.csproj">
+      <Project>{3D7A1A75-226E-441F-85C6-7A186ADF0BB4}</Project>
+      <Name>Core.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Parametros\His.Parametros.csproj">
+      <Project>{1BAE75B8-EB2A-49C7-A158-54AE397450CB}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000Entidades\His.Entidades.General\His.Entidades.General.csproj">
+      <Project>{D7465D15-7567-424B-BDCC-0FE2A75E3DA0}</Project>
+      <Name>His.Entidades.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DSAyudaIngElm.xsc">
+      <DependentUpon>DSAyudaIngElm.xsd</DependentUpon>
+    </None>
+    <None Include="DSAyudaIngElm.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAyudaIngElm.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSAyudaIngElm.xss">
+      <DependentUpon>DSAyudaIngElm.xsd</DependentUpon>
+    </None>
+    <None Include="dsProcedimiento.xsc">
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </None>
+    <None Include="dsProcedimiento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProcedimiento.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsProcedimiento.xss">
+      <DependentUpon>dsProcedimiento.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

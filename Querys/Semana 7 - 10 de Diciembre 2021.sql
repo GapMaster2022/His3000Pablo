@@ -1,0 +1,20 @@
+-- CREATE PROCEDURE sp_AnulaCgCabmae
+-- @hom_codigo bigint,
+-- @numasi float
+-- AS
+-- DELETE Cg3000..Cgcabmae WHERE numdoc = @numasi AND HOM_CODIGO = @hom_codigo AND tipdoc = 'AD'
+-- GO
+-- --------------------------------------------
+-- CREATE TABLE CG_AUDTORIA(
+-- CG_CODIGO BIGINT IDENTITY(1,1) NOT NULL,
+-- CG_TIPO NVARCHAR(5),
+-- CG_NUMASI BIGINT,
+-- CG_CODCLI BIGINT,
+-- CG_USUARIO INT,
+-- CG_DEBE FLOAT,
+-- CG_HABER FLOAT,
+-- CG_OBSERVACION NVARCHAR(500),
+-- CG_BENEFICIARIO NVARCHAR(225),
+-- CG_HOM_CODIGO BIGINT,
+-- CG_ESTADO NVARCHAR(100),
+-- CG_FECHA DATETIME DEFAULT GETDATE())

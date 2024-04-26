@@ -1,0 +1,41 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" x:Class="His.HabitacionesUI.frmListaFormularios"
+    Title="frmListaFormularios" Height="433" Width="521" Loaded="Window_Loaded" WindowStyle="None">
+	<Window.Background>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#FF898484" Offset="0.508"/>
+			<GradientStop Color="White" Offset="1"/>
+			<GradientStop Color="#FFE7E2E2"/>
+		</LinearGradientBrush>
+	</Window.Background>
+    <Grid>
+        <Button x:Name="btnAdd" Content="Añadir" HorizontalAlignment="Left" Height="20" Margin="55,0,0,8" Style="{DynamicResource SimpleButton}" VerticalAlignment="Bottom" Width="142" Click="btnAdd_Click" Background="{DynamicResource backGroundVentana1}" />
+    	<Button x:Name="btnCancelar" Content="Cancelar" Height="20" Margin="280,0,73,8" Style="{DynamicResource SimpleButton}" VerticalAlignment="Bottom" Click="btnCancelar_Click" BorderBrush="{DynamicResource backGroundVentana1}" Background="{DynamicResource backGroundVentana1}" />
+        <igDP:XamDataGrid Margin="19,25,10,34" Name="grid" xmlns:igDP="http://infragistics.com/DataPresenter" Theme="Royale" CellUpdated="grid_CellUpdated" SelectedItemsChanging="grid_SelectedItemsChanging" SelectedItemsChanged="grid_SelectedItemsChanged">
+            <igDP:XamDataGrid.FieldLayoutSettings>
+                <igDP:FieldLayoutSettings AllowDelete="False" SelectionTypeRecord="Extended" />
+            </igDP:XamDataGrid.FieldLayoutSettings>
+            <igDP:XamDataGrid.FieldSettings>
+                <igDP:FieldSettings />
+            </igDP:XamDataGrid.FieldSettings>
+            <igDP:XamDataGrid.FieldLayouts>
+                <igDP:FieldLayout Key="FormulariosLayout">
+                    <igDP:Field Name='check'  Label=' ' Width='30' />
+                    <igDP:Field Name='codigo'  Label=' Codigo' Width='50'>
+                        <igDP:Field.Settings>
+                            <igDP:FieldSettings AllowEdit="False" />
+                        </igDP:Field.Settings>
+                    </igDP:Field>
+                    <igDP:Field Name='nombre'  Label=' Formulario ' Width='400'>
+                        <igDP:Field.Settings>
+                            <igDP:FieldSettings AllowEdit="False" />
+                        </igDP:Field.Settings>
+                    </igDP:Field>
+                </igDP:FieldLayout>
+            </igDP:XamDataGrid.FieldLayouts>
+        </igDP:XamDataGrid>
+        <Label Content="Formularios de Historia Clínica" Height="21" Margin="92,4,102,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

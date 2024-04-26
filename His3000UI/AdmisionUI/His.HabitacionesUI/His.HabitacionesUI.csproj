@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4C01955-97D1-4E27-B1E2-536C9B8FFC4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.HabitacionesUI</RootNamespace>
+    <AssemblyName>His.HabitacionesUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <Utf8Output>true</Utf8Output>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="GeneralApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.DataPresenter.ExcelExporter.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.DataPresenter.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.DataPresenter.WordWriter.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.DockManager.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.Documents.Excel.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.Editors.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.Reporting.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.Ribbon.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.Tiles.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="InfragisticsWPF3.v11.2, Version=11.2.20112.1012, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Intellibox, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualC\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\ReachFramework\v4.0_4.0.0.0__31bf3856ad364e35\ReachFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Printing\v4.0_4.0.0.0__31bf3856ad364e35\System.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WPFToolkit" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmAcerca.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmAsignacionHabitaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmAsignarDieta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmAsignarPaciente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmCrearHabitacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmCuentaPaciente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmDevolucionPedido.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmDietas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmEliminarHabitaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmEncargarPaciente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmEstadosHabitaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EstilosTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmEstructurasPisos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExploradorHabitaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="frmExamenesAyudas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmHabitaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmHistorisClinica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmInfPaciente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmListaFormularios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmModificarHabitaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmMoverPaciente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmProductosAyuda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmRadiografiaAyudas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmRecetas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmReporteOcupacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalculoOxigeno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculoOxigeno.Designer.cs">
+      <DependentUpon>CalculoOxigeno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambioOrientacionItemsPanel.cs" />
+    <Compile Include="dtsImpresionPedido.cs">
+      <DependentUpon>dtsImpresionPedido.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtsImpresionPedido.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsImpresionPedido.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAcerca.xaml.cs">
+      <DependentUpon>frmAcerca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignacionHabitaciones.xaml.cs">
+      <DependentUpon>frmAsignacionHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignarDieta.xaml.cs">
+      <DependentUpon>frmAsignarDieta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignarPaciente.xaml.cs">
+      <DependentUpon>frmAsignarPaciente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearHabitacion.xaml.cs">
+      <DependentUpon>frmCrearHabitacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuentaPaciente.xaml.cs">
+      <DependentUpon>frmCuentaPaciente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevolucionPedido.xaml.cs">
+      <DependentUpon>frmDevolucionPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmDietas.xaml.cs">
+      <DependentUpon>frmDietas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminarHabitaciones.xaml.cs">
+      <DependentUpon>frmEliminarHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmEncargarPaciente.xaml.cs">
+      <DependentUpon>frmEncargarPaciente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadosHabitaciones.xaml.cs">
+      <DependentUpon>frmEstadosHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstructurasPisos.xaml.cs">
+      <DependentUpon>frmEstructurasPisos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExploradorHabitaciones.xaml.cs">
+      <DependentUpon>ExploradorHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmExamenesAyudas.xaml.cs">
+      <DependentUpon>frmExamenesAyudas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmHabitaciones.xaml.cs">
+      <DependentUpon>frmHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistorisClinica.xaml.cs">
+      <DependentUpon>frmHistorisClinica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmImpresionPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImpresionPedidos.Designer.cs">
+      <DependentUpon>frmImpresionPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfPaciente.xaml.cs">
+      <DependentUpon>frmInfPaciente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaFormularios.xaml.cs">
+      <DependentUpon>frmListaFormularios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarHabitaciones.xaml.cs">
+      <DependentUpon>frmModificarHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmMoverPaciente.xaml.cs">
+      <DependentUpon>frmMoverPaciente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductosAyuda.xaml.cs">
+      <DependentUpon>frmProductosAyuda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmRadiografiaAyudas.xaml.cs">
+      <DependentUpon>frmRadiografiaAyudas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecetas.xaml.cs">
+      <DependentUpon>frmRecetas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteOcupacion.xaml.cs">
+      <DependentUpon>frmReporteOcupacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ClavePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ClavePedido.Designer.cs">
+      <DependentUpon>frm_ClavePedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpVentana.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reportes\Habitaciones\rListadoGeneralHabitaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rListadoGeneralHabitaciones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\rptImpresionPedido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptImpresionPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="CalculoOxigeno.resx">
+      <DependentUpon>CalculoOxigeno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImpresionPedidos.resx">
+      <DependentUpon>frmImpresionPedidos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ClavePedido.resx">
+      <DependentUpon>frm_ClavePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Habitaciones\rListadoGeneralHabitaciones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rListadoGeneralHabitaciones.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pedidos\rptImpresionPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptImpresionPedido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="dtsImpresionPedido.xsc">
+      <DependentUpon>dtsImpresionPedido.xsd</DependentUpon>
+    </None>
+    <None Include="dtsImpresionPedido.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsImpresionPedido.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dtsImpresionPedido.xss">
+      <DependentUpon>dtsImpresionPedido.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\His.Admision\His.Admision.csproj">
+      <Project>{5fdfd8b7-8c24-4568-91e8-c99c89108d6f}</Project>
+      <Name>His.Admision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.DatosReportes\His.DatosReportes.csproj">
+      <Project>{053a1c21-4c30-4b7e-be9a-ed2d8f7db7cf}</Project>
+      <Name>His.DatosReportes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Datos\His.Datos.csproj">
+      <Project>{99494169-AF26-4DBF-B140-D566F3D9AEB1}</Project>
+      <Name>His.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Negocio\His.Negocio.csproj">
+      <Project>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</Project>
+      <Name>His.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His.Parametros\His.Parametros.csproj">
+      <Project>{1bae75b8-eb2a-49c7-a158-54ae397450cb}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His3000Entidades\His.Entidades.General\His.Entidades.General.csproj">
+      <Project>{D7465D15-7567-424B-BDCC-0FE2A75E3DA0}</Project>
+      <Name>His.Entidades.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\His3000Negocio\His.General\His.General.csproj">
+      <Project>{8A713189-DCE0-4674-A95C-0FB17EFED0D4}</Project>
+      <Name>His.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HistoriasUI\His.Formulario\His.Formulario.csproj">
+      <Project>{6E44C066-8AAE-40FA-97BA-ED6EF7DA08D5}</Project>
+      <Name>His.Formulario</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\clock.png" />
+    <Resource Include="imagenes\estadoAlta.png" />
+    <Resource Include="imagenes\estadoCancelada.png" />
+    <Resource Include="imagenes\estadoDesocupada.png" />
+    <Resource Include="imagenes\estadoDisponible.png" />
+    <Resource Include="imagenes\estadoLimpieza.png" />
+    <Resource Include="imagenes\estadoOcupada.png" />
+    <Resource Include="imagenes\porDefecto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\ventanaPopUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\logoExploradorHabittaciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\ConEpicrisis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\SinEpicrisis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

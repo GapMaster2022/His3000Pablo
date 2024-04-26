@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="His.Admision.frmAyudaHabitaciones"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="360.108" Width="554.452" Loaded="UserControl_Loaded">
+    <Grid Height="354.392" Width="518.727">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="377*" />
+            <RowDefinition Height="223*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="habitaciones" Grid.RowSpan="2">
+            <Canvas.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF727272" Offset="1"/>
+                    <GradientStop Color="#FFB6B6B6"/>
+                </RadialGradientBrush>
+            </Canvas.Background>
+            <igDP:XamDataGrid Height="341.392" Name="xamDataGridHabitaciones" xmlns:igDP="http://infragistics.com/DataPresenter" Theme="RoyaleStrong" MouseDown="xamDataGridHabitaciones_MouseDown" MouseDoubleClick="xamDataGridHabitaciones_MouseDoubleClick" Canvas.Left="6" Canvas.Top="7" Width="506.142" Initialized="xamDataGridHabitaciones_Initialized" KeyUp="xamDataGridHabitaciones_KeyUp" MinWidth="360">
+                <igDP:XamDataGrid.FieldSettings>
+                    <igDP:FieldSettings CellClickAction="SelectCell" AllowRecordFiltering="True" />
+                </igDP:XamDataGrid.FieldSettings>
+                <igDP:XamDataGrid.FieldLayoutSettings>
+                    <igDP:FieldLayoutSettings AllowAddNew="False" AllowDelete="False" AutoFitMode="Default" FixedFieldUIType="Default" />
+                </igDP:XamDataGrid.FieldLayoutSettings>
+            </igDP:XamDataGrid>
+        </Canvas>
+        <Canvas x:Name="infHabitacion" Width="276" Visibility="Hidden" Height="134" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7C7979" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <StackPanel x:Name="stackPanel1" Height="105.937" Canvas.Left="8" Width="260.016" Canvas.Top="20.5" />
+            <Button x:Name="infHabCerrar" Content="X" Height="13" Canvas.Left="8" Width="12.667" RenderTransformOrigin="1.136,0.106" FontSize="5.333" Click="infHabCerrar_Click" Canvas.Top="7" />
+        </Canvas>
+    </Grid>
+</UserControl>

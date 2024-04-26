@@ -1,0 +1,187 @@
+﻿<Window x:Class="His.HabitacionesUI.frmDevolucionPedido"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:auto="clr-namespace:FeserWard.Controls;assembly=Intellibox"
+    Title="Devolucion Pedido" Height="724.372" Width="929.907" Name="frmDevolucionPedido1" Loaded="frmDevolucionPedido1_Loaded" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Control}">
+                        <Grid Margin="3 2">
+                            <Rectangle x:Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+                            <Border x:Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="ShadowStyle">
+            <Setter Property="Control.Foreground" Value="LightGray" />
+        </Style>
+
+        <Style x:Key="InformButton" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontSize" Value="11px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                        <GradientStop Color="#FFFFD190" Offset="0.2"/>
+                        <GradientStop Color="Orange" Offset="0.85"/>
+                        <GradientStop Color="#FFFFD190" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" 
+    						BorderThickness="1"
+    						Padding="4,2" 
+    						BorderBrush="DarkGray" 
+    						CornerRadius="3" 
+    						Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+    								VerticalAlignment="Center" x:Name="contentShadow" 
+    								Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+    								VerticalAlignment="Center" x:Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF4788c8" />
+                                <Setter Property="Foreground" Value="#FF4788c8" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                                            <GradientStop Color="#FFFFD190" Offset="0.35"/>
+                                            <GradientStop Color="Orange" Offset="0.95"/>
+                                            <GradientStop Color="#FFFFD190" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform" >
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Opacity" Value="0.7" />
+                                <Setter Property="Foreground" Value="Gray" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="backgroundBoton1" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFBEC4C4" Offset="0.543"/>
+            <GradientStop Color="#FFDFE7E7" Offset="1"/>
+            <GradientStop Color="#FFB2B4B4"/>
+        </LinearGradientBrush>
+
+    </Window.Resources>
+
+    <Grid>
+        <Rectangle Fill="#FFF3F3F3" Height="45" Margin="10,10,12,0" RadiusX="15" RadiusY="15" Stroke="#FF9F9F9F" StrokeThickness="3" VerticalAlignment="Top" />
+        <Label FontWeight="Bold" Foreground="#FF151352" Height="23" HorizontalAlignment="Left" Margin="20,14,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="66">Paciente :</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="20,32,0,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="66">Historia :</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="81,14,0,0" Name="lblPaciente" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="199">Paciente :</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="81,32,0,0" Name="lblHistoria" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="199">Paciente :</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Right" Margin="0,32,217,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="66">Atencion:</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Right" Margin="0,14,232,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="51">Médico:</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Right" Margin="0,14,60,0" Name="lblMedico" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="166">Paciente :</Label>
+        <Label FontWeight="Bold" Height="23" HorizontalAlignment="Right" Margin="0,32,50,0" Name="lblAtencion" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="176">Paciente :</Label>
+
+        <Rectangle Fill="#FFF3F3F3" Margin="12,61,10,315" RadiusX="15" RadiusY="15" Stroke="#FF9F9F9F" StrokeThickness="3" />
+        <igDP:XamDataPresenter Background="White" Margin="31,0,31,370.478" Name="xamDataPresenterProductosSolicitados" Theme="Office2k7Blue" xmlns:igDP="http://infragistics.com/DataPresenter" Height="221.42" VerticalAlignment="Bottom" KeyUp="xamDataPresenterProductosSolicitados_KeyUp_1">
+            <igDP:XamDataPresenter.FieldLayouts>
+                <igDP:FieldLayout Key="ProductosLayout">
+                    <igDP:Field Label=" CODIGO " Name="PDD_CODIGO" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" CODIGO P. " Name="PRO_CODIGO"  Width="70" />
+                    <igDP:Field Label=" DESCRIPCION" Name="PRO_DESCRIPCION" Width="250" />
+                    <igDP:Field Label=" CANTIDAD " Name="PDD_CANTIDAD" Width="75" />
+                    <igDP:Field Label=" CANTIDAD DEV " Name="CantidadDevuelta" Width="75"  />
+                    <igDP:Field Label=" VALOR " Name="PDD_VALOR" Width="75" />
+                    <igDP:Field Label=" IVA " Name="PDD_IVA" Width="75" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_TOTAL" Width="75" />
+                    <igDP:Field Label=" TOTAL " Name="PED_CODIGO" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_ESTADO" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_COSTO" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_FACTURA" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_ESTADO_FACTURA" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_FECHA_FACTURA" Visibility="Hidden" Width="70" />
+                    <igDP:Field Label=" TOTAL " Name="PDD_RESULTADO" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PRO_CODIGO_BARRAS" Visibility="Hidden" Width="0" />
+                    <!--<igDP:Field Label=" TOTAL " Name="PEDIDOS" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" TOTAL " Name="PRODUCTO" Visibility="Hidden" Width="0" />-->
+                </igDP:FieldLayout>
+            </igDP:XamDataPresenter.FieldLayouts>
+            <igDP:XamDataPresenter.FieldSettings>
+                <igDP:FieldSettings AllowEdit="False" CellClickAction="SelectCell" FilterOperatorDefaultValue="Contains" />
+            </igDP:XamDataPresenter.FieldSettings>
+        </igDP:XamDataPresenter>
+        <Rectangle Fill="#FFF3F3F3" Margin="12,0,10,10" RadiusX="15" RadiusY="15" Stroke="#FF9F9F9F" StrokeThickness="3" Height="296.857" VerticalAlignment="Bottom" />
+        <igDP:XamDataPresenter Background="White" Margin="32.003,0,29.997,116.328" Name="xamDataPresenter1" Theme="Office2k7Blue" xmlns:igDP="http://infragistics.com/DataPresenter" Height="138.091" VerticalAlignment="Bottom" KeyUp="xamDataPresenter1_KeyUp">
+            <igDP:XamDataPresenter.FieldLayouts>
+                <igDP:FieldLayout Key="ProductosLayout">
+                    <igDP:Field Label=" CODIGO " Name="DevCodigo" Visibility="Hidden" Width="0" />
+                    <igDP:Field Label=" CODIGO P. " Name="PRO_CODIGO"  Width="70" />
+                    <igDP:Field Label=" DESCRIPCION" Name="PRO_DESCRIPCION" Width="250" />
+                    <igDP:Field Label=" CANTIDAD " Name="DevDetCantidad" Width="75" />
+                    <igDP:Field Label=" VALOR " Name="DevDetValor" Width="75" />
+                    <igDP:Field Label=" IVA " Name="DevDetIva" Width="75" />
+                    <igDP:Field Label=" TOTAL " Name="DevDetIvaTotal" Width="75" />
+                    <igDP:Field Label=" NDETALLE " Name="PDD_CODIGO" Visibility="Hidden" Width="0" />
+                </igDP:FieldLayout>
+            </igDP:XamDataPresenter.FieldLayouts>
+            <igDP:XamDataPresenter.FieldSettings>
+                <igDP:FieldSettings AllowEdit="False" CellClickAction="SelectCell" FilterOperatorDefaultValue="Contains" />
+            </igDP:XamDataPresenter.FieldSettings>
+        </igDP:XamDataPresenter>
+        <Label Height="43" HorizontalAlignment="Right" Margin="0,0,147.763,315" Name="lblCantidadAdd" RenderTransformOrigin="0.36,-0.719" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Width="62.216">Cantidad :</Label>
+        <igEditors:XamTextEditor Format="000" Height="19.998" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,0,115,329.191" Name="txtCantidad" TabIndex="4" Theme="Office2k7Silver" VerticalAlignment="Bottom" Width="36.663" xmlns:igEditors="http://infragistics.com/Editors" KeyUp="txtCantidad_KeyUp_1" KeyDown="txtCantidad_KeyDown">1</igEditors:XamTextEditor>
+        <Button Background="{DynamicResource backgroundBoton1}" BorderBrush="AliceBlue" HorizontalAlignment="Right" Margin="0,0,29.997,329.191" Name="btnAdd" OpacityMask="Magenta" RenderTransformOrigin="0.492,1.115" Style="{StaticResource InformButton}" TabIndex="7" Width="78.881" Height="20.052" VerticalAlignment="Bottom" Click="btnAdd_Click" PreviewKeyUp="btnAdd_PreviewKeyUp">
+            <Button.BindingGroup>
+                <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+            </Button.BindingGroup> Agregar
+        </Button>
+        <Label FontWeight="Bold" Foreground="#FF151352" Height="30" Margin="293.304,66.66,288.86,0" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Top" VerticalContentAlignment="Center" Name="lblPedido" HorizontalContentAlignment="Center" FontSize="13">PEDIDO No.</Label>
+        <Label FontWeight="Bold" Foreground="#FF151352" Height="23" Margin="281.083,0,301.081,261.085" Name="label1" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13">DEVOLUCION</Label>
+        <Button Background="{DynamicResource backgroundBoton1}" BorderBrush="AliceBlue" Height="20.052" HorizontalAlignment="Right" Margin="0,0,114.433,27.775" Name="btnGuardar" OpacityMask="Magenta" RenderTransformOrigin="0.492,1.115" Style="{StaticResource InformButton}" TabIndex="7" VerticalAlignment="Bottom" Width="78.881" Click="btnGuardar_Click">
+            <Button.BindingGroup>
+                <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+            </Button.BindingGroup> Guardar
+        </Button>
+        <Button Background="{DynamicResource backgroundBoton1}" BorderBrush="AliceBlue" Height="21.163" HorizontalAlignment="Right" Margin="0,0,29.997,26.664" Name="btnCancelar" OpacityMask="Magenta" RenderTransformOrigin="0.492,1.115" Style="{StaticResource InformButton}" TabIndex="7" VerticalAlignment="Bottom" Width="78.881" Click="btnCancelar_Click">
+            <Button.BindingGroup>
+                <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+            </Button.BindingGroup> Cancelar
+        </Button>
+        <TextBox x:Name="txtobservacion" HorizontalAlignment="Left" Height="47.545" Margin="115.37,593,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="775.537" BorderThickness="1"/>
+        <Label x:Name="label" Content="Observación:" HorizontalAlignment="Left" Margin="32.003,593,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.395,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD16CB7B-FCE5-40C2-B91B-12149F725119}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Recursos</RootNamespace>
+    <AssemblyName>His.Recursos</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Ejecutables\Recursos\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Archivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Archivo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Archivo.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Archivo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Archivos\Imagenes\Botones\organigrama.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_rotate_anticlockwise.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Organize.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Organize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-View-Sort-Descending-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Go-Up-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Go-Down-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Go-Up-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Go-Down-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandBy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialog-Apply-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Application-Exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Edit-Find-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Media-Floppy-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Printer-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft-Office-Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_imprimir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft_excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft_office_2003_excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft_office_2003_excel%282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft Office Excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bonotes48.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Document-New-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Document-Open-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Document-Print-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Document-Send-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Emblem-Downloads-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Application-Exit-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Mail-Attachment-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Media-Floppy-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoVG400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoTarifario.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgDelete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCancelar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PapeleraLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_32x32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevoPaciente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbolAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbolEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoFormulario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emergency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mundo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mundo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mundO32X32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mundo2_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ubicacion_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonRefresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackImagen1_1024x73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackImagen1_1280x92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackImagen1_1360x97.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

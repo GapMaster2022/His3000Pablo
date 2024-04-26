@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76D115AA-22B2-4F1A-8A33-88AB3995A68B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Mantenimiento</RootNamespace>
+    <AssemblyName>His.Mantenimiento</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinMaskedEdit.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTree.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\CambioEstadosCuentas.cs" />
+    <Compile Include="Datos\Estaciones.cs" />
+    <Compile Include="Datos\PedidosAreas.cs" />
+    <Compile Include="Encriptar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encriptar.designer.cs">
+      <DependentUpon>Encriptar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCatalogosCostosTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCatalogosCostosTipo.Designer.cs">
+      <DependentUpon>frmCatalogosCostosTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Bancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Bancos.Designer.cs">
+      <DependentUpon>frm_Bancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Cajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cajas.Designer.cs">
+      <DependentUpon>frm_Cajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Catalogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Catalogos.Designer.cs">
+      <DependentUpon>frm_Catalogos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CategoriasConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CategoriasConvenios.Designer.cs">
+      <DependentUpon>frm_CategoriasConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CatlogoCostos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CatlogoCostos.Designer.cs">
+      <DependentUpon>frm_CatlogoCostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Convenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Convenios.Designer.cs">
+      <DependentUpon>frm_Convenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ciudad.Designer.cs">
+      <DependentUpon>frm_Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Departamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Departamentos.Designer.cs">
+      <DependentUpon>frm_Departamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DivisionPolitica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DivisionPolitica.Designer.cs">
+      <DependentUpon>frm_DivisionPolitica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Empresa.Designer.cs">
+      <DependentUpon>frm_Empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Estaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Estaciones.Designer.cs">
+      <DependentUpon>frm_Estaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_local.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_local.Designer.cs">
+      <DependentUpon>frm_local.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NumeroControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NumeroControl.Designer.cs">
+      <DependentUpon>frm_NumeroControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NumeroControlCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NumeroControlCajas.Designer.cs">
+      <DependentUpon>frm_NumeroControlCajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_OpcionesAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OpcionesAcceso.Designer.cs">
+      <DependentUpon>frm_OpcionesAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Pais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Pais.Designer.cs">
+      <DependentUpon>frm_Pais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Pedidos.Designer.cs">
+      <DependentUpon>frm_Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PedidosCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PedidosCuenta.Designer.cs">
+      <DependentUpon>frm_PedidosCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Perfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Perfiles.Designer.cs">
+      <DependentUpon>frm_Perfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PermisosCambioEstadosCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PermisosCambioEstadosCuentas.Designer.cs">
+      <DependentUpon>frm_PermisosCambioEstadosCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_precios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_precios.Designer.cs">
+      <DependentUpon>frm_precios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PreciosConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PreciosConvenios.Designer.cs">
+      <DependentUpon>frm_PreciosConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HcCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HcCatalogo.Designer.cs">
+      <DependentUpon>frm_HcCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Servicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Servicios.Designer.cs">
+      <DependentUpon>frm_Servicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TipoMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TipoMedico.Designer.cs">
+      <DependentUpon>frm_TipoMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TipoNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TipoNegocio.Designer.cs">
+      <DependentUpon>frm_TipoNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Usuario.Designer.cs">
+      <DependentUpon>frm_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Zona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Zona.Designer.cs">
+      <DependentUpon>frm_Zona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ZonaEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ZonaEdicion.Designer.cs">
+      <DependentUpon>frm_ZonaEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_Mantenimiento.Designer.cs">
+      <DependentUpon>MDI_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Encriptar.resx">
+      <DependentUpon>Encriptar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCatalogosCostosTipo.resx">
+      <DependentUpon>frmCatalogosCostosTipo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Bancos.resx">
+      <DependentUpon>frm_Bancos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Cajas.resx">
+      <DependentUpon>frm_Cajas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Catalogos.resx">
+      <DependentUpon>frm_Catalogos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CategoriasConvenios.resx">
+      <DependentUpon>frm_CategoriasConvenios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CatlogoCostos.resx">
+      <DependentUpon>frm_CatlogoCostos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Convenios.resx">
+      <DependentUpon>frm_Convenios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ciudad.resx">
+      <DependentUpon>frm_Ciudad.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Departamentos.resx">
+      <DependentUpon>frm_Departamentos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DivisionPolitica.resx">
+      <DependentUpon>frm_DivisionPolitica.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Empresa.resx">
+      <DependentUpon>frm_Empresa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Estaciones.resx">
+      <DependentUpon>frm_Estaciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_local.resx">
+      <DependentUpon>frm_local.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NumeroControl.resx">
+      <DependentUpon>frm_NumeroControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NumeroControlCajas.resx">
+      <DependentUpon>frm_NumeroControlCajas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OpcionesAcceso.resx">
+      <DependentUpon>frm_OpcionesAcceso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Pais.resx">
+      <DependentUpon>frm_Pais.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Pedidos.resx">
+      <DependentUpon>frm_Pedidos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PedidosCuenta.resx">
+      <DependentUpon>frm_PedidosCuenta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Perfiles.resx">
+      <DependentUpon>frm_Perfiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PermisosCambioEstadosCuentas.resx">
+      <DependentUpon>frm_PermisosCambioEstadosCuentas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_precios.resx">
+      <DependentUpon>frm_precios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PreciosConvenios.resx">
+      <DependentUpon>frm_PreciosConvenios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HcCatalogo.resx">
+      <DependentUpon>frm_HcCatalogo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Servicios.resx">
+      <DependentUpon>frm_Servicios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TipoMedico.resx">
+      <DependentUpon>frm_TipoMedico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TipoNegocio.resx">
+      <DependentUpon>frm_TipoNegocio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Usuario.resx">
+      <DependentUpon>frm_Usuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Zona.resx">
+      <DependentUpon>frm_Zona.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ZonaEdicion.resx">
+      <DependentUpon>frm_ZonaEdicion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_Mantenimiento.resx">
+      <DependentUpon>MDI_Mantenimiento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Mantenimiento\rPreciosConvenios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rPreciosConvenios.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reportes\Mantenimiento\rPreciosConvenios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rPreciosConvenios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Utilitarios\Core.Utilitarios.csproj">
+      <Project>{E713939C-9F9D-43AE-A95D-A2844313D39A}</Project>
+      <Name>Core.Utilitarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.Datos\Core.Datos.csproj">
+      <Project>{19ACEFD2-D37B-4FD6-A5B8-A36E437AC94A}</Project>
+      <Name>Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.Entidades\Core.Entidades.csproj">
+      <Project>{3D7A1A75-226E-441F-85C6-7A186ADF0BB4}</Project>
+      <Name>Core.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Datos\His.Datos.csproj">
+      <Project>{99494169-AF26-4DBF-B140-D566F3D9AEB1}</Project>
+      <Name>His.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Negocio\His.Negocio.csproj">
+      <Project>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</Project>
+      <Name>His.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Parametros\His.Parametros.csproj">
+      <Project>{1BAE75B8-EB2A-49C7-A158-54AE397450CB}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000Negocio\His.General\His.General.csproj">
+      <Project>{8A713189-DCE0-4674-A95C-0FB17EFED0D4}</Project>
+      <Name>His.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000UI\Recursos\His.Recursos.csproj">
+      <Project>{AD16CB7B-FCE5-40C2-B91B-12149F725119}</Project>
+      <Name>His.Recursos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CRREPORTSOURCEBRIDGELib">
+      <Guid>{9405B5F8-606F-493E-8F24-C01AABC9232D}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Crystal">
+      <Guid>{00025600-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalAnalysisCommLayerLib">
+      <Guid>{175E24D1-DB87-4E89-B312-39F5C9DAB36E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalEnterpriseLib">
+      <Guid>{7F1958A2-0425-45F0-9A51-A13DDEF9C5CF}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalInfoStoreLib">
+      <Guid>{35BB92C5-1F80-46F3-A530-E5B4CC74304D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalPluginMgrLib">
+      <Guid>{90085968-51C2-49CC-9ADA-ADA4DA7B865A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportConvToolPluginLib">
+      <Guid>{950F74B4-DC57-4E4F-90F5-3BC3B1F43FF7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportPluginLib">
+      <Guid>{50C84216-732A-4BE0-B7D8-414C28620516}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsCommonObjectModelLib">
+      <Guid>{FEA500D0-505E-423A-974F-32D054C2FA98}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsControllersLib">
+      <Guid>{AB846EEF-52F8-43B8-B1B3-8E9139D2E868}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsCubeDefModelLib">
+      <Guid>{478C4E24-FC28-4405-9B18-C4E51DFC5990}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsDataDefModelLib">
+      <Guid>{11F4A8F4-F6D2-4B7F-81C8-3B2DE88C712A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportSourceLib">
+      <Guid>{5C4BF02B-A170-4D55-804A-A31E7A304F81}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsReportDefModelLib">
+      <Guid>{9B0B82D0-D659-4BE5-A72B-886C88187FF8}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ReportAppServerWebAdminPlugLib">
+      <Guid>{7DFF1525-3C84-4304-95B5-7EF2CB14B17F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

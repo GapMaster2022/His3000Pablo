@@ -1,0 +1,33 @@
+﻿<Window x:Class="AccesoUI.loginTarifario"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="loginTarifario" AllowsTransparency="True" Height="161.167" Width="317.5" WindowStartupLocation="CenterScreen" SnapsToDevicePixels="True" WindowStyle="None" Background="#00000000">
+    <Grid>
+        <Image Margin="-5,-6,-4.5,-9.833" Source="imagenes/accesoFondo.png" />
+        <TextBox FontSize="13.333" Margin="110.943,52.333,53.333,0" Name="txtUsuario" TabIndex="1" KeyDown="txtUsuario_KeyDown" Height="22.333" VerticalAlignment="Top" />
+        <Button FontSize="13.333" Height="22" Margin="75.546,0,0,13.167" Name="btnAceptar" RenderTransformOrigin="0.521,1.182" TabIndex="3" VerticalAlignment="Bottom" Click="btnAceptar_Click" HorizontalAlignment="Left" Width="65.775">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF939393" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background> Aceptar
+        </Button>
+        <Button FontSize="13.333" Height="22" Margin="0,0,80.458,13.167" Name="btnSalir" VerticalAlignment="Bottom" Click="btnSalir_Click" HorizontalAlignment="Right" Width="59.875">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF939393" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background> Salir
+        </Button>
+        <Label FontSize="13.333" HorizontalAlignment="Left" Margin="37,52.333,0,76.501" Name="lblUser" Width="56.208">Usuario</Label>
+        <Label FontSize="13.333" HorizontalAlignment="Left" Margin="37,0,0,47.834" Name="lblPwd" RenderTransformOrigin="-2.049,0.429" Width="56.208" Height="24.667" VerticalAlignment="Bottom">Clave</Label>
+        <PasswordBox Height="21" Margin="110.943,0,53.333,47.834" Name="txtClave" TabIndex="2" VerticalAlignment="Bottom" KeyDown="txtClave_KeyDown" />
+        <Image Height="34" Margin="91.879,8,87.625,0" Opacity="0.5" OpacityMask="Black" Source="imagenes/Tarifario.png" Stretch="Fill" VerticalAlignment="Top">
+            <Image.Effect>
+                <DropShadowEffect />
+            </Image.Effect>
+        </Image>
+    </Grid>
+</Window>

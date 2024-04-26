@@ -1,0 +1,19 @@
+﻿<Application x:Class="His.HabitacionesUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="ExploradorHabitaciones.xaml">
+    <Application.Resources>
+         
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="Simple Styles.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    		<LinearGradientBrush x:Key="backGroundVentana1" EndPoint="0.5,1" StartPoint="0.5,0">
+    			<GradientStop Color="#FFCFE8FE" Offset="1"/>
+    			<GradientStop Color="#FFBFDBFF"/>
+    			<GradientStop Color="#FFD2E6F9" Offset="0.488"/>
+    		</LinearGradientBrush>
+    	</ResourceDictionary>
+         
+    </Application.Resources>
+</Application>

@@ -1,0 +1,24 @@
+USE [His3000]
+GO
+
+/****** Object:  Table [dbo].[PERFILES_PRODUCTOS]    Script Date: 11/11/2022 11:58:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PERFILES_PRODUCTOS](
+	[PP_CODIGO] [int] IDENTITY(1,1) NOT NULL,
+	[PL_CODIGO] [int] NULL,
+	[codrpo] [int] NULL,
+	[coddep] [int] NULL
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[PERFILES_LABORATORIO](
+	[PL_CODIGO] [int] IDENTITY(1,1) NOT NULL,
+	[PL_PERFIL] [nvarchar](100) NULL,
+	[PL_CANTIDAD] [int] NULL
+) ON [PRIMARY]
+GO

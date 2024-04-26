@@ -1,0 +1,7 @@
+--Anamnesis 2024/03/06 Andres Cabrera
+--Añadir Score mama a Antecedentes de la MUJER
+ALTER TABLE HC_ANAMNESIS_ANTEC_MUJER
+ADD AMU_SCORE_MAMA INT;
+
+ALTER TABLE HC_ANAMNESIS
+ADD ANE_ANALISIS text;

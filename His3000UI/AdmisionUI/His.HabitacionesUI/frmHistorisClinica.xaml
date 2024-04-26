@@ -1,0 +1,8 @@
+﻿<Window x:Class="His.HabitacionesUI.frmHistorisClinica"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="frmHistorisClinica" Height="382" Width="702" Loaded="Window_Loaded">
+    <Grid Width="443" Name="gridContenedor">
+        
+    </Grid>
+</Window>

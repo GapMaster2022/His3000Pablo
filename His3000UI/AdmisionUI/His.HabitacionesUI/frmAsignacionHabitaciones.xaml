@@ -1,0 +1,23 @@
+﻿<Window x:Class="His.HabitacionesUI.frmAsignacionHabitaciones"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="frmAsignacionHabitaciones" Height="334" Width="562" xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" xmlns:igDP="http://infragistics.com/DataPresenter">
+    <Grid>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.504*"/>
+    		<ColumnDefinition Width="0.496*"/>
+    	</Grid.ColumnDefinitions>
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    			<GradientStop Color="#FFC2E2FB" Offset="0"/>
+    			<GradientStop Color="#FFE5E5E5" Offset="1"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
+        <igDP:XamDataGrid Margin="22,75,12.38,21" Name="xamDataGrid1" />
+        <igDP:XamDataGrid Margin="9.62,74,21,21" Name="xamDataGrid2" Grid.Column="1" />
+        <Label Content="Pisos disponibles" Height="22" Margin="22,48,12.38,0" VerticalAlignment="Top"/>
+        <Label Content="Pisos asignados" Height="22" Margin="9.62,48,21,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Height="22" Margin="22,12,115,0" VerticalAlignment="Top">Listado de Usuarios</Label>
+        <igEditors:XamComboEditor Grid.ColumnSpan="2" Height="28" Margin="186,10,25,0" Name="xamComboEditor1" VerticalAlignment="Top" xmlns:igEditors="http://infragistics.com/Editors" />
+    </Grid>
+</Window>

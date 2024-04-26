@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSReposicion" targetNamespace="http://tempuri.org/DSReposicion.xsd" xmlns:mstns="http://tempuri.org/DSReposicion.xsd" xmlns="http://tempuri.org/DSReposicion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSReposicion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSReposicion" msprop:Generator_UserDSName="DSReposicion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="detReposicion" msprop:Generator_TableClassName="detReposicionDataTable" msprop:Generator_TableVarName="tabledetReposicion" msprop:Generator_TablePropName="detReposicion" msprop:Generator_RowDeletingName="detReposicionRowDeleting" msprop:Generator_RowChangingName="detReposicionRowChanging" msprop:Generator_RowEvHandlerName="detReposicionRowChangeEventHandler" msprop:Generator_RowDeletedName="detReposicionRowDeleted" msprop:Generator_UserTableName="detReposicion" msprop:Generator_RowChangedName="detReposicionRowChanged" msprop:Generator_RowEvArgName="detReposicionRowChangeEvent" msprop:Generator_RowClassName="detReposicionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codpro" msprop:Generator_ColumnVarNameInTable="columncodpro" msprop:Generator_ColumnPropNameInRow="codpro" msprop:Generator_ColumnPropNameInTable="codproColumn" msprop:Generator_UserColumnName="codpro" type="xs:string" minOccurs="0" />
+              <xs:element name="despro" msprop:Generator_ColumnVarNameInTable="columndespro" msprop:Generator_ColumnPropNameInRow="despro" msprop:Generator_ColumnPropNameInTable="desproColumn" msprop:Generator_UserColumnName="despro" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cabReposicion" msprop:Generator_TableClassName="cabReposicionDataTable" msprop:Generator_TableVarName="tablecabReposicion" msprop:Generator_TablePropName="cabReposicion" msprop:Generator_RowDeletingName="cabReposicionRowDeleting" msprop:Generator_RowChangingName="cabReposicionRowChanging" msprop:Generator_RowEvHandlerName="cabReposicionRowChangeEventHandler" msprop:Generator_RowDeletedName="cabReposicionRowDeleted" msprop:Generator_UserTableName="cabReposicion" msprop:Generator_RowChangedName="cabReposicionRowChanged" msprop:Generator_RowEvArgName="cabReposicionRowChangeEvent" msprop:Generator_RowClassName="cabReposicionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="responsable" msprop:Generator_ColumnVarNameInTable="columnresponsable" msprop:Generator_ColumnPropNameInRow="responsable" msprop:Generator_ColumnPropNameInTable="responsableColumn" msprop:Generator_UserColumnName="responsable" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="hora" msprop:Generator_ColumnVarNameInTable="columnhora" msprop:Generator_ColumnPropNameInRow="hora" msprop:Generator_ColumnPropNameInTable="horaColumn" msprop:Generator_UserColumnName="hora" type="xs:string" minOccurs="0" />
+              <xs:element name="npedido" msprop:Generator_ColumnVarNameInTable="columnnpedido" msprop:Generator_ColumnPropNameInRow="npedido" msprop:Generator_ColumnPropNameInTable="npedidoColumn" msprop:Generator_UserColumnName="npedido" type="xs:string" minOccurs="0" />
+              <xs:element name="borigen" msprop:Generator_ColumnVarNameInTable="columnborigen" msprop:Generator_ColumnPropNameInRow="borigen" msprop:Generator_ColumnPropNameInTable="borigenColumn" msprop:Generator_UserColumnName="borigen" type="xs:string" minOccurs="0" />
+              <xs:element name="bdestino" msprop:Generator_ColumnVarNameInTable="columnbdestino" msprop:Generator_ColumnPropNameInRow="bdestino" msprop:Generator_ColumnPropNameInTable="bdestinoColumn" msprop:Generator_UserColumnName="bdestino" type="xs:string" minOccurs="0" />
+              <xs:element name="observacion" msprop:Generator_ColumnVarNameInTable="columnobservacion" msprop:Generator_ColumnPropNameInRow="observacion" msprop:Generator_ColumnPropNameInTable="observacionColumn" msprop:Generator_UserColumnName="observacion" type="xs:string" minOccurs="0" />
+              <xs:element name="path" msprop:Generator_ColumnVarNameInTable="columnpath" msprop:Generator_ColumnPropNameInRow="path" msprop:Generator_ColumnPropNameInTable="pathColumn" msprop:Generator_UserColumnName="path" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

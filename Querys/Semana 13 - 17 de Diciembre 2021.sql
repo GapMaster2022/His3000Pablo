@@ -1,0 +1,258 @@
+SELECT * FROM Cg3000..Cgzonval
+
+select * from Sic3000..Numero_Control where modcon = 'LIQUIDACION TARJETA CREDITO'
+
+SELECT * FROM Sic3000..Pagos
+
+CREATE TABLE Ajustes
+(aj_codigo bigint identity(1,1) not null,
+numaj bigint,
+tipo nvarchar(1),
+codcli nvarchar(10),
+fecha datetime,
+numdoc nvarchar(13),
+ajustado float,
+obs nvarchar(1),
+pagado float,
+codresp float,
+caja nvarchar(10),
+forpag nvarchar(10),
+numliquidacion bigint,
+asicon nvarchar(15),
+comentario nvarchar(100))
+----------------------------------------------
+-- CREATE TABLE MEDICOS(
+-- ID BIGINT IDENTITY(1,1) NOT NULL,
+-- MMED_CODIGO BIGINT,
+-- MBAN_CODIGO INT,
+-- MESP_CODIGO INT,
+-- MESC_CODIGO INT,
+-- MID_USUARIO INT,
+-- MTIM_CODIGO INT,
+-- MTUH_CODIGO INT,
+-- MMED_CODIGO_MED BIGINT,
+-- MMED_FECHA DATETIME DEFAULT GETDATE(),
+-- MMED_NOMBRE1 NVARCHAR(100),
+-- MMED_NOMBRE2 NVARCHAR(100),
+-- MMED_APELLIDO1 NVARCHAR(100),
+-- MMED_APELLIDO2 NVARCHAR(100),
+-- MMED_FECHA_NACIMIENTO DATETIME,
+-- MMED_DIRECCION NVARCHAR(500),
+-- MMED_OBSERVACION NVARCHAR(500),
+-- MMED_RUC NVARCHAR(20),
+-- MMED_EMAIL NVARCHAR(50),
+-- MMED_SEXO NVARCHAR(1),
+-- MMED_NUM_CUENTA NVARCHAR(25),
+-- MMED_TIPO_CUENTA NVARCHAR(1),
+-- MMED_CUENTA_CONTABLE NVARCHAR(20),
+-- MMED_TELEFONO1 NVARCHAR(16),
+-- MMED_TELEFONO2 NVARCHAR(16),
+-- MMED_AUTORIZACION NVARCHAR(49),
+-- MMED_FACTURA_INICIAL NVARCHAR(15),
+-- MMED_FACTURA_FINAL NVARCHAR(15),
+-- MMED_CON_TRANSFERENCIA BIT,
+-- MMED_RECIBE_LLAMADA BIT,
+-- MMED_ESTADO BIT,
+-- MMED_LIBRO NVARCHAR(8),
+-- MMED_FOLIO NVARCHAR(8),
+-- MACCION NVARCHAR(50))
+
+----------------------------------------------------------------------------
+--SE DEBE CREAR ESTA TABLA EN LA TABLA DE SERIES 3000 AUDITORIA
+-- CREATE PROCEDURE sp_AuditoriaMedicos
+-- @med_codigo bigint,
+-- @accion nvarchar(50),
+-- @id_usuario int
+-- AS
+-- INSERT INTO SERIES3000_AUDITORIA..MEDICOS(MMED_CODIGO, MBAN_CODIGO, MESP_CODIGO, MESC_CODIGO,
+-- MID_USUARIO, MTIM_CODIGO, MTUH_CODIGO, MMED_CODIGO_MED, MMED_NOMBRE1, MMED_NOMBRE2, MMED_APELLIDO1, MMED_APELLIDO2,
+-- MMED_FECHA_NACIMIENTO, MMED_DIRECCION, MMED_OBSERVACION, MMED_RUC, MMED_EMAIL, MMED_SEXO, MMED_NUM_CUENTA,
+-- MMED_TIPO_CUENTA, MMED_CUENTA_CONTABLE, MMED_TELEFONO1, MMED_TELEFONO2, MMED_AUTORIZACION, MMED_FACTURA_INICIAL,
+-- MMED_FACTURA_FINAL, MMED_CON_TRANSFERENCIA, MMED_RECIBE_LLAMADA, MMED_ESTADO, MMED_LIBRO, MMED_FOLIO, MACCION)
+-- SELECT MED_CODIGO, BAN_CODIGO, ESP_CODIGO, ESC_CODIGO,
+-- @id_usuario, TIM_CODIGO, TIH_CODIGO, CONVERT(BIGINT, MED_CODIGO_MEDICO), MED_NOMBRE1, MED_NOMBRE2, MED_APELLIDO_PATERNO, 
+-- MED_APELLIDO_MATERNO, MED_FECHA_NACIMIENTO, MED_DIRECCION, MED_DIRECCION_CONSULTORIO, MED_RUC, MED_EMAIL, MED_GENERO,
+-- MED_NUM_CUENTA, MED_TIPO_CUENTA, MED_CUENTA_CONTABLE, MED_TELEFONO_CASA, MED_TELEFONO_CELULAR, MED_AUTORIZACION_SRI,
+-- MED_FACTURA_INICIAL, MED_FACTURA_FINAL, MED_CON_TRANSFERENCIA, MED_RECIBE_LLAMADA, MED_ESTADO, MED_CODIGO_LIBRO, MED_CODIGO_FOLIO, @accion
+-- FROM His3000..MEDICOS WHERE MED_CODIGO = @med_codigo
+-- GO
+
+--------------------------------------------------------
+
+-- --revisar si el codigo es el mismo 
+-- select * from PARAMETROS order by 1 desc
+
+-- SELECT * FROM PARAMETROS_DETALLE ORDER BY 1 DESC
+
+-- INSERT INTO PARAMETROS VALUES(24, 1, 'RECETA PASTEUR', 'NUEVO DISEÑO DE RECETA', 0)
+
+-- INSERT INTO PARAMETROS_DETALLE VALUES(35, 24, 'RECETA PASTEUR', NULL, 'NUEVO DISEÑO', 0)
+
+-------------------------------------------------------------------
+
+-- CREATE PROCEDURE sp_ParametroReceta
+-- AS
+-- SELECT PAD_ACTIVO FROM PARAMETROS_DETALLE WHERE PAD_CODIGO = 35
+-- GO
+
+-------------------------------------------------------------------
+
+-- CREATE TABLE RECETA_MEDICA
+-- (RM_CODIGO BIGINT IDENTITY(1,1) NOT NULL,
+-- ATE_CODIGO BIGINT,
+-- RM_FECHA DATETIME DEFAULT GETDATE(),
+-- RM_ALERGIAS NVARCHAR(255),
+-- MED_CODIGO BIGINT,
+-- RM_CITA DATETIME)
+-- USE [His3000]
+-- GO
+
+-- /****** Object:  Table [dbo].[RECETA_MEDICA]    Script Date: 19/12/2021 10:45:00 ******/
+-- SET ANSI_NULLS ON
+-- GO
+
+-- SET QUOTED_IDENTIFIER ON
+-- GO
+
+-- CREATE TABLE [dbo].[RECETA_MEDICA](
+	-- [RM_CODIGO] [bigint] IDENTITY(1,1) NOT NULL,
+	-- [ATE_CODIGO] [bigint] NULL,
+	-- [RM_FECHA] [datetime] NULL,
+	-- [RM_ALERGIAS] [nvarchar](255) NULL,
+	-- [MED_CODIGO] [bigint] NULL,
+	-- [RM_CITA] [datetime] NULL,
+	-- [ID_USUARIO] [int] NULL,
+	-- [RM_ESTADO] [bit] NULL,
+	-- [RM_SIGNO] [nvarchar](500) NULL,
+	-- [RM_FARMACOS] [nvarchar](1000) NULL
+-- ) ON [PRIMARY]
+-- GO
+
+-- ALTER TABLE [dbo].[RECETA_MEDICA] ADD  DEFAULT (getdate()) FOR [RM_FECHA]
+-- GO
+
+-- ALTER TABLE [dbo].[RECETA_MEDICA] ADD  CONSTRAINT [DF_RECETA_MEDICA_RM_ESTADO]  DEFAULT ((1)) FOR [RM_ESTADO]
+-- GO
+
+
+
+
+
+
+-- CREATE TABLE RECETA_DIAGNOSTICO(
+-- RD_CODIGO BIGINT IDENTITY(1,1) NOT NULL,
+-- RM_CODIGO BIGINT,
+-- CIE_CODIGO NVARCHAR(7))
+
+-- CREATE TABLE RECETA_MEDICAMENTOS(
+-- RMD_CODIGO BIGINT IDENTITY(1,1),
+-- CODPRO NVARCHAR(15),
+-- RM_CODIGO BIGINT,
+-- RMD_INDICACIONES NVARCHAR(255),
+-- RMD_ADMINISTRACION NVARCHAR(50),
+-- RMD_PRESENTACION NVARCHAR(50),
+-- RMD_CONCENTRACION NVARCHAR(50),
+-- RMD_CANTIDAD INT)
+
+
+-----------------------------------------------
+-- alter PROCEDURE sp_RecetaCrear
+-- @ate_codigo bigint,
+-- @alergias nvarchar(255),
+-- @med_codigo bigint,
+-- @cita datetime,
+-- @id_usuario int,
+-- @signos nvarchar(500),
+-- @farmacos nvarchar(1000),
+-- @tipo int,
+-- @consulta int
+-- AS
+-- INSERT INTO RECETA_MEDICA(ATE_CODIGO, RM_ALERGIAS, MED_CODIGO, RM_CITA, ID_USUARIO, RM_SIGNO, RM_FARMACOS, TIP_CODIGO, TC_CONSULTA)
+-- VALUES(@ate_codigo, @alergias, @med_codigo, @cita, @id_usuario, @signos, @farmacos, @tipo, @consulta);
+-- GO
+
+-- CREATE PROCEDURE sp_RecetaDiagnosticoCrear
+-- @rm_codigo bigint,
+-- @cie nvarchar(7)
+-- AS
+-- INSERT INTO RECETA_DIAGNOSTICO VALUES(@rm_codigo, @cie)
+-- GO
+
+-- alter PROCEDURE sp_RecetaMedicamentosCrear
+-- @codpro nvarchar(15),
+-- @rm_codigo bigint,
+-- @indicaciones nvarchar(255),
+-- @administracion nvarchar(50),
+-- @presentacion nvarchar(50),
+-- @concentracion nvarchar(50),
+-- @cantidad int,
+-- @comercial nvarchar(255)
+-- AS
+-- INSERT INTO RECETA_MEDICAMENTOS VALUES(@codpro, @rm_codigo, @indicaciones, @administracion, @presentacion, @concentracion, @cantidad, @comercial)
+-- GO
+----------------------------------------------
+
+
+-- ALTER PROCEDURE sp_RecetaEditar
+-- @rm_codigo bigint,
+-- @alergias nvarchar(255),
+-- @med_codigo bigint,
+-- @cita datetime,
+-- @id_usuario int,
+-- @signos nvarchar(500),
+-- @farmacos nvarchar(1000),
+-- @tipo int,
+-- @consulta int
+-- AS
+-- UPDATE RECETA_MEDICA SET RM_ALERGIAS = @alergias, MED_CODIGO = @med_codigo, RM_CITA = @cita, RM_SIGNO = @signos,
+-- RM_FARMACOS = @farmacos, TIP_CODIGO = @tipo, TC_CONSULTA = @consulta WHERE RM_CODIGO = @rm_codigo
+-- GO
+
+-- -- ALTER PROCEDURE sp_RecetaEditar
+-- -- @rm_codigo bigint,
+-- -- @alergias nvarchar(255),
+-- -- @med_codigo bigint,
+-- -- @cita datetime,
+-- -- @id_usuario int,
+-- -- @signos nvarchar(500),
+-- -- @farmacos nvarchar(1000),
+-- -- @tipo int,
+-- -- @consulta int
+-- -- AS
+-- -- UPDATE RECETA_MEDICA SET RM_ALERGIAS = @alergias, MED_CODIGO = @med_codigo, RM_CITA = @cita, RM_SIGNO = @signos,
+-- -- RM_FARMACOS = @farmacos, TIP_CODIGO = @tipo, TC_CONSULTA = @consulta WHERE RM_CODIGO = @rm_codigo
+
+-- -- DELETE FROM RECETA_DIAGNOSTICO WHERE RM_CODIGO = @rm_codigo
+-- -- DELETE FROM RECETA_MEDICAMENTOS WHERE RM_CODIGO = @rm_codigo
+-- -- GO
+
+------------------------------------------------------------------
+-- CREATE TABLE TIPO_CONSULTA
+-- (TC_CODIGO INT IDENTITY(1,1) NOT NULL,
+-- TC_DESCRIPCION NVARCHAR(255)
+-- )
+
+-- INSERT INTO TIPO_CONSULTA VALUES ('CONSULTA EXTERNA')
+-- INSERT INTO TIPO_CONSULTA VALUES ('CONSULTA PRIVADA')
+-- INSERT INTO TIPO_CONSULTA VALUES ('CONSULTA EMERGENCIA')
+
+-- CREATE TABLE TIPO_PRESENTACION(
+-- TP_CODIGO INT IDENTITY(1,1) NOT NULL,
+-- TP_DESCRIPCION NVARCHAR(255))
+
+-- INSERT INTO TIPO_PRESENTACION VALUES ('TABLETA')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('COMPRIMIDO')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('CAPSULA')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('GRAGEA')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('GOTERO')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('JARABE')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('SUSPENSION')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('SUPOSITORIO')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('OVULO')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('AMPOLLA')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('FRASCO')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('SPRAY')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('CREMA')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('UNGUENTO')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('GEL')
+-- INSERT INTO TIPO_PRESENTACION VALUES ('PARCHE DERMICO')

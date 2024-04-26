@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FDFD8B7-8C24-4568-91E8-C99C89108D6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>His.Admision</RootNamespace>
+    <AssemblyName>His.Admision</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/His.Admision/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlexPilotti.FTPS.Client, Version=1.1.0.27735, Culture=neutral, PublicKeyToken=48316da1e84b328d, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="GeneralApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Documents.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinDock.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinMaskedEdit.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTree.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinCalcManager.v10.3.FormulaBuilder, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.SupportDialogs.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics3.Excel.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics3.Win.UltraWinGrid.ExcelExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="InfragisticsWPF3.DataPresenter.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="InfragisticsWPF3.Editors.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="InfragisticsWPF3.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CertificadoMedico.cs" />
+    <Compile Include="Datos\CuentaPaciente.cs" />
+    <Compile Include="Datos\GenerarPdf.cs" />
+    <Compile Include="Datos\ParametrosFTP.cs" />
+    <Compile Include="dtsAdmision.cs">
+      <DependentUpon>dtsAdmision.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtsAdmision.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsAdmision.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtsImpresionPedido.cs" />
+    <Compile Include="dtsImpresionPedido.designer.cs">
+      <DependentUpon>dtsImpresionPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExploradorFormularios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExploradorFormularios.Designer.cs">
+      <DependentUpon>ExploradorFormularios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmisionEmergencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmisionEmergencia.Designer.cs">
+      <DependentUpon>frmAdmisionEmergencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaHabitaciones.xaml.cs">
+      <DependentUpon>frmAyudaHabitaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaOtrosRubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaOtrosRubros.designer.cs">
+      <DependentUpon>frmAyudaOtrosRubros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckListHc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckListHc.designer.cs">
+      <DependentUpon>frmCheckListHc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlesWPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlesWPF.Designer.cs">
+      <DependentUpon>frmControlesWPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmergenciaProcedimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmergenciaProcedimientos.Designer.cs">
+      <DependentUpon>frmEmergenciaProcedimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExploradorControlAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExploradorControlAyuda.designer.cs">
+      <DependentUpon>frmExploradorControlAyuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExploradorControlHC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExploradorControlHC.designer.cs">
+      <DependentUpon>frmExploradorControlHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExploradorHC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExploradorHC.Designer.cs">
+      <DependentUpon>frmExploradorHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExploradorMicrofilms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExploradorMicrofilms.Designer.cs">
+      <DependentUpon>frmExploradorMicrofilms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistorialHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialHabitaciones.Designer.cs">
+      <DependentUpon>frmHistorialHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImpresionPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImpresionPedidos.designer.cs">
+      <DependentUpon>frmImpresionPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLaboratorio.Designer.cs">
+      <DependentUpon>FrmLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteDefunciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteDefunciones.Designer.cs">
+      <DependentUpon>frmReporteDefunciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="FrmTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTarifario.Designer.cs">
+      <DependentUpon>FrmTarifario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AyudaCatalogoSubNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AyudaCatalogoSubNivel.Designer.cs">
+      <DependentUpon>frm_AyudaCatalogoSubNivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AyudaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AyudaPacientes.Designer.cs">
+      <DependentUpon>frm_AyudaPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AyudaPacientesCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AyudaPacientesCuentas.Designer.cs">
+      <DependentUpon>frm_AyudaPacientesCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Ayudas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ayudas.Designer.cs">
+      <DependentUpon>frm_Ayudas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CensoDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CensoDiario.Designer.cs">
+      <DependentUpon>frm_CensoDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CierreAdmisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CierreAdmisiones.Designer.cs">
+      <DependentUpon>frm_CierreAdmisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Egreso_preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Egreso_preview.Designer.cs">
+      <DependentUpon>frm_Egreso_preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_EstadoHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_EstadoHabitaciones.Designer.cs">
+      <DependentUpon>frm_EstadoHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ExploradorHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ExploradorHabitaciones.Designer.cs">
+      <DependentUpon>frm_ExploradorHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ExploradorIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ExploradorIngresos.Designer.cs">
+      <DependentUpon>frm_ExploradorIngresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ExploradorRubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ExploradorRubros.Designer.cs">
+      <DependentUpon>frm_ExploradorRubros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ExploraPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ExploraPacientes.Designer.cs">
+      <DependentUpon>frm_ExploraPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Admision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Admision.Designer.cs">
+      <DependentUpon>frm_Admision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_FormulariosHCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_FormulariosHCU.Designer.cs">
+      <DependentUpon>frm_FormulariosHCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Habitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Habitaciones.Designer.cs">
+      <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Imagenologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Imagenologia.Designer.cs">
+      <DependentUpon>frm_Imagenologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ListaFormularios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ListaFormularios.Designer.cs">
+      <DependentUpon>frm_ListaFormularios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MedicoTemporal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MedicoTemporal.Designer.cs">
+      <DependentUpon>frm_MedicoTemporal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MoverPacienteHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MoverPacienteHabitacion.Designer.cs">
+      <DependentUpon>frm_MoverPacienteHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garantias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Garantias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GarantiasBloque.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GarantiasBloque.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImpresionCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImpresionCertificado.Designer.cs">
+      <DependentUpon>ImpresionCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INEN.Designer.cs">
+      <DependentUpon>INEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI_Admision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_Admision.Designer.cs">
+      <DependentUpon>MDI_Admision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumerosLetras.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="certificadoMedico.rdlc" />
+    <EmbeddedResource Include="ExploradorFormularios.resx">
+      <DependentUpon>ExploradorFormularios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmisionEmergencia.resx">
+      <DependentUpon>frmAdmisionEmergencia.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaOtrosRubros.resx">
+      <DependentUpon>frmAyudaOtrosRubros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckListHc.resx">
+      <DependentUpon>frmCheckListHc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlesWPF.resx">
+      <DependentUpon>frmControlesWPF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmergenciaProcedimientos.resx">
+      <DependentUpon>frmEmergenciaProcedimientos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExploradorControlAyuda.resx">
+      <DependentUpon>frmExploradorControlAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExploradorControlHC.resx">
+      <DependentUpon>frmExploradorControlHC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExploradorHC.resx">
+      <DependentUpon>frmExploradorHC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExploradorMicrofilms.resx">
+      <DependentUpon>frmExploradorMicrofilms.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialHabitaciones.resx">
+      <DependentUpon>frmHistorialHabitaciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImpresionPedidos.resx">
+      <DependentUpon>frmImpresionPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLaboratorio.resx">
+      <DependentUpon>FrmLaboratorio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportaGarantias.resx">
+      <DependentUpon>frmReportaGarantias.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteDefunciones.resx">
+      <DependentUpon>frmReporteDefunciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTarifario.resx">
+      <DependentUpon>FrmTarifario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AyudaCatalogoSubNivel.resx">
+      <DependentUpon>frm_AyudaCatalogoSubNivel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AyudaPacientes.resx">
+      <DependentUpon>frm_AyudaPacientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ayudas.resx">
+      <DependentUpon>frm_Ayudas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CensoDiario.resx">
+      <DependentUpon>frm_CensoDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CierreAdmisiones.resx">
+      <DependentUpon>frm_CierreAdmisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Egreso_preview.resx">
+      <DependentUpon>frm_Egreso_preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_EstadoHabitaciones.resx">
+      <DependentUpon>frm_EstadoHabitaciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ExploradorHabitaciones.resx">
+      <DependentUpon>frm_ExploradorHabitaciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ExploradorIngresos.resx">
+      <DependentUpon>frm_ExploradorIngresos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ExploradorRubros.resx">
+      <DependentUpon>frm_ExploradorRubros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ExploraPacientes.resx">
+      <DependentUpon>frm_ExploraPacientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Admision.resx">
+      <DependentUpon>frm_Admision.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_FormulariosHCU.resx">
+      <DependentUpon>frm_FormulariosHCU.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Habitaciones.resx">
+      <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Imagenologia.resx">
+      <DependentUpon>frm_Imagenologia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ListaFormularios.resx">
+      <DependentUpon>frm_ListaFormularios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MedicoTemporal.resx">
+      <DependentUpon>frm_MedicoTemporal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MoverPacienteHabitacion.resx">
+      <DependentUpon>frm_MoverPacienteHabitacion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Garantias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Garantias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GarantiasBloque.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GarantiasBloque.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImpresionCertificado.resx">
+      <DependentUpon>ImpresionCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INEN.resx">
+      <DependentUpon>INEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_Admision.resx">
+      <DependentUpon>MDI_Admision.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Admision\CertifivadoMedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CertifivadoMedico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Admision\Contrato.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Contrato.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Admision\rPrimeraAtencion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rPrimeraAtencion1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Admision\rPrimeraAtencion2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rPrimeraAtencion2.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Admision\rPrimeraAtencion3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rPrimeraAtencion3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="dtsAdmision.xsc">
+      <DependentUpon>dtsAdmision.xsd</DependentUpon>
+    </None>
+    <None Include="dtsAdmision.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsAdmision.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dtsAdmision.xss">
+      <DependentUpon>dtsAdmision.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CertificadoMedico.datasource" />
+    <None Include="Properties\DataSources\His.Entidades.PACIENTES.datasource" />
+    <None Include="Properties\DataSources\ImpresionCertificado.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmReportaGarantias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportaGarantias.Designer.cs">
+      <DependentUpon>frmReportaGarantias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Admision\CertifivadoMedico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertifivadoMedico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Admision\Contrato.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contrato.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\Admision\rPrimeraAtencion1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rPrimeraAtencion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Admision\rPrimeraAtencion2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rPrimeraAtencion2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\Admision\rPrimeraAtencion3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rPrimeraAtencion3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Utilitarios\Core.Utilitarios.csproj">
+      <Project>{E713939C-9F9D-43AE-A95D-A2844313D39A}</Project>
+      <Name>Core.Utilitarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.Datos\Core.Datos.csproj">
+      <Project>{19ACEFD2-D37B-4FD6-A5B8-A36E437AC94A}</Project>
+      <Name>Core.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.Entidades\Core.Entidades.csproj">
+      <Project>{3D7A1A75-226E-441F-85C6-7A186ADF0BB4}</Project>
+      <Name>Core.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.DatosReportes\His.DatosReportes.csproj">
+      <Project>{053A1C21-4C30-4B7E-BE9A-ED2D8F7DB7CF}</Project>
+      <Name>His.DatosReportes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Datos\His.Datos.csproj">
+      <Project>{99494169-AF26-4DBF-B140-D566F3D9AEB1}</Project>
+      <Name>His.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.EntidadesAdmision\His.EntidadesAdmision.csproj">
+      <Project>{6C736C02-D03F-4ACA-B2E1-4FD3D49F23FC}</Project>
+      <Name>His.EntidadesAdmision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Entidades\His.Entidades.csproj">
+      <Project>{98A247E3-EBA6-46C6-84A0-AC9D14350C89}</Project>
+      <Name>His.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Negocio\His.Negocio.csproj">
+      <Project>{7B911AE9-39DA-493E-87AF-9E6BF60DEF90}</Project>
+      <Name>His.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His.Parametros\His.Parametros.csproj">
+      <Project>{1BAE75B8-EB2A-49C7-A158-54AE397450CB}</Project>
+      <Name>His.Parametros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000Entidades\His.Entidades.General\His.Entidades.General.csproj">
+      <Project>{D7465D15-7567-424B-BDCC-0FE2A75E3DA0}</Project>
+      <Name>His.Entidades.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000Negocio\His.General\His.General.csproj">
+      <Project>{8A713189-DCE0-4674-A95C-0FB17EFED0D4}</Project>
+      <Name>His.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000UI\FarmaciaUI\His.Farmacia\His.Farmacia.csproj">
+      <Project>{E009D62B-D8FF-4288-9F06-63C48CEE9F75}</Project>
+      <Name>His.Farmacia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000UI\His.Garantia\His.Garantia.csproj">
+      <Project>{588f7d3a-e5cd-4ce1-8e12-3abd992b085b}</Project>
+      <Name>His.Garantia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000UI\His.Honorarios\His.Honorarios.csproj">
+      <Project>{46D13EBA-7A43-457B-A0F7-0833C55C17A2}</Project>
+      <Name>His.Honorarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000UI\HistoriasUI\His.Formulario\His.Formulario.csproj">
+      <Project>{6E44C066-8AAE-40FA-97BA-ED6EF7DA08D5}</Project>
+      <Name>His.Formulario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\His3000UI\Recursos\His.Recursos.csproj">
+      <Project>{AD16CB7B-FCE5-40C2-B91B-12149F725119}</Project>
+      <Name>His.Recursos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="frmAyudaHabitaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\estadoAlta.png" />
+    <Resource Include="imagenes\estadoCancelada.png" />
+    <Resource Include="imagenes\estadoDesocupada.png" />
+    <Resource Include="imagenes\estadoDisponible.png" />
+    <Resource Include="imagenes\estadoLimpieza.png" />
+    <Resource Include="imagenes\estadoOcupada.png" />
+    <Resource Include="imagenes\porDefecto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

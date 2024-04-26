@@ -1,0 +1,10 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="His.HabitacionesUI.frmModificarHabitaciones"
+	x:Name="Window"
+	Title="frmModificarHabitaciones"
+	Width="348" Height="224">
+
+	<Grid x:Name="LayoutRoot" Background="LightGray"  />
+</Window>
