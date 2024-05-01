@@ -14,7 +14,7 @@
     <Shape ID="DesignTable:TiemposQ" ZOrder="4" X="247" Y="492" Height="200" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
     <Shape ID="DesignTable:Complicaciones" ZOrder="1" X="408" Y="373" Height="162" Width="156" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:ExamenesHist" ZOrder="3" X="436" Y="550" Height="181" Width="171" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
-    <Shape ID="DesignTable:DatosProfesional" ZOrder="2" X="743" Y="241" Height="105" Width="165" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
+    <Shape ID="DesignTable:DatosProfesional" ZOrder="2" X="633" Y="550" Height="105" Width="165" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

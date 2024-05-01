@@ -16,9 +16,9 @@ namespace His.Formulario {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class FrmConsultaExterna002 : ReportClass {
+    public class ProtocoloOperatorio2021 : ReportClass {
         
-        public FrmConsultaExterna002() {
+        public ProtocoloOperatorio2021() {
         }
         
         public override string ResourceName {
@@ -92,9 +92,9 @@ namespace His.Formulario {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedFrmConsultaExterna002 : Component, ICachedReport {
+    public class CachedFrmProtocoloOperatorio2021 : Component, ICachedReport {
         
-        public CachedFrmConsultaExterna002() {
+        public CachedFrmProtocoloOperatorio2021() {
         }
         
         [Browsable(false)]

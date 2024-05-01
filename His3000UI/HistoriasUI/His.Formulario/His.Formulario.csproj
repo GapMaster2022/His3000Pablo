@@ -566,14 +566,6 @@
     <Compile Include="frmAyudaReceta.Designer.cs">
       <DependentUpon>frmAyudaReceta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProtocoloOperatorio.cs">
-      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ProtocoloOperatorio.Designer.cs">
-      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="ProtocoloOperatorio2021.cs">
       <DependentUpon>ProtocoloOperatorio2021.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2285,17 +2277,6 @@
     </None>
     <None Include="Garantias.xss">
       <DependentUpon>Garantias.xsd</DependentUpon>
-    </None>
-    <None Include="ProtocoloOperatorio.xsc">
-      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
-    </None>
-    <None Include="ProtocoloOperatorio.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProtocoloOperatorio.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProtocoloOperatorio.xss">
-      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
     </None>
     <None Include="HCU_form002MSP.xsc">
       <DependentUpon>HCU_form002MSP.xsd</DependentUpon>
