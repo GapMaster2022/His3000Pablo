@@ -2031,6 +2031,8 @@ namespace His.Formulario {
             
             private global::System.Data.DataColumn columnotrosAnest;
             
+            private global::System.Data.DataColumn columnDetalle;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AnestesiaDataTable() {
@@ -2098,6 +2100,14 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DetalleColumn {
+                get {
+                    return this.columnDetalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2133,13 +2143,14 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnestesiaRow AddAnestesiaRow(string general, string regional, string sedacion, string otrosAnest) {
+            public AnestesiaRow AddAnestesiaRow(string general, string regional, string sedacion, string otrosAnest, string Detalle) {
                 AnestesiaRow rowAnestesiaRow = ((AnestesiaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         general,
                         regional,
                         sedacion,
-                        otrosAnest};
+                        otrosAnest,
+                        Detalle};
                 rowAnestesiaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAnestesiaRow);
                 return rowAnestesiaRow;
@@ -2166,6 +2177,7 @@ namespace His.Formulario {
                 this.columnregional = base.Columns["regional"];
                 this.columnsedacion = base.Columns["sedacion"];
                 this.columnotrosAnest = base.Columns["otrosAnest"];
+                this.columnDetalle = base.Columns["Detalle"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2179,6 +2191,8 @@ namespace His.Formulario {
                 base.Columns.Add(this.columnsedacion);
                 this.columnotrosAnest = new global::System.Data.DataColumn("otrosAnest", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnotrosAnest);
+                this.columnDetalle = new global::System.Data.DataColumn("Detalle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDetalle);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2683,6 +2697,8 @@ namespace His.Formulario {
             
             private global::System.Data.DataColumn columncomp;
             
+            private global::System.Data.DataColumn columndiagrama;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ComplicacionesDataTable() {
@@ -2766,6 +2782,14 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn diagramaColumn {
+                get {
+                    return this.columndiagrama;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2801,7 +2825,7 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComplicacionesRow AddComplicacionesRow(string perdidaSang, string sangradoAprox, string usoMaterialSi, string usoMaterialNo, string descripcion, string comp) {
+            public ComplicacionesRow AddComplicacionesRow(string perdidaSang, string sangradoAprox, string usoMaterialSi, string usoMaterialNo, string descripcion, string comp, string diagrama) {
                 ComplicacionesRow rowComplicacionesRow = ((ComplicacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         perdidaSang,
@@ -2809,7 +2833,8 @@ namespace His.Formulario {
                         usoMaterialSi,
                         usoMaterialNo,
                         descripcion,
-                        comp};
+                        comp,
+                        diagrama};
                 rowComplicacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowComplicacionesRow);
                 return rowComplicacionesRow;
@@ -2838,6 +2863,7 @@ namespace His.Formulario {
                 this.columnusoMaterialNo = base.Columns["usoMaterialNo"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columncomp = base.Columns["comp"];
+                this.columndiagrama = base.Columns["diagrama"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2855,6 +2881,8 @@ namespace His.Formulario {
                 base.Columns.Add(this.columndescripcion);
                 this.columncomp = new global::System.Data.DataColumn("comp", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncomp);
+                this.columndiagrama = new global::System.Data.DataColumn("diagrama", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiagrama);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4819,6 +4847,22 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Detalle {
+                get {
+                    try {
+                        return ((string)(this[this.tableAnestesia.DetalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Detalle\' de la tabla \'Anestesia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAnestesia.DetalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsgeneralNull() {
                 return this.IsNull(this.tableAnestesia.generalColumn);
             }
@@ -4863,6 +4907,18 @@ namespace His.Formulario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetotrosAnestNull() {
                 this[this.tableAnestesia.otrosAnestColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDetalleNull() {
+                return this.IsNull(this.tableAnestesia.DetalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDetalleNull() {
+                this[this.tableAnestesia.DetalleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5245,6 +5301,22 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string diagrama {
+                get {
+                    try {
+                        return ((string)(this[this.tableComplicaciones.diagramaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'diagrama\' de la tabla \'Complicaciones\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComplicaciones.diagramaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsperdidaSangNull() {
                 return this.IsNull(this.tableComplicaciones.perdidaSangColumn);
             }
@@ -5313,6 +5385,18 @@ namespace His.Formulario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcompNull() {
                 this[this.tableComplicaciones.compColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdiagramaNull() {
+                return this.IsNull(this.tableComplicaciones.diagramaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdiagramaNull() {
+                this[this.tableComplicaciones.diagramaColumn] = global::System.Convert.DBNull;
             }
         }
         

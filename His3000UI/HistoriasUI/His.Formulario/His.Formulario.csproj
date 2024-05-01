@@ -566,6 +566,20 @@
     <Compile Include="frmAyudaReceta.Designer.cs">
       <DependentUpon>frmAyudaReceta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProtocoloOperatorio.cs">
+      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocoloOperatorio.Designer.cs">
+      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ProtocoloOperatorio2021.cs">
+      <DependentUpon>ProtocoloOperatorio2021.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="FrmConsultaExterna002.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2257,6 +2271,10 @@
     <None Include="dtsIngestaEliminacion.xss">
       <DependentUpon>dtsIngestaEliminacion.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="ProtocoloOperatorio2021.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProtocoloOperatorio2021.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Garantias.xsc">
       <DependentUpon>Garantias.xsd</DependentUpon>
     </None>
@@ -2267,6 +2285,17 @@
     </None>
     <None Include="Garantias.xss">
       <DependentUpon>Garantias.xsd</DependentUpon>
+    </None>
+    <None Include="ProtocoloOperatorio.xsc">
+      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
+    </None>
+    <None Include="ProtocoloOperatorio.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProtocoloOperatorio.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProtocoloOperatorio.xss">
+      <DependentUpon>ProtocoloOperatorio.xsd</DependentUpon>
     </None>
     <None Include="HCU_form002MSP.xsc">
       <DependentUpon>HCU_form002MSP.xsd</DependentUpon>

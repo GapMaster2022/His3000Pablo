@@ -15,7 +15,7 @@ using His.DatosReportes;
 using Infragistics;
 using System.Data.SqlClient;
 using His.Entidades.Clases;
-using His.Parametros;
+using His.Formulario;
 
 
 namespace His.Formulario
@@ -1413,63 +1413,6 @@ namespace His.Formulario
 
                 reporte.PROT_PROCEDIMIENTO = proced1;
                 reporte.PROT_PROCEDIMIENTO2 = proced2;
-                //string cadena = rtbProcedimientos.Text;
-                //string texto1 = "\n";
-                //    int lon = 0;
-                //    int espacioUlt = 0;
-                //int contln = 0;
-                //    int posicion = 0;
-                //for (int i = 0; i < cadena.Length; i++)
-                //{
-                //    {
-                //        posicion = i;
-                //        if (contln < 9 && lon < 710)
-                //        {
-                //            if (contln == 8)
-                //            {
-                //                if (cadena.Length - texto1.Length > 117)
-                //                {
-                //                    string texto2 = "";
-                //                    for (int j = i; j < i + 117; j++)
-                //                    {
-                //                        if ((cadena.Substring(j, 1) == "\n"))
-                //                        {
-                //                            posicion = j;
-                //                            break;
-                //                        }
-                //                        else
-                //                        {
-                //                            if (cadena.Substring(j, 1) == " ")
-                //                                posicion = j;
-                //                            texto2 = texto2 + cadena.Substring(j, 1);
-                //                        }
-                //                    }
-                //                    texto1 = texto1 + espacioUlt;
-                //                    i = posicion;
-                //                    posicion = i;
-                //                }
-                //                contln++;
-
-                //            }else
-                //            {
-                //                if(contln == 1){}
-                //                if ((cadena.Substring(i, 1) == "\n"))
-                //                {
-                //                    contln++;
-                //                    lon = cadena.Length -posicion;
-                //                }
-                //                if (cadena.Substring(i, 1) == " ")
-                //                    espacioUlt = i;
-                //                if(i> 960)
-                //                    break;
-                //            }
-                //        }else
-                //                break;
-
-                //    }
-                //}
-                //reporte.PROT_PROCEDIMIENTO = "\n" + cadena.Substring(0, posicion);
-                //    reporte.PROT_PROCEDIMIENTO2 = "\n"+cadena.Substring(posicion, (cadena.Length-posicion));
                 reporte.PROT_SINTESIS = rtbSintesis.Text;
                 reporte.PROT_COMPLICACIONES = rtbComplicaciones.Text;
                 if (rdbSi.Checked == true)
@@ -1498,19 +1441,6 @@ namespace His.Formulario
                 reporte.PROT_FECHA_DD = Convert.ToString(dtpFecha.Value).Substring(3, 2);
                 reporte.PROT_FECHA_DA = Convert.ToString(dtpFecha.Value).Substring(6, 4);
 
-
-                //ReportesHistoriaClinica reporteAnamnesis = new ReportesHistoriaClinica();
-                //reporteAnamnesis.ingresarAnamnesis(reporte);
-                //frmReportes ventana = new frmReportes(1, "anamnesis");
-                ////ventana.Show();
-                //if (accion.Equals("reporte"))
-                //    ventana.Show();
-                //else
-                //{
-                //    CrearCarpetas_Srvidor("anamnesis");
-                //}
-
-
                 ReportesHistoriaClinica reporteOperatorio = new ReportesHistoriaClinica();
                 reporteOperatorio.ingresarProtocolo(reporte);
                 frmReportes ventana = new frmReportes(1, "protocolo");
@@ -1522,6 +1452,77 @@ namespace His.Formulario
                 }
 
                 //ventana.Show();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //Nuevo Reporte Protocolo Operatorio 2021 Pablo Rocha 29/04/2024
+            try
+            {
+                string FullPath = "C:\\Sic3000\\Iconos\\LogoEmpresa.png";
+                DSProtocoloOperatorio DSprotocolo = new DSProtocoloOperatorio();
+                DataRow drDiagnostico;
+                drDiagnostico = DSprotocolo.Tables["Diagnostico"].NewRow();
+                string[] preOp = txtPreOperatorio.Text.Split('\n');
+                if (preOp.Length == 1)
+                {
+                    string[] ciePos = preOp[0].Split('-');
+                    drDiagnostico["preOp1"] = ciePos[1];
+                    drDiagnostico["preOpCie1"] = ciePos[0];
+                }
+                else if (preOp.Length == 2)
+                {
+                    string[] ciePos1 = preOp[0].Split('-');
+                    string[] ciePos2 = preOp[1].Split('-');
+                    drDiagnostico["preOp1"] = ciePos1[1];
+                    drDiagnostico["preOpCie1"] = ciePos1[0];
+                    drDiagnostico["preOp2"] = ciePos2[1];
+                    drDiagnostico["preOpCie2"] = ciePos2[0];
+                }
+                else
+                {
+                    string[] ciePos1 = preOp[0].Split('-');
+                    string[] ciePos2 = preOp[1].Split('-');
+                    string[] ciePos3 = preOp[2].Split('-');
+                    drDiagnostico["preOp1"] = ciePos1[1];
+                    drDiagnostico["preOpCie1"] = ciePos1[0];
+                    drDiagnostico["preOp2"] = ciePos2[1];
+                    drDiagnostico["preOpCie2"] = ciePos2[0];
+                    drDiagnostico["preOp3"] = ciePos3[1];
+                    drDiagnostico["preOpCie3"] = ciePos3[0];
+                }
+
+
+                string[] postOpe = txtPostOperatorio.Text.Split('\n');
+                if(postOpe.Length == 1)
+                {
+                    string[] ciePos = postOpe[0].Split('-');
+                    drDiagnostico["postOp1"] = ciePos[1];
+                    drDiagnostico["postOpCie1"] = ciePos[0];
+                }else if (postOpe.Length == 2)
+                {
+                    string[] ciePos1 = postOpe[0].Split('-');
+                    string[] ciePos2 = postOpe[1].Split('-');
+                    drDiagnostico["postOp1"] = ciePos1[1];
+                    drDiagnostico["postOpCie1"] = ciePos1[0];
+                    drDiagnostico["postOp2"] = ciePos2[1];
+                    drDiagnostico["postOpCie2"] = ciePos2[0];
+                }
+                else
+                {
+                    string[] ciePos1 = postOpe[0].Split('-');
+                    string[] ciePos2 = postOpe[1].Split('-');
+                    string[] ciePos3 = postOpe[2].Split('-');
+                    drDiagnostico["postOp1"] = ciePos1[1];
+                    drDiagnostico["postOpCie1"] = ciePos1[0];
+                    drDiagnostico["postOp2"] = ciePos2[1];
+                    drDiagnostico["postOpCie2"] = ciePos2[0];
+                    drDiagnostico["postOp3"] = ciePos3[1];
+                    drDiagnostico["postOpCie3"] = ciePos3[0];
+                }
+
             }
             catch (Exception err)
             {
