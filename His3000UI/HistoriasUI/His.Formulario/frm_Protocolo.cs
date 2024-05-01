@@ -15,6 +15,7 @@ using His.DatosReportes;
 using Infragistics;
 using System.Data.SqlClient;
 using His.Entidades.Clases;
+using His.Parametros;
 
 
 namespace His.Formulario
@@ -210,7 +211,7 @@ namespace His.Formulario
             rtbExploracion.Text = "";
             rtbProcedimientos.Text = "";
             rtbSintesis.Text = "";
-            rtbComplicaciones.Text = "SANGRADO:\r\n\r\nOTROS:";
+            rtbComplicaciones.Text = "";
             txtHoraAnestecia.Text = "";
             rdbSi.Checked = false;
             rdbNo.Checked = true;
@@ -315,7 +316,28 @@ namespace His.Formulario
             rtbExploracion.Text = protocolo.PROT_EXPLORACION;
             rtbProcedimientos.Text = protocolo.PROT_PROCEDIMIENTO;
             rtbSintesis.Text = protocolo.PROT_SINTESIS;
-            rtbComplicaciones.Text = protocolo.PROT_COMPLICACIONES;
+            string cadena = protocolo.PROT_COMPLICACIONES;
+            char[] separadores = { '\n', '/' }; // Define el carácter delimitador, en este caso, el punto y coma
+
+            string[] partes = cadena.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
+            if(partes.Length > 0)
+            {
+                if(partes.Length == 4)
+                {
+                    rtbComplicaciones.Text = partes[0];
+                    txt_perdida_sanguinea.Text = partes[1];
+                    txt_sangrado_aprox.Text = partes[2];
+                    txt_uso_material.Text = partes[3];
+                    rdb_material_si.Checked = true;
+                }
+                else
+                {
+                    rtbComplicaciones.Text = partes[0];
+                    txt_perdida_sanguinea.Text = partes[1];
+                    txt_sangrado_aprox.Text = partes[2];
+                    rdb_material_no.Checked = true;
+                }
+            }
             if (protocolo.PROT_EXAMENHIS == true)
             {
                 rdbSi.Checked = true;
@@ -426,7 +448,7 @@ namespace His.Formulario
             nuevoProtocolo.PROT_EXPLORACION = rtbExploracion.Text;
             nuevoProtocolo.PROT_PROCEDIMIENTO = rtbProcedimientos.Text;
             nuevoProtocolo.PROT_SINTESIS = rtbSintesis.Text;
-            nuevoProtocolo.PROT_COMPLICACIONES = rtbComplicaciones.Text;
+            nuevoProtocolo.PROT_COMPLICACIONES = rtbComplicaciones.Text + "\n//" + txt_perdida_sanguinea.Text + "\n//" + txt_sangrado_aprox.Text + "\n//" + txt_uso_material.Text;
             if (rdbSi.Checked == true)
                 nuevoProtocolo.PROT_EXAMENHIS = true;
             else
@@ -702,11 +724,11 @@ namespace His.Formulario
                 AgregarError(groupBox4);
                 valido = true;
             }
-            if (txtProfesional.Text.Trim() == string.Empty)
-            {
-                AgregarError(groupBox4);
-                valido = true;
-            }
+            //if (txtProfesional.Text.Trim() == string.Empty)
+            //{
+            //    AgregarError(groupBox4);
+            //    valido = true;
+            //}
             if (rtbDieresis.Text.Trim() == string.Empty)
             {
                 AgregarError(rtbDieresis);
@@ -717,11 +739,11 @@ namespace His.Formulario
                 AgregarError(rtbExposicion);
                 valido = true;
             }
-            if (rtbSintesis.Text.Trim() == string.Empty)
-            {
-                AgregarError(rtbSintesis);
-                valido = true;
-            }
+            //if (rtbSintesis.Text.Trim() == string.Empty)
+            //{
+            //    AgregarError(rtbSintesis);
+            //    valido = true;
+            //}
             if (rtbProcedimientos.Text.Trim() == string.Empty)
             {
                 AgregarError(rtbProcedimientos);
@@ -730,6 +752,24 @@ namespace His.Formulario
             if (rtbComplicaciones.Text.Trim() == string.Empty || rtbComplicaciones.Text == "SANGRADO:\r\n\r\nOTROS:")
             {
                 AgregarError(rtbComplicaciones);
+                valido = true;
+            }
+            if (rdb_material_si.Checked)
+            {
+                if(txt_uso_material.Text == "")
+                {
+                    AgregarError(txt_uso_material);
+                    valido = true;
+                }
+            }
+            if(txt_perdida_sanguinea.Text == "")
+            {
+                AgregarError(label22);
+                valido = true;
+            }
+            if(txt_sangrado_aprox.Text == "")
+            {
+                AgregarError(label23);
                 valido = true;
             }
             if (valido == true)
@@ -772,6 +812,7 @@ namespace His.Formulario
                             try
                             {
                                 NegProtocoloOperatorio.crearProtocolo(nuevoProtocolo);
+                                
                             }
                             catch (Exception ex)
                             {
@@ -795,6 +836,7 @@ namespace His.Formulario
                         {
                             nuevoProtocolo = llenarProtocolo();
                             NegProtocoloOperatorio.actualizarProtocolo(nuevoProtocolo);
+                            
                             MessageBox.Show("Registro Guardado", "PROTOCOLO OPERATORIO", MessageBoxButtons.OK,
                                             MessageBoxIcon.Information);
                             habilitarBotones(true, false, true, true, true);
@@ -1098,13 +1140,13 @@ namespace His.Formulario
             }
         }
 
-        //private void txtHoraI_KeyPress(object sender, KeyPressEventArgs e)
+        //private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
         //{
         //    if (e.KeyChar == (char)(GeneralPAR.TeclaTabular) || e.KeyChar == (char)(Keys.Tab))
         //    {
         //        e.Handled = true;
         //        SendKeys.SendWait("{TAB}");
-        //        txtHoraFin.Focus();
+        //        txtHoraTerm.Focus();
         //    }
         //}
 
@@ -1893,15 +1935,20 @@ namespace His.Formulario
             busqueda.ShowDialog();
             if (busqueda.codigo != null)
             {
-                if (txtPreOperatorio.Text.Length <= 0)
+                if (txtPreOperatorio.Text.Length == 0)
                 {
-                    txtPreOperatorio.Text = busqueda.codigo + "-" + busqueda.resultado;
+                    txtPreOperatorio.Text += busqueda.codigo + " - " + busqueda.resultado;
                 }
                 else
                 {
-                    string cadena = txtPreOperatorio.Text;
-                    txtPreOperatorio.Text = "";
-                    txtPreOperatorio.Text = cadena + " -- " + busqueda.codigo + "-" + busqueda.resultado;
+                    txtPreOperatorio.Text += Environment.NewLine;
+                    txtPreOperatorio.Text += busqueda.codigo + " - " + busqueda.resultado;
+                }
+
+                string[] lineas = txtPreOperatorio.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                if (lineas.Length == 3)
+                {
+                    btncie1.Enabled = false;
                 }
             }
         }
@@ -2122,7 +2169,7 @@ namespace His.Formulario
             if (ayuda.campoPadre.Text != string.Empty)
                 txtCirujano1.Text = cargarMedico(Convert.ToInt32(ayuda.campoPadre.Text.ToString()), cadena);
 
-            btnF1Cirujano2.Focus();
+            btnPAyudante.Focus();
         }
 
         private void btnF1Cirujano2_Click(object sender, EventArgs e)
@@ -2136,7 +2183,7 @@ namespace His.Formulario
             string cadena = txtCirujano2.Text;
 
             if (ayuda.campoPadre.Text != string.Empty)
-                txtCirujano2.Text = cargarMedico(Convert.ToInt32(ayuda.campoPadre.Text.ToString()), cadena);
+                txtCirujano2.Text += cargarMedico(Convert.ToInt32(ayuda.campoPadre.Text.ToString()), cadena);
 
             btnPAyudante.Focus();
         }
@@ -2329,6 +2376,12 @@ namespace His.Formulario
         {
             txtPostOperatorio.Text = "";
             txtPostOperatorio.Text = txtPreOperatorio.Text;
+            string[] lineas = txtPreOperatorio.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+            if (lineas.Length == 3)
+            {
+                button1.Enabled = false;
+                btncie2.Enabled = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -2570,6 +2623,84 @@ namespace His.Formulario
                         MessageBox.Show("No ha registrado ningun tarifario realizada", "His3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void btnCargaDiagrama_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            //openFileDialog1.InitialDirectory = "c:\\"; // Directorio inicial
+            //openFileDialog1.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"; // Filtros de archivos
+            //openFileDialog1.FilterIndex = 2;
+            //openFileDialog1.RestoreDirectory = true;
+
+            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    // Obtener la ruta del archivo seleccionado
+            //    lbl_name_archive.Text = openFileDialog1.FileName;
+            //    lbl_name_archive.Visible = true;
+            //    // Puedes hacer algo con el archivo seleccionado, como cargarlo en tu aplicación
+            //    // Por ejemplo, mostrar el nombre del archivo en un TextBox
+            //    //rtbDiagHispa.Text = lbl_name_archive.Text;
+            //}
+            Int64 entityId = Convert.ToInt64(atencion.EntityKey.EntityKeyValues[0].Value);
+            ATENCIONES ate = NegAtenciones.RecuepraAtencionNumeroAtencion(entityId);
+            PACIENTES pac = NegPacientes.recuperarPacientePorAtencion(entityId);
+            string paciente = pac.PAC_NOMBRE1 + " " + pac.PAC_NOMBRE2;
+            string apellido = pac.PAC_APELLIDO_PATERNO + " " + pac.PAC_APELLIDO_MATERNO;
+            string numeroAtencion = ate.ATE_NUMERO_ATENCION;
+            string numeroHistoria = pac.PAC_HISTORIA_CLINICA;
+            int codPaciente = pac.PAC_CODIGO;
+            int codAtencion = ate.ATE_CODIGO;
+            DataTable x = NegDietetica.getDataTable("PathLocalHC");
+
+            string strDirectorio = numeroHistoria + "//" + entityId + "//";
+            if (x.Rows.Count > 0)
+            {
+                string strPathGeneral = x.Rows[0][0].ToString();
+
+                var expArchivos = new GeneralApp.ControlesWinForms.ExploradorLocal(strDirectorio, strPathGeneral, paciente, codAtencion.ToString());
+                expArchivos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No se encontro datos para cargar microfilm.", "HIS3000");
+                return;
+            }
+        }
+
+        private void rdb_material_si_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_material_si.Checked)
+            {
+                txt_uso_material.Enabled = true;
+            }
+            else
+            {
+                txt_uso_material.Enabled = false;
+            }
+        }
+
+        private void rdb_material_no_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_material_no.Checked)
+            {
+                txt_uso_material.Enabled = false;
+            }
+            else
+            {
+                txt_uso_material.Enabled = true;
+            }
+        }
+
+        private void txt_perdida_sanguinea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NegUtilitarios.OnlyNumberDecimal(e, false);
+        }
+
+        private void txt_sangrado_aprox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NegUtilitarios.OnlyNumberDecimal(e, false);
         }
     }
 }
