@@ -44,6 +44,9 @@ namespace His.Formulario
         internal static string personal; //recibe el nombre del personal
         public bool _valido = false;
 
+        private Int32 codMed1 = 0;
+        private Int32 codMed2 = 0;
+
         ToolTip toolTip1 = new ToolTip();
         //ATENCIONES atencion = new ATENCIONES();
         #endregion
@@ -441,7 +444,22 @@ namespace His.Formulario
             nuevoProtocolo.PROT_FECHA = dtpFecha.Value;
             nuevoProtocolo.PROT_HORAINICIO = txtHoraInicio.Text;
             nuevoProtocolo.PROT_HORAFIN = txtHoraTerm.Text;
-            nuevoProtocolo.PROT_TIPOANEST = txt_tipos_anestesia.Text;
+            string anestesia = "";
+            if (chb_general.Checked)
+            {
+                anestesia = "Anestesia General";
+            }
+            if (chb_sedacion.Checked) {
+                anestesia += " - Anestesia Sedación";
+            }
+            if (chb_regional.Checked) {
+                anestesia += " - Anestesia Regional";
+            }
+            if (chb_otros.Checked) {
+                anestesia += " - Otros tipos de Anestesia";
+            }
+            nuevoProtocolo.PROT_TIPOANEST = anestesia;
+            txt_tipos_anestesia.Text = anestesia;
 
             nuevoProtocolo.PROT_DIERESIS = rtbDieresis.Text;
             nuevoProtocolo.PROT_EXPOSICION = rtbExposicion.Text;
@@ -1325,138 +1343,138 @@ namespace His.Formulario
 
         private void imprimirReporte(string accion)
         {
-            try
-            {
-                string FullPath;
-                FullPath = "C:\\Sic3000\\Iconos\\LogoEmpresa.png";
-                ReporteProtocoloOperatorio reporte = new ReporteProtocoloOperatorio();
-                NegCertificadoMedico m = new NegCertificadoMedico();
-                if (!NegParametros.ParametroFormularios())
-                    reporte.PROT_HISTORIA_CLINICA = paciente.PAC_HISTORIA_CLINICA + "-" + atencion.ATE_NUMERO_ATENCION;
-                else
-                    reporte.PROT_HISTORIA_CLINICA = paciente.PAC_IDENTIFICACION;
-                reporte.PROT_EMPRESA = His.Entidades.Clases.Sesion.nomEmpresa;
-                reporte.PROT_NUMHOJA = 1;
-                reporte.PROT_LOGO = NegUtilitarios.RutaLogo("General");
-                reporte.PROT_NOMBREPACIENTE = paciente.PAC_NOMBRE1 + " " + paciente.PAC_NOMBRE2;
-                reporte.PROT_APELLIDOPACIENTE = paciente.PAC_APELLIDO_PATERNO + "  " + paciente.PAC_APELLIDO_MATERNO;
-                reporte.PROT_GENERO = txt_sexo.Text;
-                reporte.PROT_NUMHOJA = 1;
-                reporte.PROT_MEDICO = medico.MED_APELLIDO_PATERNO + " " + medico.MED_APELLIDO_MATERNO + " " + medico.MED_NOMBRE1 + " " + medico.MED_NOMBRE2;
-                reporte.PROT_SERVICIO = txtServicio.Text;
-                reporte.PROT_SALA = txtSala.Text;
-                reporte.PROT_HABITACION = txtCama.Text;
-                reporte.PROT_PREOPERATORIO = txtPreOperatorio.Text;
-                reporte.PROT_POSTOPERATORIO = txtPostOperatorio.Text;
-                string cadenaProyectada = "";
-                string cadenaRealizado = "";
-                for (int i = 0; i < dtgProyectada.Rows.Count - 1; i++)
-                {
-                    cadenaProyectada = cadenaProyectada + dtgProyectada.Rows[i].Cells[1].Value.ToString() + "-" + dtgProyectada.Rows[i].Cells[2].Value.ToString() + "-" + dtgProyectada.Rows[i].Cells[3].Value.ToString() + " | ";
-                }
-                for (int i = 0; i < dtgRealizada.Rows.Count - 1; i++)
-                {
-                    cadenaRealizado = cadenaRealizado + dtgRealizada.Rows[i].Cells[1].Value.ToString() + "-" + dtgRealizada.Rows[i].Cells[2].Value.ToString() + "-" + dtgRealizada.Rows[i].Cells[3].Value.ToString() + " | ";
-                }
-                reporte.PROT_PROYECTADA = cadenaProyectada.Trim().Substring(0, cadenaProyectada.Length - 2);
-                reporte.PROT_REALIZADO = cadenaRealizado.Trim().Substring(0, cadenaRealizado.Length - 2);
-                if (rdbElectiva.Checked == true)
-                {
-                    reporte.PROT_ELECTIVA = "X";
-                    reporte.PROT_EMERGENCIA = " ";
-                    reporte.PROT_PALEATIVA = " ";
-                }
-                if (rdbEmergencia.Checked == true)
-                {
-                    reporte.PROT_ELECTIVA = " ";
-                    reporte.PROT_EMERGENCIA = "X";
-                    reporte.PROT_PALEATIVA = " ";
-                }
-                if (rdbPaleativa.Checked == true)
-                {
-                    reporte.PROT_ELECTIVA = " ";
-                    reporte.PROT_EMERGENCIA = " ";
-                    reporte.PROT_PALEATIVA = "X";
-                }
-                if (txtCirujano2.Text != "") // se comenta hasta realizar el nuevo diseno // Mario  // se verifico con reporte nuevo 2024/02/05 Cristian Ruiz
-                {
-                    reporte.PROT_CIRUJANO = txtCirujano.Text + "\r\n" + "COCIRUJANO 2: " + txtCirujano2.Text;
-                }
-                if (txtCirujano1.Text != "")
-                {
-                    reporte.PROT_CIRUJANO = txtCirujano.Text + "\r\n" + "COCIRUJANO 1: " + txtCirujano1.Text;
-                    if (txtCirujano2.Text != "")
-                    {
-                        reporte.PROT_CIRUJANO = txtCirujano.Text + "\r\n" + "COCIRUJANO 1: " + txtCirujano1.Text + "\r\n" + "COCIRUJANO 2:" + txtCirujano2.Text;
-                    }
-                }
-                else
-                    reporte.PROT_CIRUJANO = txtCirujano.Text;
+            //try
+            //{
+            //    string FullPath;
+            //    FullPath = "C:\\Sic3000\\Iconos\\LogoEmpresa.png";
+            //    ReporteProtocoloOperatorio reporte = new ReporteProtocoloOperatorio();
+            //    NegCertificadoMedico m = new NegCertificadoMedico();
+            //    if (!NegParametros.ParametroFormularios())
+            //        reporte.PROT_HISTORIA_CLINICA = paciente.PAC_HISTORIA_CLINICA + "-" + atencion.ATE_NUMERO_ATENCION;
+            //    else
+            //        reporte.PROT_HISTORIA_CLINICA = paciente.PAC_IDENTIFICACION;
+            //    reporte.PROT_EMPRESA = His.Entidades.Clases.Sesion.nomEmpresa;
+            //    reporte.PROT_NUMHOJA = 1;
+            //    reporte.PROT_LOGO = NegUtilitarios.RutaLogo("General");
+            //    reporte.PROT_NOMBREPACIENTE = paciente.PAC_NOMBRE1 + " " + paciente.PAC_NOMBRE2;
+            //    reporte.PROT_APELLIDOPACIENTE = paciente.PAC_APELLIDO_PATERNO + "  " + paciente.PAC_APELLIDO_MATERNO;
+            //    reporte.PROT_GENERO = txt_sexo.Text;
+            //    reporte.PROT_NUMHOJA = 1;
+            //    reporte.PROT_MEDICO = medico.MED_APELLIDO_PATERNO + " " + medico.MED_APELLIDO_MATERNO + " " + medico.MED_NOMBRE1 + " " + medico.MED_NOMBRE2;
+            //    reporte.PROT_SERVICIO = txtServicio.Text;
+            //    reporte.PROT_SALA = txtSala.Text;
+            //    reporte.PROT_HABITACION = txtCama.Text;
+            //    reporte.PROT_PREOPERATORIO = txtPreOperatorio.Text;
+            //    reporte.PROT_POSTOPERATORIO = txtPostOperatorio.Text;
+            //    string cadenaProyectada = "";
+            //    string cadenaRealizado = "";
+            //    for (int i = 0; i < dtgProyectada.Rows.Count - 1; i++)
+            //    {
+            //        cadenaProyectada = cadenaProyectada + dtgProyectada.Rows[i].Cells[1].Value.ToString() + "-" + dtgProyectada.Rows[i].Cells[2].Value.ToString() + "-" + dtgProyectada.Rows[i].Cells[3].Value.ToString() + " | ";
+            //    }
+            //    for (int i = 0; i < dtgRealizada.Rows.Count - 1; i++)
+            //    {
+            //        cadenaRealizado = cadenaRealizado + dtgRealizada.Rows[i].Cells[1].Value.ToString() + "-" + dtgRealizada.Rows[i].Cells[2].Value.ToString() + "-" + dtgRealizada.Rows[i].Cells[3].Value.ToString() + " | ";
+            //    }
+            //    reporte.PROT_PROYECTADA = cadenaProyectada.Trim().Substring(0, cadenaProyectada.Length - 2);
+            //    reporte.PROT_REALIZADO = cadenaRealizado.Trim().Substring(0, cadenaRealizado.Length - 2);
+            //    if (rdbElectiva.Checked == true)
+            //    {
+            //        reporte.PROT_ELECTIVA = "X";
+            //        reporte.PROT_EMERGENCIA = " ";
+            //        reporte.PROT_PALEATIVA = " ";
+            //    }
+            //    if (rdbEmergencia.Checked == true)
+            //    {
+            //        reporte.PROT_ELECTIVA = " ";
+            //        reporte.PROT_EMERGENCIA = "X";
+            //        reporte.PROT_PALEATIVA = " ";
+            //    }
+            //    if (rdbPaleativa.Checked == true)
+            //    {
+            //        reporte.PROT_ELECTIVA = " ";
+            //        reporte.PROT_EMERGENCIA = " ";
+            //        reporte.PROT_PALEATIVA = "X";
+            //    }
+            //    if (txtCirujano2.Text != "") // se comenta hasta realizar el nuevo diseno // Mario  // se verifico con reporte nuevo 2024/02/05 Cristian Ruiz
+            //    {
+            //        reporte.PROT_CIRUJANO = txtCirujano.Text + "\r\n" + "COCIRUJANO 2: " + txtCirujano2.Text;
+            //    }
+            //    if (txtCirujano1.Text != "")
+            //    {
+            //        reporte.PROT_CIRUJANO = txtCirujano.Text + "\r\n" + "COCIRUJANO 1: " + txtCirujano1.Text;
+            //        if (txtCirujano2.Text != "")
+            //        {
+            //            reporte.PROT_CIRUJANO = txtCirujano.Text + "\r\n" + "COCIRUJANO 1: " + txtCirujano1.Text + "\r\n" + "COCIRUJANO 2:" + txtCirujano2.Text;
+            //        }
+            //    }
+            //    else
+            //        reporte.PROT_CIRUJANO = txtCirujano.Text;
 
-                reporte.PROT_PAYUDANTE = txtPAyudante.Text;
-                reporte.PROT_SAYUDANTE = txtSAyudante.Text;
-                reporte.PROT_TAYUDANTE = txtTAyudante.Text;
-                reporte.PROT_INSTRUMENTISTA = txtInstrumentista.Text;
-                reporte.PROT_CIRCULANTE = txtCircundante.Text;
-                reporte.PROT_ANESTESISTA = txtAnestesista.Text;
-                reporte.PROT_AYUANESTESISTA = txtAyuAnestesista.Text;
-                reporte.PROT_FECHA = dtpFecha.Value;
-                reporte.PROT_HORAI = txtHoraInicio.Text;
-                reporte.PROT_HORAT = txtHoraTerm.Text;
-                reporte.PROT_TIPOANESTESIA = txtTipoAnestesia.Text;
-                reporte.PROT_DIERESIS = validarTexto(rtbDieresis.Text).Trim();
-                reporte.PROT_EXPOSICION = rtbExposicion.Text;
-                reporte.PROT_EXPLORACION = rtbExploracion.Text;
-                validarTextoProcedimiento();
+            //    reporte.PROT_PAYUDANTE = txtPAyudante.Text;
+            //    reporte.PROT_SAYUDANTE = txtSAyudante.Text;
+            //    reporte.PROT_TAYUDANTE = txtTAyudante.Text;
+            //    reporte.PROT_INSTRUMENTISTA = txtInstrumentista.Text;
+            //    reporte.PROT_CIRCULANTE = txtCircundante.Text;
+            //    reporte.PROT_ANESTESISTA = txtAnestesista.Text;
+            //    reporte.PROT_AYUANESTESISTA = txtAyuAnestesista.Text;
+            //    reporte.PROT_FECHA = dtpFecha.Value;
+            //    reporte.PROT_HORAI = txtHoraInicio.Text;
+            //    reporte.PROT_HORAT = txtHoraTerm.Text;
+            //    reporte.PROT_TIPOANESTESIA = txtTipoAnestesia.Text;
+            //    reporte.PROT_DIERESIS = validarTexto(rtbDieresis.Text).Trim();
+            //    reporte.PROT_EXPOSICION = rtbExposicion.Text;
+            //    reporte.PROT_EXPLORACION = rtbExploracion.Text;
+            //    validarTextoProcedimiento();
 
 
 
-                reporte.PROT_PROCEDIMIENTO = proced1;
-                reporte.PROT_PROCEDIMIENTO2 = proced2;
-                reporte.PROT_SINTESIS = rtbSintesis.Text;
-                reporte.PROT_COMPLICACIONES = rtbComplicaciones.Text;
-                if (rdbSi.Checked == true)
-                {
-                    reporte.PROT_EXAMENHISSI = "X";
-                    reporte.PROT_EXAMENHISNO = " ";
-                }
-                if (rdbNo.Checked == true)
-                {
-                    reporte.PROT_EXAMENHISSI = " ";
-                    reporte.PROT_EXAMENHISNO = "X";
-                }
+            //    reporte.PROT_PROCEDIMIENTO = proced1;
+            //    reporte.PROT_PROCEDIMIENTO2 = proced2;
+            //    reporte.PROT_SINTESIS = rtbSintesis.Text;
+            //    reporte.PROT_COMPLICACIONES = rtbComplicaciones.Text;
+            //    if (rdbSi.Checked == true)
+            //    {
+            //        reporte.PROT_EXAMENHISSI = "X";
+            //        reporte.PROT_EXAMENHISNO = " ";
+            //    }
+            //    if (rdbNo.Checked == true)
+            //    {
+            //        reporte.PROT_EXAMENHISSI = " ";
+            //        reporte.PROT_EXAMENHISNO = "X";
+            //    }
 
-                reporte.PROT_DIAGNOSTICOSHIS = rtbDiagHispa.Text + "\r\n \r\n 9.EXAMEN DE CULTIVO: " + txt_examen_cultivo.Text + "\r\n \r\n 10. DREN: " + txt_dren.Text;
-                reporte.PROT_DICTADO = txtDictada.Text;
-                reporte.PROT_FECHADIC = dtpFechaDictada.Value;
-                reporte.PROT_HORADIC = txtHoraDictada.Text;
-                reporte.PROT_ESCRITA = txtEscrita.Text;
-                reporte.PROT_PROFESIONAL = txtProfesional.Text;
-                reporte.PROT_FECHA_OD = Convert.ToString(dtpFecha.Value).Substring(0, 2);
-                reporte.PROT_FECHA_OM = Convert.ToString(dtpFecha.Value).Substring(3, 2);
-                reporte.PROT_FECHA_OA = Convert.ToString(dtpFecha.Value).Substring(6, 4);
+            //    reporte.PROT_DIAGNOSTICOSHIS = rtbDiagHispa.Text + "\r\n \r\n 9.EXAMEN DE CULTIVO: " + txt_examen_cultivo.Text + "\r\n \r\n 10. DREN: " + txt_dren.Text;
+            //    reporte.PROT_DICTADO = txtDictada.Text;
+            //    reporte.PROT_FECHADIC = dtpFechaDictada.Value;
+            //    reporte.PROT_HORADIC = txtHoraDictada.Text;
+            //    reporte.PROT_ESCRITA = txtEscrita.Text;
+            //    reporte.PROT_PROFESIONAL = txtProfesional.Text;
+            //    reporte.PROT_FECHA_OD = Convert.ToString(dtpFecha.Value).Substring(0, 2);
+            //    reporte.PROT_FECHA_OM = Convert.ToString(dtpFecha.Value).Substring(3, 2);
+            //    reporte.PROT_FECHA_OA = Convert.ToString(dtpFecha.Value).Substring(6, 4);
 
-                reporte.PROT_FECHA_DH = Convert.ToString(dtpFecha.Value).Substring(11, 5);
-                reporte.PROT_FECHA_DM = Convert.ToString(dtpFecha.Value).Substring(0, 2);
-                reporte.PROT_FECHA_DD = Convert.ToString(dtpFecha.Value).Substring(3, 2);
-                reporte.PROT_FECHA_DA = Convert.ToString(dtpFecha.Value).Substring(6, 4);
+            //    reporte.PROT_FECHA_DH = Convert.ToString(dtpFecha.Value).Substring(11, 5);
+            //    reporte.PROT_FECHA_DM = Convert.ToString(dtpFecha.Value).Substring(0, 2);
+            //    reporte.PROT_FECHA_DD = Convert.ToString(dtpFecha.Value).Substring(3, 2);
+            //    reporte.PROT_FECHA_DA = Convert.ToString(dtpFecha.Value).Substring(6, 4);
 
-                ReportesHistoriaClinica reporteOperatorio = new ReportesHistoriaClinica();
-                reporteOperatorio.ingresarProtocolo(reporte);
-                frmReportes ventana = new frmReportes(1, "protocolo");
-                if (accion.Equals("reporte"))
-                    ventana.Show();
-                else
-                {
-                    CrearCarpetas_Srvidor("protocolo");
-                }
+            //    ReportesHistoriaClinica reporteOperatorio = new ReportesHistoriaClinica();
+            //    reporteOperatorio.ingresarProtocolo(reporte);
+            //    frmReportes ventana = new frmReportes(1, "protocolo");
+            //    if (accion.Equals("reporte"))
+            //        ventana.Show();
+            //    else
+            //    {
+            //        CrearCarpetas_Srvidor("protocolo");
+            //    }
 
-                //ventana.Show();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    //ventana.Show();
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show(err.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
             //Nuevo Reporte Protocolo Operatorio 2021 Pablo Rocha 29/04/2024
             try
@@ -1469,16 +1487,16 @@ namespace His.Formulario
                 if (preOp.Length == 1)
                 {
                     string[] ciePos = preOp[0].Split('-');
-                    drDiagnostico["preOp1"] = ciePos[1];
+                    drDiagnostico["preOp1"] = "1. " + ciePos[1];
                     drDiagnostico["preOpCie1"] = ciePos[0];
                 }
                 else if (preOp.Length == 2)
                 {
                     string[] ciePos1 = preOp[0].Split('-');
                     string[] ciePos2 = preOp[1].Split('-');
-                    drDiagnostico["preOp1"] = ciePos1[1];
+                    drDiagnostico["preOp1"] = "1. " + ciePos1[1];
                     drDiagnostico["preOpCie1"] = ciePos1[0];
-                    drDiagnostico["preOp2"] = ciePos2[1];
+                    drDiagnostico["preOp2"] = "2. " + ciePos2[1];
                     drDiagnostico["preOpCie2"] = ciePos2[0];
                 }
                 else
@@ -1486,11 +1504,11 @@ namespace His.Formulario
                     string[] ciePos1 = preOp[0].Split('-');
                     string[] ciePos2 = preOp[1].Split('-');
                     string[] ciePos3 = preOp[2].Split('-');
-                    drDiagnostico["preOp1"] = ciePos1[1];
+                    drDiagnostico["preOp1"] = "1. " + ciePos1[1];
                     drDiagnostico["preOpCie1"] = ciePos1[0];
-                    drDiagnostico["preOp2"] = ciePos2[1];
+                    drDiagnostico["preOp2"] = "2. " + ciePos2[1];
                     drDiagnostico["preOpCie2"] = ciePos2[0];
-                    drDiagnostico["preOp3"] = ciePos3[1];
+                    drDiagnostico["preOp3"] = "3. " + ciePos3[1];
                     drDiagnostico["preOpCie3"] = ciePos3[0];
                 }
 
@@ -1499,15 +1517,15 @@ namespace His.Formulario
                 if(postOpe.Length == 1)
                 {
                     string[] ciePos = postOpe[0].Split('-');
-                    drDiagnostico["postOp1"] = ciePos[1];
+                    drDiagnostico["postOp1"] = "1. " + ciePos[1];
                     drDiagnostico["postOpCie1"] = ciePos[0];
                 }else if (postOpe.Length == 2)
                 {
                     string[] ciePos1 = postOpe[0].Split('-');
                     string[] ciePos2 = postOpe[1].Split('-');
-                    drDiagnostico["postOp1"] = ciePos1[1];
+                    drDiagnostico["postOp1"] = "1. " + ciePos1[1];
                     drDiagnostico["postOpCie1"] = ciePos1[0];
-                    drDiagnostico["postOp2"] = ciePos2[1];
+                    drDiagnostico["postOp2"] = "2. " + ciePos2[1];
                     drDiagnostico["postOpCie2"] = ciePos2[0];
                 }
                 else
@@ -1515,13 +1533,201 @@ namespace His.Formulario
                     string[] ciePos1 = postOpe[0].Split('-');
                     string[] ciePos2 = postOpe[1].Split('-');
                     string[] ciePos3 = postOpe[2].Split('-');
-                    drDiagnostico["postOp1"] = ciePos1[1];
+                    drDiagnostico["postOp1"] = "1. " + ciePos1[1];
                     drDiagnostico["postOpCie1"] = ciePos1[0];
-                    drDiagnostico["postOp2"] = ciePos2[1];
+                    drDiagnostico["postOp2"] = "2. " + ciePos2[1];
                     drDiagnostico["postOpCie2"] = ciePos2[0];
-                    drDiagnostico["postOp3"] = ciePos3[1];
+                    drDiagnostico["postOp3"] = "3. " + ciePos3[1];
                     drDiagnostico["postOpCie3"] = ciePos3[0];
                 }
+                DSprotocolo.Tables["Diagnostico"].Rows.Add(drDiagnostico);
+
+                DataRow drProcedimiento;
+                drProcedimiento = DSprotocolo.Tables["Procedimiento"].NewRow();
+                string cadenaProyectada = "";
+                string cadenaRealizado = "";
+                for (int i = 0; i < dtgProyectada.Rows.Count - 1; i++)
+                {
+                    cadenaProyectada = cadenaProyectada + dtgProyectada.Rows[i].Cells[1].Value.ToString() + "-" + dtgProyectada.Rows[i].Cells[2].Value.ToString() + "-" + dtgProyectada.Rows[i].Cells[3].Value.ToString() + " | ";
+                }
+                for (int i = 0; i < dtgRealizada.Rows.Count - 1; i++)
+                {
+                    cadenaRealizado = cadenaRealizado + dtgRealizada.Rows[i].Cells[1].Value.ToString() + "-" + dtgRealizada.Rows[i].Cells[2].Value.ToString() + "-" + dtgRealizada.Rows[i].Cells[3].Value.ToString() + " | ";
+                }
+                drProcedimiento["proyectado"] = cadenaProyectada.Trim().Substring(0, cadenaProyectada.Length - 2);
+                drProcedimiento["realizado"] = cadenaRealizado.Trim().Substring(0, cadenaRealizado.Length - 2);
+                if (rdbElectiva.Checked == true)
+                {
+                    drProcedimiento["electiva"] = "X";
+                    drProcedimiento["emergencia"] = " ";
+                    drProcedimiento["urgencia"] = " ";
+                }
+                if (rdbEmergencia.Checked == true)
+                {
+                    drProcedimiento["electiva"] = " ";
+                    drProcedimiento["emergencia"] = "X";
+                    drProcedimiento["urgencia"] = " ";
+                }
+                if (rdbPaleativa.Checked == true)
+                {
+                    drProcedimiento["electiva"] = " ";
+                    drProcedimiento["emergencia"] = " ";
+                    drProcedimiento["urgencia"] = "X";
+                }
+                DSprotocolo.Tables["Procedimiento"].Rows.Add(drProcedimiento);
+
+                DataRow drIntegrantes;
+                drIntegrantes = DSprotocolo.Tables["IntegrantesQ"].NewRow();
+                drIntegrantes["cirujano1"] = txtCirujano.Text;
+                drIntegrantes["cirujano2"] = txtCirujano1.Text;
+                drIntegrantes["primerA"] = txtPAyudante.Text;
+                drIntegrantes["segundoA"] = txtSAyudante.Text;
+                drIntegrantes["tercerA"] = txtTAyudante.Text;
+                drIntegrantes["Instrumentista"] = txtInstrumentista.Text;
+                drIntegrantes["circulante"] = txtCircundante.Text;
+                drIntegrantes["anestesiologo"] = txtAnestesista.Text;
+                drIntegrantes["ayudanteAnest"] = txtAyuAnestesista.Text;
+                drIntegrantes["otros"] = txtCirujano2.Text;
+                DSprotocolo.Tables["IntegrantesQ"].Rows.Add(drIntegrantes);
+
+                DataRow drAnestesia;
+                drAnestesia = DSprotocolo.Tables["Anestesia"].NewRow();
+                if (chb_general.Checked)
+                {
+                    drAnestesia["general"] = "X";
+                    drAnestesia["regional"] = "";
+                    drAnestesia["sedacion"] = "";
+                    drAnestesia["otrosAnest"] = "";
+                }
+                else if (chb_regional.Checked)
+                {
+                    drAnestesia["general"] = "";
+                    drAnestesia["regional"] = "X";
+                    drAnestesia["sedacion"] = "";
+                    drAnestesia["otrosAnest"] = "";
+                }
+                else if (chb_sedacion.Checked)
+                {
+                    drAnestesia["general"] = "";
+                    drAnestesia["regional"] = "";
+                    drAnestesia["sedacion"] = "X";
+                    drAnestesia["otrosAnest"] = "";
+                }
+                else if (chb_otros.Checked)
+                {
+                    drAnestesia["general"] = "";
+                    drAnestesia["regional"] = "";
+                    drAnestesia["sedacion"] = "";
+                    drAnestesia["otrosAnest"] = "X";
+                }
+                drAnestesia["Detalle"] = txt_tipos_anestesia.Text;
+                DSprotocolo.Tables["Anestesia"].Rows.Add(drAnestesia);
+
+                DataRow drTiemposQ;
+                drTiemposQ = DSprotocolo.Tables["TiemposQ"].NewRow();
+                DateTime fechaSeleccionada = dtpFecha.Value;
+
+                int dia = fechaSeleccionada.Day;
+                int mes = fechaSeleccionada.Month;
+                int anio = fechaSeleccionada.Year;
+                drTiemposQ["opDia"] = dia;
+                drTiemposQ["opMes"] = mes;
+                drTiemposQ["opAnio"] = anio;
+                drTiemposQ["opHoraInicio"] = txtHoraInicio.Text;
+                drTiemposQ["opHoraTerm"] = txtHoraTerm.Text;
+                drTiemposQ["dieresis"] = rtbDieresis.Text.Trim();
+                drTiemposQ["exposicion"] = rtbExposicion.Text.Trim();
+                drTiemposQ["hallazgosQ"] = rtbExploracion.Text.Trim();
+                drTiemposQ["procedQ"] = txt_tipos_anestesia.Text.Trim() + " -- " + rtbProcedimientos.Text.Trim();
+                DSprotocolo.Tables["TiemposQ"].Rows.Add(drTiemposQ);
+
+                DataRow drComplicaciones;
+                drComplicaciones = DSprotocolo.Tables["Complicaciones"].NewRow();
+                drComplicaciones["perdidaSang"] = txt_perdida_sanguinea.Text;
+                drComplicaciones["sangradoAprox"] = txt_sangrado_aprox.Text;
+                if (rdb_material_si.Checked)
+                {
+                    drComplicaciones["usoMaterialSi"] = "X";
+                    drComplicaciones["usoMaterialNo"] = "";
+                    drComplicaciones["descripcion"] = txt_uso_material.Text;
+                    drComplicaciones["comp"] = rtbComplicaciones.Text;
+
+                }
+                else
+                {
+                    drComplicaciones["usoMaterialSi"] = "";
+                    drComplicaciones["usoMaterialNo"] = "X";
+                    drComplicaciones["descripcion"] = "";
+                    drComplicaciones["comp"] = rtbComplicaciones.Text;
+                }
+                drComplicaciones["diagrama"] = lbl_name_archive.Text;
+                DSprotocolo.Tables["Complicaciones"].Rows.Add(drComplicaciones);
+                
+                DataRow drExamenesHist;
+                drExamenesHist = DSprotocolo.Tables["ExamenesHist"].NewRow();
+                if (rdbSi.Checked)
+                {
+                    drExamenesHist["transquirurgico"] = txt_detalle_exaHisto.Text;
+                    drExamenesHist["patologorep"] = txtDrPatologo.Text;
+                    if (rb_cultivo_si.Checked)
+                    {
+                        drExamenesHist["biopsiaSi"] = "X";
+                        drExamenesHist["biopsiaNo"] = "";
+                        drExamenesHist["biopsiaResultado"] = txt_examen_cultivo.Text;
+                    }
+                    else
+                    {
+                        drExamenesHist["biopsiaSi"] = "";
+                        drExamenesHist["biopsiaNo"] = "X";
+                        drExamenesHist["biopsiaResultado"] = "";
+
+                    }
+                    if (rb_dren_si.Checked)
+                    {
+                        drExamenesHist["histopatologicoSi"] = "X";
+                        drExamenesHist["histopatologicoNo"] = "";
+                        drExamenesHist["histopatologicoMuestra"] = txt_dren.Text;
+                    }
+                    else
+                    {
+
+                        drExamenesHist["histopatologicoSi"] = "";
+                        drExamenesHist["histopatologicoNo"] = "X";
+                        drExamenesHist["histopatologicoMuestra"] = "";
+                    }
+                }
+                else
+                {
+                    drExamenesHist["transquirurgico"] ="";
+                    drExamenesHist["biopsiaSi"] = "";
+                    drExamenesHist["biopsiaNo"] = "";
+                    drExamenesHist["biopsiaResultado"] = "";
+                    drExamenesHist["histopatologicoSi"] = "";
+                    drExamenesHist["histopatologicoNo"] = "";
+                    drExamenesHist["histopatologicoMuestra"] = "";
+                    drExamenesHist["patologorep"] = "";
+                }
+                DSprotocolo.Tables["ExamenesHist"].Rows.Add(drExamenesHist);
+
+
+                DataRow drDatosProfesional;
+                drDatosProfesional = DSprotocolo.Tables["DatosProfesional"].NewRow();
+                drDatosProfesional["nomApe"] = txtCirujano.Text;
+                DataTable espMedicas = NegMedicos.RecuperaEspecialidadMed(Convert.ToInt32(codMed1));
+                string especialidadesMed = espMedicas.Rows[0][0].ToString();
+                drDatosProfesional["especialidad"] = especialidadesMed;
+
+                if(txtCirujano1.Text != "")
+                {
+                    drDatosProfesional["nomApeAyu1"] = txtCirujano.Text;
+                    espMedicas = NegMedicos.RecuperaEspecialidadMed(Convert.ToInt32(codMed1));
+                    especialidadesMed = espMedicas.Rows[0][0].ToString();
+                    drDatosProfesional["especialidadAyu1"] = especialidadesMed;
+                }
+                DSprotocolo.Tables["DatosProfesional"].Rows.Add(drDatosProfesional);
+
+                His.Formulario.frmReportes myreport = new His.Formulario.frmReportes(1, "ProtocoloOperatorio2021", DSprotocolo);
+                myreport.Show();
 
             }
             catch (Exception err)
@@ -1621,6 +1827,7 @@ namespace His.Formulario
             if (ayuda.campoPadre.Text != string.Empty)
                 txtCirujano.Text = cargarMedico(Convert.ToInt32(ayuda.campoPadre.Text.ToString()), cadena);
             txtProfesional.Text = txtCirujano.Text;
+            codMed1 = Convert.ToInt32(ayuda.campoPadre.Text.ToString());
             btnF1Cirujano1.Focus();
         }
 
@@ -2169,7 +2376,7 @@ namespace His.Formulario
 
             if (ayuda.campoPadre.Text != string.Empty)
                 txtCirujano1.Text = cargarMedico(Convert.ToInt32(ayuda.campoPadre.Text.ToString()), cadena);
-
+            codMed2 = Convert.ToInt32(ayuda.campoPadre.Text.ToString());
             btnPAyudante.Focus();
         }
 

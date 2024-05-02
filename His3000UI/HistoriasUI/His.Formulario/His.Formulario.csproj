@@ -394,6 +394,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsPreadmision.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSProtocoloOperatorio.cs">
+      <DependentUpon>DSProtocoloOperatorio.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSProtocoloOperatorio.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

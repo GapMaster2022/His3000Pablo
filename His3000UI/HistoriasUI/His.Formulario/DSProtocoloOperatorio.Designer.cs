@@ -3365,9 +3365,9 @@ namespace His.Formulario {
             
             private global::System.Data.DataColumn columnespecialidad;
             
-            private global::System.Data.DataColumn columnfirma;
+            private global::System.Data.DataColumn columnnomApeAyu1;
             
-            private global::System.Data.DataColumn columnsello;
+            private global::System.Data.DataColumn columnespecialidadAyu1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3420,17 +3420,17 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn firmaColumn {
+            public global::System.Data.DataColumn nomApeAyu1Column {
                 get {
-                    return this.columnfirma;
+                    return this.columnnomApeAyu1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn selloColumn {
+            public global::System.Data.DataColumn especialidadAyu1Column {
                 get {
-                    return this.columnsello;
+                    return this.columnespecialidadAyu1;
                 }
             }
             
@@ -3471,13 +3471,13 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DatosProfesionalRow AddDatosProfesionalRow(string nomApe, string especialidad, string firma, string sello) {
+            public DatosProfesionalRow AddDatosProfesionalRow(string nomApe, string especialidad, string nomApeAyu1, string especialidadAyu1) {
                 DatosProfesionalRow rowDatosProfesionalRow = ((DatosProfesionalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nomApe,
                         especialidad,
-                        firma,
-                        sello};
+                        nomApeAyu1,
+                        especialidadAyu1};
                 rowDatosProfesionalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDatosProfesionalRow);
                 return rowDatosProfesionalRow;
@@ -3502,8 +3502,8 @@ namespace His.Formulario {
             internal void InitVars() {
                 this.columnnomApe = base.Columns["nomApe"];
                 this.columnespecialidad = base.Columns["especialidad"];
-                this.columnfirma = base.Columns["firma"];
-                this.columnsello = base.Columns["sello"];
+                this.columnnomApeAyu1 = base.Columns["nomApeAyu1"];
+                this.columnespecialidadAyu1 = base.Columns["especialidadAyu1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3513,10 +3513,10 @@ namespace His.Formulario {
                 base.Columns.Add(this.columnnomApe);
                 this.columnespecialidad = new global::System.Data.DataColumn("especialidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnespecialidad);
-                this.columnfirma = new global::System.Data.DataColumn("firma", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfirma);
-                this.columnsello = new global::System.Data.DataColumn("sello", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsello);
+                this.columnnomApeAyu1 = new global::System.Data.DataColumn("nomApeAyu1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnomApeAyu1);
+                this.columnespecialidadAyu1 = new global::System.Data.DataColumn("especialidadAyu1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnespecialidadAyu1);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5688,33 +5688,34 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string firma {
+            public string nomApeAyu1 {
                 get {
                     try {
-                        return ((string)(this[this.tableDatosProfesional.firmaColumn]));
+                        return ((string)(this[this.tableDatosProfesional.nomApeAyu1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'firma\' de la tabla \'DatosProfesional\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nomApeAyu1\' de la tabla \'DatosProfesional\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDatosProfesional.firmaColumn] = value;
+                    this[this.tableDatosProfesional.nomApeAyu1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string sello {
+            public string especialidadAyu1 {
                 get {
                     try {
-                        return ((string)(this[this.tableDatosProfesional.selloColumn]));
+                        return ((string)(this[this.tableDatosProfesional.especialidadAyu1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sello\' de la tabla \'DatosProfesional\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'especialidadAyu1\' de la tabla \'DatosProfesional\' es DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableDatosProfesional.selloColumn] = value;
+                    this[this.tableDatosProfesional.especialidadAyu1Column] = value;
                 }
             }
             
@@ -5744,26 +5745,26 @@ namespace His.Formulario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsfirmaNull() {
-                return this.IsNull(this.tableDatosProfesional.firmaColumn);
+            public bool IsnomApeAyu1Null() {
+                return this.IsNull(this.tableDatosProfesional.nomApeAyu1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetfirmaNull() {
-                this[this.tableDatosProfesional.firmaColumn] = global::System.Convert.DBNull;
+            public void SetnomApeAyu1Null() {
+                this[this.tableDatosProfesional.nomApeAyu1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsselloNull() {
-                return this.IsNull(this.tableDatosProfesional.selloColumn);
+            public bool IsespecialidadAyu1Null() {
+                return this.IsNull(this.tableDatosProfesional.especialidadAyu1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetselloNull() {
-                this[this.tableDatosProfesional.selloColumn] = global::System.Convert.DBNull;
+            public void SetespecialidadAyu1Null() {
+                this[this.tableDatosProfesional.especialidadAyu1Column] = global::System.Convert.DBNull;
             }
         }
         

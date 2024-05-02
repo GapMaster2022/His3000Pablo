@@ -842,6 +842,16 @@ namespace His.Formulario
                     crystalReportViewer1.RefreshReport();
                 }
                 #endregion
+                #region ProtocoloOperatorio2021
+                else if (reporte == "ProtocoloOperatorio2021")
+                {
+                    ProtocoloOperatorio2021 myreport = new ProtocoloOperatorio2021();
+                    myreport.Refresh();
+                    myreport.SetDataSource(Datos);
+                    crystalReportViewer1.ReportSource = myreport;
+                    crystalReportViewer1.RefreshReport();
+                }
+                #endregion
                 #region InterconsultaBNewCorreo
                 else if (reporte == "InterconsultaBCorreo")
                 {

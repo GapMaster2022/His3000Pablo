@@ -232,6 +232,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lbl_name_archive = new System.Windows.Forms.Label();
+            this.chb_general = new System.Windows.Forms.CheckBox();
+            this.chb_regional = new System.Windows.Forms.CheckBox();
+            this.chb_sedacion = new System.Windows.Forms.CheckBox();
+            this.chb_otros = new System.Windows.Forms.CheckBox();
             this.ultraTabPageControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -809,6 +813,10 @@
             // 
             // ultraTabPageControl2
             // 
+            this.ultraTabPageControl2.Controls.Add(this.chb_otros);
+            this.ultraTabPageControl2.Controls.Add(this.chb_sedacion);
+            this.ultraTabPageControl2.Controls.Add(this.chb_regional);
+            this.ultraTabPageControl2.Controls.Add(this.chb_general);
             this.ultraTabPageControl2.Controls.Add(this.txtHoraAnestecia);
             this.ultraTabPageControl2.Controls.Add(this.txtHoraInicio);
             this.ultraTabPageControl2.Controls.Add(this.txtHoraTerm);
@@ -857,7 +865,7 @@
             this.ultraTabPageControl2.Controls.Add(this.label10);
             this.ultraTabPageControl2.Controls.Add(this.label8);
             this.ultraTabPageControl2.Controls.Add(this.label7);
-            this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl2.Location = new System.Drawing.Point(1, 22);
             this.ultraTabPageControl2.Name = "ultraTabPageControl2";
             this.ultraTabPageControl2.Size = new System.Drawing.Size(808, 581);
             // 
@@ -901,22 +909,24 @@
             // 
             this.btn_mas_anestesias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_mas_anestesias.Image = global::His.Formulario.Properties.Resources.HIS_NUEVO;
-            this.btn_mas_anestesias.Location = new System.Drawing.Point(725, 317);
+            this.btn_mas_anestesias.Location = new System.Drawing.Point(725, 425);
             this.btn_mas_anestesias.Name = "btn_mas_anestesias";
             this.btn_mas_anestesias.Size = new System.Drawing.Size(75, 54);
             this.btn_mas_anestesias.TabIndex = 59;
             this.btn_mas_anestesias.UseVisualStyleBackColor = true;
+            this.btn_mas_anestesias.Visible = false;
             this.btn_mas_anestesias.Click += new System.EventHandler(this.btn_mas_anestesias_Click);
             // 
             // txt_tipos_anestesia
             // 
-            this.txt_tipos_anestesia.Location = new System.Drawing.Point(175, 383);
+            this.txt_tipos_anestesia.Location = new System.Drawing.Point(175, 491);
             this.txt_tipos_anestesia.MaxLength = 100;
             this.txt_tipos_anestesia.Multiline = true;
             this.txt_tipos_anestesia.Name = "txt_tipos_anestesia";
             this.txt_tipos_anestesia.ReadOnly = true;
             this.txt_tipos_anestesia.Size = new System.Drawing.Size(530, 62);
             this.txt_tipos_anestesia.TabIndex = 58;
+            this.txt_tipos_anestesia.Visible = false;
             this.txt_tipos_anestesia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_tipos_anestesia_KeyUp);
             // 
             // label42
@@ -924,11 +934,12 @@
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(14, 386);
+            this.label42.Location = new System.Drawing.Point(14, 494);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(119, 13);
             this.label42.TabIndex = 57;
             this.label42.Text = "Tipos de Anestesia:";
+            this.label42.Visible = false;
             // 
             // txtHoraTotal
             // 
@@ -1015,27 +1026,29 @@
             // 
             this.txtOtroAnestesia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOtroAnestesia.Enabled = false;
-            this.txtOtroAnestesia.Location = new System.Drawing.Point(175, 343);
+            this.txtOtroAnestesia.Location = new System.Drawing.Point(175, 451);
             this.txtOtroAnestesia.MaxLength = 100;
             this.txtOtroAnestesia.Name = "txtOtroAnestesia";
             this.txtOtroAnestesia.Size = new System.Drawing.Size(530, 20);
             this.txtOtroAnestesia.TabIndex = 47;
+            this.txtOtroAnestesia.Visible = false;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(14, 345);
+            this.label38.Location = new System.Drawing.Point(14, 453);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(154, 13);
             this.label38.TabIndex = 46;
             this.label38.Text = "Defina Tipo de Anestesia:";
+            this.label38.Visible = false;
             // 
             // lblotros
             // 
             this.lblotros.AutoSize = true;
-            this.lblotros.Location = new System.Drawing.Point(500, 317);
+            this.lblotros.Location = new System.Drawing.Point(14, 477);
             this.lblotros.Name = "lblotros";
             this.lblotros.Size = new System.Drawing.Size(41, 13);
             this.lblotros.TabIndex = 45;
@@ -1045,10 +1058,11 @@
             // txtTipoAnestesia
             // 
             this.txtTipoAnestesia.FormattingEnabled = true;
-            this.txtTipoAnestesia.Location = new System.Drawing.Point(392, 307);
+            this.txtTipoAnestesia.Location = new System.Drawing.Point(392, 415);
             this.txtTipoAnestesia.Name = "txtTipoAnestesia";
             this.txtTipoAnestesia.Size = new System.Drawing.Size(313, 21);
             this.txtTipoAnestesia.TabIndex = 44;
+            this.txtTipoAnestesia.Visible = false;
             this.txtTipoAnestesia.SelectedIndexChanged += new System.EventHandler(this.txtTipoAnestesia_SelectedIndexChanged);
             // 
             // label36
@@ -1593,7 +1607,7 @@
             this.ultraTabPageControl4.Controls.Add(this.label26);
             this.ultraTabPageControl4.Controls.Add(this.gbExamenHis);
             this.ultraTabPageControl4.Controls.Add(this.label25);
-            this.ultraTabPageControl4.Location = new System.Drawing.Point(1, 22);
+            this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl4.Name = "ultraTabPageControl4";
             this.ultraTabPageControl4.Size = new System.Drawing.Size(808, 581);
             // 
@@ -2529,6 +2543,50 @@
             this.lbl_name_archive.Text = "lbl_Name_archive";
             this.lbl_name_archive.Visible = false;
             // 
+            // chb_general
+            // 
+            this.chb_general.AutoSize = true;
+            this.chb_general.BackColor = System.Drawing.Color.Transparent;
+            this.chb_general.Location = new System.Drawing.Point(401, 309);
+            this.chb_general.Name = "chb_general";
+            this.chb_general.Size = new System.Drawing.Size(63, 17);
+            this.chb_general.TabIndex = 153;
+            this.chb_general.Text = "General";
+            this.chb_general.UseVisualStyleBackColor = false;
+            // 
+            // chb_regional
+            // 
+            this.chb_regional.AutoSize = true;
+            this.chb_regional.BackColor = System.Drawing.Color.Transparent;
+            this.chb_regional.Location = new System.Drawing.Point(401, 347);
+            this.chb_regional.Name = "chb_regional";
+            this.chb_regional.Size = new System.Drawing.Size(68, 17);
+            this.chb_regional.TabIndex = 154;
+            this.chb_regional.Text = "Regional";
+            this.chb_regional.UseVisualStyleBackColor = false;
+            // 
+            // chb_sedacion
+            // 
+            this.chb_sedacion.AutoSize = true;
+            this.chb_sedacion.BackColor = System.Drawing.Color.Transparent;
+            this.chb_sedacion.Location = new System.Drawing.Point(602, 310);
+            this.chb_sedacion.Name = "chb_sedacion";
+            this.chb_sedacion.Size = new System.Drawing.Size(71, 17);
+            this.chb_sedacion.TabIndex = 155;
+            this.chb_sedacion.Text = "Sedación";
+            this.chb_sedacion.UseVisualStyleBackColor = false;
+            // 
+            // chb_otros
+            // 
+            this.chb_otros.AutoSize = true;
+            this.chb_otros.BackColor = System.Drawing.Color.Transparent;
+            this.chb_otros.Location = new System.Drawing.Point(602, 347);
+            this.chb_otros.Name = "chb_otros";
+            this.chb_otros.Size = new System.Drawing.Size(51, 17);
+            this.chb_otros.TabIndex = 156;
+            this.chb_otros.Text = "Otros";
+            this.chb_otros.UseVisualStyleBackColor = false;
+            // 
             // frm_Protocolo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2794,5 +2852,9 @@
         private System.Windows.Forms.TextBox txt_perdida_sanguinea;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lbl_name_archive;
+        private System.Windows.Forms.CheckBox chb_otros;
+        private System.Windows.Forms.CheckBox chb_sedacion;
+        private System.Windows.Forms.CheckBox chb_regional;
+        private System.Windows.Forms.CheckBox chb_general;
     }
 }
